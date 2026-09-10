@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First HTML Page</title>
+</head>
+
+<body>
+    <div style="padding: 10px 20px;">
+        <a href="../../../index.html" style="color: #581c87; font-weight: bold; text-decoration: none; font-size: 13px; font-family: sans-serif; background: #faf5ff; padding: 6px 14px; border-radius: 20px; border: 1px solid #d8b4fe; display: inline-block;">← Back to DevTask HUB</a>
+    </div>
+    <div>
+            <h1>1. What is &lt;!DOCTYPE html&gt; ?</h1>
+        <p>
+            &lt;!DOCTYPE html&gt;is the first line of every HTML5 document. It tells the web browser that the page is written using HTML5, which is the latest version of HTML. This declaration is not an HTML tag; it is an instruction for the browser. When the browser sees <!DOCTYPE html>, it displays the page in Standards Mode, ensuring that HTML and CSS behave consistently across modern browsers.
+            Without this declaration, browsers may switch to Quirks Mode, where they try to imitate older browser behavior. This can cause layout issues, CSS inconsistencies, and unexpected rendering problems. Therefore, it is considered a best practice to always include <!DOCTYPE html> as the very first line of every HTML document.
+        </p>
+        <p><strong>Implementation :</strong><br><br> &lt;!DOCTYPE html&gt; </p>
+    </div><br>
+    <div>
+            <h1>2.What is &lt;html lang="en"&gt;</h1>
+        <p>
+            &lt;html lang="en"
+            &lt;html&gt;The lang="en" attribute specifies that the language of the webpage is English. This helps search engines, screen readers, translation tools, and accessibility software correctly identify the language of the page. If your webpage is written in another language, you can change this value (for example, lang="ta" for Tamil or lang="fr" for French).
+        </p>
+        <p><strong>Implementation :</strong><br><br> &lt;html lang="en"&gt; </p>
+        <br><br>
+    </div><br>
+     <div>
+            <h1>3.What is &lt;meta charset="UTF-8"&gt;</h1>
+        <p>
+            <h2>What is the charset meta tag ?</h2><br>
+            The charset meta tag tells the browser which character encoding is used in the HTML document. Today, the recommended encoding is UTF-8, which supports almost every language and symbol in the world, including English, Tamil, Hindi, Chinese, Arabic, emojis, and many special characters.
+            Without specifying UTF-8, some characters may appear as strange symbols or question marks because the browser may interpret the text using the wrong encoding. Placing this meta tag near the beginning of the <head> section ensures the browser reads the document correctly from the start. Using UTF-8 also improves compatibility across different operating systems and browsers.
+        </p>
+        <p><strong>Implementation :</strong><br><br> &lt;meta charset="UTF-8"&gt; </p>
+        <br><br>
+    </div><br>
+    <div>
+            <h1>4.Viewport meta tag &lt;meta name="viewport"&gt;</h1>
+        <p>
+            <h2>What is the viewport meta tag?</h2><br>
+            The viewport meta tag controls how a webpage is displayed on different screen sizes, especially on smartphones and tablets. The viewport is the visible area of the webpage on the user's device. Without this tag, mobile browsers often display the page as if it were designed for a desktop screen, making the content appear very small and difficult to read.
+            The value width=device-width tells the browser to make the webpage width match the width of the device's screen. The value initial-scale=1.0 sets the initial zoom level to 100%, so the page is displayed at its normal size when it first loads. This meta tag is an essential part of responsive web design, allowing websites to adapt properly to desktops, laptops, tablets, and mobile phones.
+        <p><strong>Implementation :</strong><br><br> &lt;head <br>
+            meta charset="UTF-8"
+             meta name="viewport" content="width=device-width, initial-scale=1.0"
+             <br>head&gt; 
+        </p>
+        <br><br>
+    </div><br>
+
+
+
+</body>
+
+</html>

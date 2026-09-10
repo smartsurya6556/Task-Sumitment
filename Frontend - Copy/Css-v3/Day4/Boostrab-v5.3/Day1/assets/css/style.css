@@ -1,0 +1,83 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+   
+    color: black;
+}
+a{
+    text-decoration: none;
+}
+.parent{
+    height: 80vh;
+    padding: 20px;
+    border-radius: 20px;
+    width: 1200px;
+    background-color: rgba(80, 96, 87, 0.374);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    color: rgb(15, 15, 15);
+    position: relative;
+    top: 5vh;
+    left: 10vw;
+    border: none;
+    z-index: 2;
+    
+}
+.child{
+    background-color: rgba(156, 170, 192, 0.781);
+    width: 30%;
+    padding: 20px;
+    text-align: center;
+    border-radius: 20px;
+    z-index: 1;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.child:hover{
+    border: 3px solid #e1ee71;
+    transform:scale(1.05)
+} 
+.child > h3{
+    text-align: center;
+    font-weight: 600;
+}
+@media (max-width:480px) {
+    .child{
+        width: 100%;
+    }
+    
+}
+@media (min-width:480px) and (min-width: 768px) {
+    .child{
+        width: 45%;
+    }
+    
+}
+@media (min-width:769px) {
+    .child{
+        width: 30%;
+    }
+
+} 
+.text{
+    background-color: antiquewhite;
+    height: 200px;
+    width: 25vw;
+    border-radius: 20px;
+    display: grid;
+    align-items: center;
+    position: relative;
+    top: 8vh;
+    left: 35vw;
+    padding: 10px;
+}
+

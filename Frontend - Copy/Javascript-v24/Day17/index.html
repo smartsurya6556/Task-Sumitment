@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        input {
+            padding: 8px;
+            margin: 5px;
+        }
+
+        button {
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+
+        .student {
+            border: 1px solid black;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        .product {
+            border: 1px solid black;
+            padding: 10px;
+            margin: 10px 0;
+            width: 250px;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Student, Employee and Product Details</h1>
+
+    <section>
+        <h2>Student Details</h2>
+
+        <input type="text" id="studentName" placeholder="Name">
+        <input type="number" id="studentAge" placeholder="Age">
+        <input type="text" id="studentCity" placeholder="City">
+
+        <button onclick="addStudent()">Add Student</button>
+
+        <div id="studentList"></div>
+    </section>
+
+
+    <section>
+        <h2>Employee Details</h2>
+
+        <input type="text" id="employeeName" placeholder="Employee Name">
+        <input type="text" id="department" placeholder="Department">
+        <input type="number" id="salary" placeholder="Salary">
+
+        <button onclick="addEmployee()">Add Employee</button>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Department</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+
+            <tbody id="employeeList"></tbody>
+        </table>
+    </section>
+
+
+    <section>
+        <h2>Product Details</h2>
+
+        <input type="text" id="productName" placeholder="Product Name">
+        <input type="number" id="price" placeholder="Price">
+        <input type="text" id="category" placeholder="Category">
+
+        <button onclick="addProduct()">Add Product</button>
+
+        <div id="productList"></div>
+    </section>
+
+
+    <script src="./assets/js/script.js"></script>
+
+</body>
+</html>

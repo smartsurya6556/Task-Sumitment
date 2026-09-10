@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 12 — Callback Patterns, Closures & Array Mutations (All 6 Tasks)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    code, pre, .font-mono { font-family: 'JetBrains Mono', monospace; }
+  </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen p-4 sm:p-8 flex flex-col">
+  <div class="max-w-6xl mx-auto w-full space-y-6 flex-1">
+    
+    <!-- Top Navigation -->
+    <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+      <a href="../../../index.html" onclick="if(window.history.length > 1){ window.history.back(); return false; }" class="inline-flex items-center gap-2 text-xs font-bold text-indigo-400 hover:text-indigo-300 transition">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+        <span>Back to DevTask HUB</span>
+      </a>
+      <span class="text-xs font-mono px-3 py-1 rounded-full bg-rose-500/10 text-rose-400 border border-rose-500/20 font-bold">Day 12 Task</span>
+    </div>
+
+    <!-- Header -->
+    <header class="space-y-2">
+      <h1 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Day 12: Callbacks, Closures & Array Mutations</h1>
+      <p class="text-sm text-slate-400">Complete execution of all 6 tasks from <code class="text-amber-400">assets/js/script.js</code>.</p>
+    </header>
+
+    <!-- Cards Grid: All 6 Tasks -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      
+      <!-- Task 1: Callback -->
+      <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-5 flex flex-col justify-between shadow-xl space-y-3">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 font-bold">TASK 1</span>
+            <span class="text-[11px] font-bold text-blue-400">Callback</span>
+          </div>
+          <h3 class="text-sm font-bold text-white">SIMPLE CALLBACK FUNCTION</h3>
+          <p class="text-xs text-slate-400 mt-1">Passing callback to double number:</p>
+          <div class="mt-3 p-3 bg-slate-950/70 rounded-xl border border-slate-700/50 space-y-1 text-xs font-mono">
+            <div>processNumber(10, displayResult)</div>
+            <div class="text-emerald-400 font-bold mt-1">&rarr; Result: 20</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Task 2: Closure Counter -->
+      <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-5 flex flex-col justify-between shadow-xl space-y-3">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 font-bold">TASK 2</span>
+            <span class="text-[11px] font-bold text-purple-400">Closure</span>
+          </div>
+          <h3 class="text-sm font-bold text-white">SIMPLE CLOSURE COUNTER</h3>
+          <p class="text-xs text-slate-400 mt-1">Preserving private state count:</p>
+          <div class="mt-3 p-3 bg-slate-950/70 rounded-xl border border-slate-700/50 space-y-1 text-xs font-mono text-purple-300">
+            <div>counter() &rarr; 1</div>
+            <div>counter() &rarr; 2</div>
+            <div>counter() &rarr; 3</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Task 3: Push and Pop -->
+      <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-5 flex flex-col justify-between shadow-xl space-y-3">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold">TASK 3</span>
+            <span class="text-[11px] font-bold text-emerald-400">push() / pop()</span>
+          </div>
+          <h3 class="text-sm font-bold text-white">PUSH AND POP (Fruits)</h3>
+          <p class="text-xs text-slate-400 mt-1">Adding & removing end elements:</p>
+          <div class="mt-3 p-3 bg-slate-950/70 rounded-xl border border-slate-700/50 space-y-1 text-xs font-mono text-emerald-300">
+            <div>push("Pineapple", "Watermelon")</div>
+            <div>pop() removes "Watermelon"</div>
+            <div class="text-slate-400">Final: ["Apple", "Mango", "Orange", "Banana", "Grapes", "Pineapple"]</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Task 4: Shift and Unshift -->
+      <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-5 flex flex-col justify-between shadow-xl space-y-3">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 font-bold">TASK 4</span>
+            <span class="text-[11px] font-bold text-amber-400">shift / unshift</span>
+          </div>
+          <h3 class="text-sm font-bold text-white">SHIFT AND UNSHIFT (Colors)</h3>
+          <p class="text-xs text-slate-400 mt-1">Prepending & dequeuing elements:</p>
+          <div class="mt-3 p-3 bg-slate-950/70 rounded-xl border border-slate-700/50 space-y-1 text-xs font-mono text-amber-300">
+            <div>unshift("Black") &rarr; adds to front</div>
+            <div>shift() &rarr; removes "Black"</div>
+            <div class="text-slate-400">Final: ["Red", "Blue", "Green", "Yellow"]</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Task 5: Manual Push -->
+      <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-5 flex flex-col justify-between shadow-xl space-y-3">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-teal-500/20 text-teal-300 font-bold">TASK 5</span>
+            <span class="text-[11px] font-bold text-teal-400">Manual Push</span>
+          </div>
+          <h3 class="text-sm font-bold text-white">MANUAL PUSH WITHOUT PUSH()</h3>
+          <p class="text-xs text-slate-400 mt-1">Using index assignment:</p>
+          <div class="mt-3 p-3 bg-slate-950/70 rounded-xl border border-slate-700/50 space-y-1 text-xs font-mono text-teal-300">
+            <div>numbers[newNumbers.length] = 40</div>
+            <div class="text-emerald-400 font-bold">&rarr; [10, 20, 30, 40]</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Task 6: Array Methods & concat() -->
+      <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-5 flex flex-col justify-between shadow-xl space-y-3">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-rose-500/20 text-rose-300 font-bold">TASK 6</span>
+            <span class="text-[11px] font-bold text-rose-400">concat()</span>
+          </div>
+          <h3 class="text-sm font-bold text-white">ARRAY METHODS & CONCAT</h3>
+          <p class="text-xs text-slate-400 mt-1">Combining fruits & vegetables:</p>
+          <div class="mt-3 p-3 bg-slate-950/70 rounded-xl border border-slate-700/50 space-y-1 text-xs font-mono text-rose-300">
+            <div>Length: 3 | fruits1.concat(vegetables)</div>
+            <div class="text-emerald-400 font-bold">&rarr; ["Apple", "Mango", "Orange", "Carrot", "Potato"]</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Live Console Output Terminal -->
+    <div class="bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden shadow-2xl space-y-0">
+      <div class="bg-slate-900/90 px-5 py-3.5 border-b border-slate-800 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <div class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></div>
+          <span class="text-xs font-mono font-bold text-slate-200">Live Console Output (Running: assets/js/script.js)</span>
+        </div>
+        <button onclick="runDay12Script()" class="px-3 py-1 rounded-lg text-xs font-bold bg-emerald-500 hover:bg-emerald-400 text-slate-950 transition cursor-pointer">
+          Re-run Output
+        </button>
+      </div>
+      <div id="terminal" class="p-5 font-mono text-xs text-emerald-400 leading-relaxed max-h-80 overflow-y-auto space-y-1 bg-[#090d16]">
+        <!-- Intercepted console.log lines injected here -->
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    const term = document.getElementById('terminal');
+
+    function appendLog(...args) {
+      const line = document.createElement('div');
+      line.className = 'font-mono text-xs leading-relaxed text-slate-300';
+      const text = args.map(a => typeof a === 'object' ? JSON.stringify(a) : String(a)).join(' ');
+
+      if (text.includes('Task') || text.includes('===')) {
+        line.className = 'font-mono text-xs text-purple-400 font-bold pt-1 border-t border-slate-800/60 mt-1';
+      } else {
+        line.className = 'font-mono text-xs text-emerald-400 font-semibold';
+      }
+
+      line.innerHTML = `<span class="text-slate-600 select-none mr-2">&gt;</span>${text}`;
+      term.appendChild(line);
+      term.scrollTop = term.scrollHeight;
+    }
+
+    const originalLog = console.log;
+    console.log = function(...args) {
+      originalLog.apply(console, args);
+      appendLog(...args);
+    };
+
+    function runDay12Script() {
+      term.innerHTML = '';
+      
+      console.log("=== Task 1 - Simple Callback Function ===");
+      function processNumber(number, callback) {
+        let result = number * 2;
+        callback(result);
+      }
+      function displayResult(result) {
+        console.log("Result:", result);
+      }
+      processNumber(10, displayResult);
+
+      console.log("=== Task 2 - Simple Closure Counter ===");
+      function createCounter() {
+        let count = 0;
+        return function () {
+          count++;
+          console.log("Counter:", count);
+        };
+      }
+      let counter = createCounter();
+      counter();
+      counter();
+      counter();
+
+      console.log("=== Task 3 - Push and Pop ===");
+      let fruits = ["Apple", "Mango", "Orange", "Banana", "Grapes"];
+      fruits.push("Pineapple");
+      fruits.push("Watermelon");
+      fruits.pop();
+      console.log("Fruits Array:", fruits);
+
+      console.log("=== Task 4 - Shift and Unshift ===");
+      let colors = ["Red", "Blue", "Green", "Yellow"];
+      colors.unshift("Black");
+      colors.shift();
+      console.log("Colors Array:", colors);
+
+      console.log("=== Task 5 - Manual Push Without push() ===");
+      const numbers = [10, 20, 30];
+      let newNumbers = [];
+      for (let i = 0; i < numbers.length; i++) {
+        newNumbers[i] = numbers[i];
+      }
+      newNumbers[newNumbers.length] = 40;
+      console.log("Manual Array:", newNumbers);
+
+      console.log("=== Task 6 - Array Methods Until concat() ===");
+      const fruits1 = ["Apple", "Mango", "Orange"];
+      const vegetables = ["Carrot", "Potato"];
+      fruits1.push("Banana");
+      fruits1.pop();
+      fruits1.unshift("Grapes");
+      fruits1.shift();
+      console.log("Length:", fruits1.length);
+      const finalArray = fruits1.concat(vegetables);
+      console.log("Final Combined Array:", finalArray);
+    }
+
+    runDay12Script();
+  </script>
+</body>
+</html>

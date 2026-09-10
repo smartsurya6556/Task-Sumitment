@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 3 — Operators, Statements & Expressions</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #0b1120;
+            color: #f8fafc;
+            margin: 0;
+            padding: 24px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #131d32;
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid #1e293b;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .back-link {
+            color: #c084fc;
+            background: #3b0764;
+            border: 1px solid #6b21a8;
+            padding: 8px 16px;
+            border-radius: 9999px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 13px;
+            transition: 0.2s;
+        }
+        .back-link:hover { background: #581c87; color: #fff; }
+        .day-badge {
+            background: rgba(168, 85, 247, 0.15);
+            color: #d8b4fe;
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-size: 12px;
+            font-family: monospace;
+            font-weight: 700;
+        }
+        h1 { color: #facc15; margin: 0 0 8px 0; font-size: 26px; }
+        p.lead { color: #94a3b8; font-size: 14px; margin: 0 0 24px 0; }
+
+        .calc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .calc-card {
+            background: #0f172a;
+            border: 1px solid #1e293b;
+            border-radius: 14px;
+            padding: 18px;
+        }
+        .calc-card h3 {
+            margin: 0 0 8px 0;
+            font-size: 14px;
+            color: #38bdf8;
+            display: flex;
+            justify-content: space-between;
+        }
+        .calc-expr {
+            font-family: monospace;
+            font-size: 13px;
+            background: #050811;
+            padding: 8px 12px;
+            border-radius: 8px;
+            border: 1px solid #1e293b;
+            color: #e2e8f0;
+            margin-bottom: 8px;
+        }
+        .calc-res {
+            font-family: monospace;
+            font-size: 14px;
+            color: #4ade80;
+            font-weight: bold;
+        }
+
+        /* Terminal Window */
+        .terminal-box {
+            background: #050811;
+            border: 1px solid #22c55e44;
+            border-radius: 14px;
+            overflow: hidden;
+        }
+        .terminal-header {
+            background: #091122;
+            padding: 10px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #1e293b;
+        }
+        .terminal-title {
+            font-family: monospace;
+            font-size: 12px;
+            color: #4ade80;
+            font-weight: 700;
+        }
+        .terminal-body {
+            padding: 16px;
+            font-family: 'Consolas', monospace;
+            font-size: 13px;
+            line-height: 1.7;
+            color: #86efac;
+            min-height: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="top-bar">
+            <a href="../../../index.html" onclick="if(window.history.length > 1){ window.history.back(); return false; }" class="back-link">← Back to DevTask HUB</a>
+            <span class="day-badge">Day 3 / JAVASCRIPT-V24</span>
+        </div>
+
+        <h1>Day 3: Operators, Statements & Expressions</h1>
+        <p class="lead">Evaluating arithmetic operators (+, -, *, /, %), assignment operators (+=, -=), increment/decrement (++u, s++), and exponentiation (2**y).</p>
+
+        <div class="calc-grid">
+            <div class="calc-card">
+                <h3>Addition & Assignment <span style="color:#64748b; font-size:11px;">(a + s)</span></h3>
+                <div class="calc-expr">a = 35, s = 20 &rarr; u = a + s</div>
+                <div class="calc-res">Result: u = 55</div>
+            </div>
+
+            <div class="calc-card">
+                <h3>Compound Assignment <span style="color:#64748b; font-size:11px;">(u += r + a)</span></h3>
+                <div class="calc-expr">r = 27, a = 35 &rarr; u += 62</div>
+                <div class="calc-res">Result: u = 117</div>
+            </div>
+
+            <div class="calc-card">
+                <h3>Exponentiation <span style="color:#64748b; font-size:11px;">(2 ** y)</span></h3>
+                <div class="calc-expr">2 ** 12 (Power of 2 to 12)</div>
+                <div class="calc-res">Result: 4096</div>
+            </div>
+        </div>
+
+        <!-- Live Output Terminal -->
+        <div class="terminal-box">
+            <div class="terminal-header">
+                <span class="terminal-title">● Live JavaScript Execution Output (Day 3 script.js)</span>
+                <button onclick="runDay3()" style="background:#22c55e; color:#052e16; border:none; padding:4px 10px; border-radius:6px; font-weight:bold; font-size:11px; cursor:pointer;">Re-run Output</button>
+            </div>
+            <div id="outputLog" class="terminal-body"></div>
+        </div>
+    </div>
+
+    <script>
+        function logLine(text) {
+            const out = document.getElementById('outputLog');
+            const div = document.createElement('div');
+            div.innerHTML = `<span style="color:#64748b">&gt;</span> ${text}`;
+            out.appendChild(div);
+        }
+
+        function runDay3() {
+            const out = document.getElementById('outputLog');
+            out.innerHTML = '';
+
+            let a = 35;
+            let s = 20;
+            let u = 31;
+            let r = 27;
+            let y = 12;
+
+            u = a + s;
+            logLine(`Addition (a + s): <strong>${u}</strong>`);
+
+            s = null;
+            u += r + a;
+            logLine(`Compound Addition (u += r + a): <strong>${u}</strong>`);
+
+            s++;
+            logLine(`Post-increment s++: <strong>${s}</strong>`);
+            logLine(`Prefix increment ++u: <strong>${++u}</strong>`);
+            logLine(`Exponentiation (2 ** y): <strong>${2 ** y}</strong>`);
+        }
+
+        runDay3();
+    </script>
+</body>
+</html>

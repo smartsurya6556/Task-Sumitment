@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 13 — Array Methods & Higher Order Iterations</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #0b1120;
+            color: #f8fafc;
+            margin: 0;
+            padding: 24px;
+        }
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            background: #131d32;
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid #1e293b;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .back-link {
+            color: #c084fc;
+            background: #3b0764;
+            border: 1px solid #6b21a8;
+            padding: 8px 16px;
+            border-radius: 9999px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 13px;
+            transition: 0.2s;
+        }
+        .back-link:hover { background: #581c87; color: #fff; }
+        .day-badge {
+            background: rgba(168, 85, 247, 0.15);
+            color: #d8b4fe;
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-size: 12px;
+            font-family: monospace;
+            font-weight: 700;
+        }
+        h1 { color: #facc15; margin: 0 0 8px 0; font-size: 26px; }
+        p.lead { color: #94a3b8; font-size: 14px; margin: 0 0 24px 0; }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .m-card {
+            background: #0f172a;
+            border: 1px solid #1e293b;
+            border-radius: 14px;
+            padding: 18px;
+        }
+        .m-card h3 {
+            margin: 0 0 10px 0;
+            font-size: 14px;
+            font-weight: bold;
+            color: #38bdf8;
+            display: flex;
+            justify-content: space-between;
+        }
+        .badge {
+            font-size: 10px;
+            font-family: monospace;
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-weight: bold;
+            background: #065f46;
+            color: #6ee7b7;
+        }
+        .calc-res {
+            font-family: monospace;
+            font-size: 12px;
+            background: #050811;
+            padding: 10px 14px;
+            border-radius: 8px;
+            border: 1px solid #1e293b;
+            color: #4ade80;
+            line-height: 1.6;
+        }
+
+        /* Terminal Window */
+        .terminal-box {
+            background: #050811;
+            border: 1px solid #22c55e44;
+            border-radius: 14px;
+            overflow: hidden;
+        }
+        .terminal-header {
+            background: #091122;
+            padding: 10px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #1e293b;
+        }
+        .terminal-title {
+            font-family: monospace;
+            font-size: 12px;
+            color: #4ade80;
+            font-weight: 700;
+        }
+        .terminal-body {
+            padding: 16px;
+            font-family: 'Consolas', monospace;
+            font-size: 12px;
+            line-height: 1.6;
+            color: #86efac;
+            max-height: 250px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="top-bar">
+            <a href="../../../index.html" onclick="if(window.history.length > 1){ window.history.back(); return false; }" class="back-link">← Back to DevTask HUB</a>
+            <span class="day-badge">Day 13 / JAVASCRIPT-V24</span>
+        </div>
+
+        <h1>Day 13: Array Methods & Higher Order Iterations</h1>
+        <p class="lead">Exploring array manipulation with push, pop, shift, unshift, forEach traversal, and map transformations.</p>
+
+        <div class="cards-grid">
+            <div class="m-card">
+                <h3>shift & unshift <span class="badge">cities</span></h3>
+                <p style="font-size:12px; color:#94a3b8; margin:0 0 6px 0;">Added Coimbatore, removed Chennai:</p>
+                <div class="calc-res">
+                    ["Coimbatore", "Mumbai", "Delhi", "Bangalore", "Hyderabad"]
+                </div>
+            </div>
+
+            <div class="m-card">
+                <h3>map() Transformation <span class="badge">Double values</span></h3>
+                <p style="font-size:12px; color:#94a3b8; margin:0 0 6px 0;">[10, 20, 30, 40, 50] doubled:</p>
+                <div class="calc-res">
+                    Result: [20, 40, 60, 80, 100]
+                </div>
+            </div>
+
+            <div class="m-card">
+                <h3>forEach() Iteration <span class="badge">students</span></h3>
+                <p style="font-size:12px; color:#94a3b8; margin:0 0 6px 0;">Numbered roster:</p>
+                <div class="calc-res">
+                    1. Arun &bull; 2. Bala &bull; 3. Kumar &bull; 4. Surya &bull; 5. Ravi
+                </div>
+            </div>
+        </div>
+
+        <!-- Live Output Terminal -->
+        <div class="terminal-box">
+            <div class="terminal-header">
+                <span class="terminal-title">● Live JavaScript Execution Output (Day 13 script.js)</span>
+                <button onclick="runDay13()" style="background:#22c55e; color:#052e16; border:none; padding:4px 10px; border-radius:6px; font-weight:bold; font-size:11px; cursor:pointer;">Re-run Output</button>
+            </div>
+            <div id="outputLog" class="terminal-body"></div>
+        </div>
+    </div>
+
+    <script>
+        function logLine(text) {
+            const out = document.getElementById('outputLog');
+            const div = document.createElement('div');
+            div.innerHTML = `<span style="color:#64748b">&gt;</span> ${text}`;
+            out.appendChild(div);
+        }
+
+        function runDay13() {
+            const out = document.getElementById('outputLog');
+            out.innerHTML = '';
+
+            // Task 1: push
+            let numbers = [10, 20, 30, 40, 50];
+            numbers.push(60, 70, 80);
+            logLine(`Task 1: push() &rarr; [<strong>${numbers.join(', ')}</strong>]`);
+
+            // Task 2: pop
+            let fruits = ["Apple", "Mango", "Orange", "Banana", "Grapes", "Pineapple"];
+            let r1 = fruits.pop();
+            let r2 = fruits.pop();
+            logLine(`Task 2: pop() &rarr; Removed: '${r1}', '${r2}' | Remaining: [${fruits.join(', ')}]`);
+
+            // Task 3: shift & unshift
+            let cities = ["Chennai", "Mumbai", "Delhi", "Bangalore", "Hyderabad"];
+            let removedCity = cities.shift();
+            cities.unshift("Coimbatore");
+            logLine(`Task 3: shift/unshift &rarr; Removed: '${removedCity}' | Current: [<strong>${cities.join(', ')}</strong>]`);
+
+            // Task 4: forEach()
+            let students = ["Arun", "Bala", "Kumar", "Surya", "Ravi"];
+            logLine(`Task 4: forEach() Roster:`);
+            students.forEach((st, idx) => {
+                logLine(`&nbsp;&nbsp;${idx + 1}. <strong>${st}</strong>`);
+            });
+
+            // Task 5: map()
+            let numbers2 = [10, 20, 30, 40, 50];
+            let doubled = numbers2.map(n => n * 2);
+            logLine(`Task 5: map() doubled &rarr; [<strong>${doubled.join(', ')}</strong>]`);
+        }
+
+        runDay13();
+    </script>
+</body>
+</html>

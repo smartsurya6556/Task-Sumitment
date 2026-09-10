@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div style="padding: 10px 20px;">
+        <a href="../../../index.html" style="color: #581c87; font-weight: bold; text-decoration: none; font-size: 13px; font-family: sans-serif; background: #faf5ff; padding: 6px 14px; border-radius: 20px; border: 1px solid #d8b4fe; display: inline-block;">← Back to DevTask HUB</a>
+    </div>
+    <header>
+        <nav>
+            <div class="nav">
+                <a href="">Home</a>
+                <a href="">About</a>
+                <a href="">Service</a>
+                <a href="">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+
+    <section>
+        <div class="zoho">
+            <h2>ZOHO Portal</h2>
+            <div>
+                <div><h3>Login Form </h3></div>
+            <form action="Profile.html" method="post">
+
+                <label for="login">Email or Username :</label>
+                <input 
+                type="text"
+                name="email or username " 
+                placeholder="Email or Username"
+                id="login" 
+                required>
+                <label for="password">Password :</label>
+                <input 
+                type="password" 
+                name="password" 
+                placeholder="Enter Password"
+                id="password"
+                required>
+                <label for="">Remember Me </label>
+                <input 
+                type="checkbox" 
+                name="remember" 
+                id="remember">
+            
+                <div class="login-btn"><button type="submit">Login</button></div>
+
+            </form></div>
+        </div><br>
+
+        <div class="par">
+            <h2>SLA Registration </h2><br>
+
+            <div class="sla"> 
+                <h3>Registration Form </h3>
+            <form action="Profile.html" method="post">
+
+                <label for="fname">Full Name :</label>
+                <input 
+                type="text"
+                name="fname " 
+                placeholder="All Capital"
+                id="fname" 
+                required>
+                <label for="emailid">Email :</label>
+                <input 
+                type="email" 
+                name="email" 
+                id="emailid"
+                required>
+                <label for="password">Password :</label>
+                <input 
+                type="password" 
+                name="password" 
+                placeholder="Enter Password"
+                id="password"
+                required>
+                <label >Date of Birth :</label>
+                <input 
+                type="date">
+                <label >Gender</label>
+                <input 
+                type="radio" 
+                name="gender" 
+                required>Male
+                <input 
+                type="radio" 
+                name="gender" 
+                required>Female
+                <input 
+                type="radio" 
+                name="gender" 
+                required>Other
+                <label for="select1">District</label>
+                <select name="select" id="select1">
+                    <option>Chennai</option>
+                    <option>Tenkasi</option>
+                    <option>Covai</option>
+                    <option>Nellai</option>
+                </select>
+                <label for="skills"></label>
+                <input type="checkbox"> HTML 
+                <input type="checkbox"> Js 
+                <input type="checkbox"> React 
+                <label for="">Profile Photo</label>
+                <input type="file">
+                <div id="btn">
+                <input type="button" value="submit">
+                </div>
+            </div>
+        
+           
+
+            </form>
+        </div><br>
+
+        <div>
+            <form action="/Profile.html" method="post">
+
+                    <h2>Contact Me</h2><br>
+                    <h3>Contact Form</h3>
+                    <label>Name</label>
+                    <input type="text">
+                    <br><br>
+                    <label>Email</label>
+                    <input type="email">
+                    <br><br>
+                    <label>Phone</label>
+                    <input type="tel">
+                    <br><br>
+                    <label>Message</label>
+                    <br>
+                    <textarea rows="5" cols="30"></textarea>
+                    <br><br>
+                    <button>
+                        Send Message
+                    </button>
+
+            </form>
+        </div><br>
+
+        <div>
+            <h2>Training Feedbak</h2><br>
+            <h3>Feedbak Form :</h3>
+            <form action="/Profile.html" method="post">
+            
+                <label>Your Name</label>
+                <input type="text">
+                <br><br>
+                <label>Email</label>
+                <input type="email">
+                <br><br>
+                <label>Rating</label>
+                <br>
+                <input type="radio" name="rating">1
+
+                <input type="radio" name="rating">2
+
+                <input type="radio" name="rating">3
+
+                <input type="radio" name="rating">4
+
+                <input type="radio" name="rating">5
+                <br><br>
+                <label>Feedback</label>
+                <br>
+                <textarea rows="5"></textarea>
+                <br><br>
+                <button>
+                Submit Feedback
+                </button>
+
+            </form>
+        </div><br>
+
+        <div>
+                <h2>Job Application Form</h2><br>
+                <h3>Application Form :</h3>
+            <form action="/Profile.html" method="post">
+        
+                <label>Full Name</label>
+                <input type="text">
+                <br><br>
+                <label>Email</label>
+                <input type="email">
+                <br><br>
+                <label>Qualification</label>
+                <select>
+
+                <option>BCA</option>
+
+                <option>BSc</option>
+
+                <option>BCom</option>
+
+                <option>BE</option>
+
+                </select>
+                <br><br>
+                <label>Experience</label>
+                <input type="number">
+                <br><br>
+                <label>Resume</label>
+                <input type="file">
+                <br><br>
+                <label>About Yourself</label>
+                <textarea rows="5"></textarea>
+                <br><br>
+                <button>
+
+                Apply Now
+
+                </button>
+                <br><br>
+                <button type="reset">Reset All</button>  
+                <button type="submit">Complete All</button>
+                
+            </form>
+        </div>
+
+    </section>
+    
+</body>
+</html>

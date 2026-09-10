@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Task Portfolio & Fullstack Learning Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background: #0b1120; color: #fff; min-height: 100vh; display: flex; flex-direction: column; justify-content: space-between; }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; background: #111827; border-bottom: 1px solid #1e293b; }
+        .logo { font-size: 24px; font-weight: bold; color: #00ffd5; }
+        nav ul { display: flex; gap: 15px; list-style: none; }
+        nav ul a { color: #cbd5e1; text-decoration: none; padding: 8px 16px; border-radius: 8px; font-weight: 600; font-size: 14px; transition: 0.3s; }
+        nav ul a:hover, nav ul a.active { background: #00ffd5; color: #0b1120; }
+        
+        .hero { text-align: center; padding: 60px 20px 30px; }
+        .hero h1 { font-size: 42px; color: #00ffd5; margin-bottom: 15px; }
+        .hero p { font-size: 18px; color: #94a3b8; max-width: 750px; margin: 0 auto 30px; }
+        
+        .cta-btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 30px; background: #00ffd5; color: #0b1120; font-size: 16px; font-weight: 700; border-radius: 30px; text-decoration: none; transition: 0.3s; box-shadow: 0 4px 20px rgba(0, 255, 213, 0.3); }
+        .cta-btn:hover { background: #05efad; transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0, 255, 213, 0.4); }
+
+        .cards-container { max-width: 1200px; width: 90%; margin: 30px auto 60px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; }
+        .portal-card { background: #1b2432; border: 1px solid #243042; border-radius: 16px; padding: 30px 25px; text-align: center; text-decoration: none; color: inherit; transition: 0.35s; display: flex; flex-direction: column; justify-content: space-between; }
+        .portal-card:hover { transform: translateY(-8px); border-color: #00ffd5; box-shadow: 0 10px 30px rgba(0, 255, 213, 0.18); }
+        .portal-card i { font-size: 44px; color: #00ffd5; margin-bottom: 20px; }
+        .portal-card h3 { font-size: 20px; color: #f1f5f9; margin-bottom: 10px; }
+        .portal-card p { font-size: 14px; color: #94a3b8; line-height: 1.5; margin-bottom: 20px; }
+        .card-tag { font-size: 12px; font-weight: 700; color: #00ffd5; text-transform: uppercase; letter-spacing: 0.5px; }
+
+        footer { text-align: center; padding: 25px; background: #111827; color: #64748b; font-size: 14px; border-top: 1px solid #1e293b; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">Fullstack Developer Portfolio</div>
+        <ul>
+            <a href="Own_Project/Fullstack-learning-site/pages/frontend.html" class="active">Frontend Tasks</a>
+            <a href="Own_Project/Fullstack-learning-site/index.html">Fullstack Hub</a>
+            <a href="Own_Project/Creation-&-Evolution/index.html">Encyclopedia</a>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <h1>Task Submission &amp; Frontend Portfolio</h1>
+        <p>Explore all 40+ organized frontend tasks, assignments, and full-stack projects categorized across HTML5, CSS3, Bootstrap, Tailwind CSS, Typography, and JavaScript.</p>
+        <a href="Own_Project/Fullstack-learning-site/pages/frontend.html" class="cta-btn">
+            <i class="fa-solid fa-layer-group"></i> Open Frontend Task Portfolio
+        </a>
+    </section>
+
+    <div class="cards-container">
+        <a href="Own_Project/Fullstack-learning-site/pages/frontend.html" class="portal-card">
+            <div>
+                <i class="fa-solid fa-code"></i>
+                <h3>Frontend Tasks &amp; Submissions</h3>
+                <p>All HTML5, CSS3, Bootstrap 5, Tailwind CSS, Typography, and JavaScript course assignments with live preview and ZIP downloads.</p>
+            </div>
+            <span class="card-tag">40 Tasks &bull; Live View &rarr;</span>
+        </a>
+
+        <a href="Own_Project/Fullstack-learning-site/index.html" class="portal-card">
+            <div>
+                <i class="fa-solid fa-laptop-code"></i>
+                <h3>Fullstack Learning Hub</h3>
+                <p>Computer Fundamentals, Aptitude, Frontend, Backend Java/OOP, and MySQL database learning curriculum.</p>
+            </div>
+            <span class="card-tag">Full Curriculum &bull; Explore &rarr;</span>
+        </a>
+
+        <a href="Own_Project/Creation-&-Evolution/index.html" class="portal-card">
+            <div>
+                <i class="fa-solid fa-dna"></i>
+                <h3>Creation &amp; Evolution (C&amp;E)</h3>
+                <p>A dual-realm encyclopedia exploring 400+ milestones of human inventions, ancient siddhars, and biological adaptations.</p>
+            </div>
+            <span class="card-tag">Featured Project &bull; View &rarr;</span>
+        </a>
+
+        <a href="Own_Project/Developer%20Must%20Know/index.html" class="portal-card">
+            <div>
+                <i class="fa-solid fa-book-open-reader"></i>
+                <h3>Developer Must Know Hub</h3>
+                <p>Roadmap covering Computer Fundamentals, Frontend, Backend, Database, and Object-Oriented Programming.</p>
+            </div>
+            <span class="card-tag">Developer Guide &bull; View &rarr;</span>
+        </a>
+    </div>
+
+    <footer>Fullstack Learning &amp; Portfolio Hub &copy; 2026</footer>
+</body>
+</html>

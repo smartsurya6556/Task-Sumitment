@@ -1,0 +1,274 @@
+/* ==========================================================================
+   Creation & Evolution — Technology History Editorial Stylesheet
+   Author: Creation & Evolution Editorial Team
+   Description: Compact editorial banner, timeline controls, interactive cards,
+                smooth pagination, and responsive modal transitions.
+   ========================================================================== */
+
+/* Custom Typography & Base Tokens */
+:root {
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Newsreader', Georgia, Cambria, 'Times New Roman', serif;
+  --font-display: 'Plus Jakarta Sans', var(--font-sans);
+  
+  --color-brand-50: #f0f9ff;
+  --color-brand-100: #e0f2fe;
+  --color-brand-600: #0284c7;
+  --color-brand-700: #0369a1;
+  --color-brand-900: #0c4a6e;
+  
+  --color-slate-900: #0f172a;
+  --color-slate-800: #1e293b;
+  --color-slate-700: #334155;
+  --color-slate-600: #475569;
+  --color-slate-200: #e2e8f0;
+  --color-slate-100: #f1f5f9;
+  --color-slate-50: #f8fafc;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  color: var(--color-slate-800);
+  background-color: #ffffff;
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* Custom Scrollbar for Sleek Interface */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-slate-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Modal Smooth Transitions */
+.modal-backdrop {
+  transition: opacity 0.25s ease-in-out;
+}
+
+.modal-content {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease-in-out;
+}
+
+.modal-open {
+  overflow: hidden;
+}
+
+/* Horizontal Timeline Track & Connector Lines */
+.timeline-track-container {
+  position: relative;
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
+}
+
+.timeline-connector {
+  position: absolute;
+  top: 34px;
+  left: 30px;
+  right: 30px;
+  height: 2px;
+  background-color: var(--color-slate-200);
+  z-index: 1;
+}
+
+.timeline-node {
+  position: relative;
+  z-index: 2;
+  transition: transform 0.15s ease;
+}
+
+.timeline-node:hover {
+  transform: translateY(-2px);
+}
+
+/* Vertical Timeline (for Mobile screens) */
+@media (max-width: 768px) {
+  .vertical-timeline-line {
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: var(--color-slate-200);
+  }
+}
+
+/* Article Reader Section Styling */
+.article-section-title {
+  position: relative;
+  padding-bottom: 0.4rem;
+}
+
+.article-section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 32px;
+  height: 2px;
+  background-color: var(--color-brand-600);
+}
+
+/* Comparison Table Styling */
+.comparison-table-wrapper {
+  overflow-x: auto;
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-slate-200);
+}
+
+.comparison-table th {
+  background-color: var(--color-slate-50);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+/* Subtle Card Hover Transitions */
+.invention-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+/* Card Aesthetic Enhancement */
+.invention-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 1rem;
+  border: 1px solid #e2e8f0;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+.invention-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px -8px rgba(15, 23, 42, 0.12), 0 8px 16px -4px rgba(15, 23, 42, 0.06);
+  border-color: #cbd5e1;
+}
+
+.card-media-banner {
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s ease;
+}
+
+.invention-card:hover .card-media-banner {
+  filter: brightness(1.03);
+}
+
+.card-icon-bubble {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.invention-card:hover .card-icon-bubble {
+  transform: scale(1.08);
+}
+
+.card-tag-pill {
+  font-size: 10px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+}
+
+/* Secondary Domain Sub-Navbar Styles */
+.subnav-sticky {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.category-tab-btn {
+  position: relative;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.category-tab-btn.active {
+  background-color: var(--color-slate-900);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.12);
+}
+
+.category-tab-btn.active .tab-icon-wrapper {
+  color: #38bdf8;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.category-tab-btn.active .tab-count-badge {
+  background-color: var(--color-brand-600);
+  color: #ffffff;
+}
+
+.category-tab-btn:not(.active):hover {
+  background-color: #f1f5f9;
+  border-color: #cbd5e1;
+  color: var(--color-slate-900);
+}
+
+.tab-icon-wrapper {
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+/* Compact Banner Subtle Grid Gradient */
+.hero-compact-bg {
+  background-color: #0b1329;
+  background-image: 
+    radial-gradient(circle at 15% 50%, rgba(14, 165, 233, 0.12) 0%, transparent 40%),
+    radial-gradient(circle at 85% 30%, rgba(16, 185, 129, 0.12) 0%, transparent 40%),
+    radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 24px 24px;
+}
+
+/* Realm Specific Accent Highlights */
+body.realm-fauna-active {
+  --color-brand-600: #059669;
+  --color-brand-700: #047857;
+}
+
+.realm-pill-btn {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.realm-pill-btn:hover {
+  transform: translateY(-1px);
+}
+
+/* Print Friendly Stylesheet */
+@media print {
+  header, footer, #search-filter-section, #timeline-section, .no-print {
+    display: none !important;
+  }
+  
+  #modal-container {
+    display: block !important;
+    position: static !important;
+    background: transparent !important;
+  }
+}

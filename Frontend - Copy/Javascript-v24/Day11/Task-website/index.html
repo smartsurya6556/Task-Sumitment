@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS LAB — Learn JavaScript & Practice Logic</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       Top Navigation Bar
+       ========================================================================== -->
+  <header class="top-navbar">
+    <div class="navbar-inner">
+      <a href="../../../../index.html" onclick="if(window.history.length > 1){ window.history.back(); return false; }" style="background:#3b0764; color:#c084fc; border:1px solid #6b21a8; padding:6px 14px; border-radius:9999px; text-decoration:none; font-weight:bold; font-size:12px; margin-right:12px; display:inline-flex; align-items:center; gap:6px;">← DevTask HUB</a>
+      <!-- Clean Developer Logo: [ JS ] LAB -->
+      <a href="#dashboard" class="brand-logo-link" data-view="dashboard">
+        <span class="logo-icon-badge">JS</span>
+        <span class="logo-text-title">LAB<span class="logo-text-dot">.</span></span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <ul class="nav-links-list">
+        <li><a href="#dashboard" class="nav-link active" data-view="dashboard">Dashboard</a></li>
+        <li><a href="#topics" class="nav-link" data-view="topics">Topics</a></li>
+        <li><a href="#practice" class="nav-link" data-view="practice">Logical Practice</a></li>
+        <li><a href="#cheat" class="nav-link" data-view="cheat">JS Cheat Lab</a></li>
+      </ul>
+
+      <!-- Global Search Box -->
+      <div class="search-box-wrap">
+        <svg class="search-icon-svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input 
+          type="text" 
+          id="global-search-input" 
+          class="search-input-field" 
+          placeholder="Search JavaScript topics or logical questions..." 
+          autocomplete="off"
+          spellcheck="false"
+        >
+        <!-- Categorized Search Results Panel -->
+        <div id="search-dropdown-results" class="search-dropdown-panel hidden"></div>
+      </div>
+
+      <!-- Mobile Menu Toggle Button -->
+      <button class="mobile-toggle-btn" id="mobile-menu-toggle" aria-label="Toggle navigation">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer Navigation Menu -->
+    <nav class="mobile-nav-menu" id="mobile-nav-menu">
+      <ul class="mobile-nav-list">
+        <li><a href="#dashboard" class="mobile-nav-link active" data-view="dashboard">Dashboard</a></li>
+        <li><a href="#topics" class="mobile-nav-link" data-view="topics">Topics</a></li>
+        <li><a href="#practice" class="mobile-nav-link" data-view="practice">Logical Practice</a></li>
+        <li><a href="#cheat" class="mobile-nav-link" data-view="cheat">JS Cheat Lab</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <!-- ==========================================================================
+       Main App Views Container
+       ========================================================================== -->
+  <main class="main-content">
+
+    <!-- ========================================================================
+         VIEW 1: DASHBOARD
+         ======================================================================== -->
+    <section class="app-view active-view" id="view-dashboard">
+      <!-- Hero Section -->
+      <div class="hero-card">
+        <span class="hero-tag">JS LAB • Developer Study Workspace</span>
+        <h1 class="hero-title">JavaScript Learning Lab</h1>
+        <p class="hero-description">
+          Learn JavaScript fundamentals, build logical thinking, and prepare for coding tests.
+        </p>
+        <div class="hero-slogan-flow">
+          <span>Learn</span> &rarr; <span>Understand</span> &rarr; <span>Practice</span> &rarr; <span>Improve</span>
+        </div>
+        <div class="hero-actions-row">
+          <button class="btn-primary-solid" data-goto="topics">
+            Explore Topics
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </button>
+          <button class="btn-secondary-outline" data-goto="practice">
+            Practice Logic
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Compact Overview Cards -->
+      <div class="stats-grid-four">
+        <div class="stat-metric-card">
+          <div class="stat-number">10</div>
+          <div class="stat-label">JavaScript Topics</div>
+        </div>
+        <div class="stat-metric-card">
+          <div class="stat-number">10</div>
+          <div class="stat-label">Logical Questions</div>
+        </div>
+        <div class="stat-metric-card">
+          <div class="stat-number" style="color: #f87171;">5</div>
+          <div class="stat-label">Hard Problems</div>
+        </div>
+        <div class="stat-metric-card">
+          <div class="stat-number" style="color: #34d399;">5</div>
+          <div class="stat-label">Easy Problems</div>
+        </div>
+      </div>
+
+      <!-- Learning & Practice Showcase Grid -->
+      <h2 class="dashboard-block-title">Learning & Practice Hub</h2>
+      <div class="dash-sections-grid">
+        <!-- Section A Card -->
+        <div class="dash-feature-card" data-goto="topics">
+          <div>
+            <div class="dash-card-header">
+              <span class="topic-num-badge">Section A</span>
+              <span class="topic-category-pill">10 Topics</span>
+            </div>
+            <h3 class="dash-card-title">10 Important JavaScript Topics</h3>
+            <p class="dash-card-desc">
+              Variables, Data Types, Operators, Conditional Statements, Functions, Arrow Functions, Arrays, Objects, Destructuring, and Classes.
+            </p>
+          </div>
+          <span class="dash-card-link link-gold">Explore Topics &rarr;</span>
+        </div>
+
+        <!-- Section B Hard Card -->
+        <div class="dash-feature-card border-hard" data-goto="practice" data-filter="hard">
+          <div>
+            <div class="dash-card-header">
+              <span class="diff-badge badge-hard">🔴 Hard Set</span>
+              <span class="topic-category-pill">5 Questions</span>
+            </div>
+            <h3 class="dash-card-title">Advanced OOP & Systems Logic</h3>
+            <p class="dash-card-desc">
+              Bank Account System, Online Shopping Cart, ATM Withdrawal, Bank Loan Eligibility, and Student Result System.
+            </p>
+          </div>
+          <span class="dash-card-link link-red">Practice 5 Hard Questions &rarr;</span>
+        </div>
+
+        <!-- Section B Easy Card -->
+        <div class="dash-feature-card border-easy" data-goto="practice" data-filter="easy">
+          <div>
+            <div class="dash-card-header">
+              <span class="diff-badge badge-easy">🟢 Easy Set</span>
+              <span class="topic-category-pill">5 Questions</span>
+            </div>
+            <h3 class="dash-card-title">Core Logic, Range & Security Drills</h3>
+            <p class="dash-card-desc">
+              Weather Checker, Delivery Charge Calculator, Car Speed Checker, Shopping Discount, and Login Security Check.
+            </p>
+          </div>
+          <span class="dash-card-link link-green">Practice 5 Easy Questions &rarr;</span>
+        </div>
+
+        <!-- Section JS Cheat Lab Card -->
+        <div class="dash-feature-card" data-goto="cheat">
+          <div>
+            <div class="dash-card-header">
+              <span class="topic-num-badge">Visual Reference</span>
+              <span class="topic-category-pill">Cheat Lab</span>
+            </div>
+            <h3 class="dash-card-title">JS Cheat Lab</h3>
+            <p class="dash-card-desc">
+              Quick visual learning reference: What &rarr; Syntax &rarr; Example &rarr; Remember. Understand concepts quickly without long theory.
+            </p>
+          </div>
+          <span class="dash-card-link link-gold">Open JS Cheat Lab &rarr;</span>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ========================================================================
+         VIEW 2: JAVASCRIPT TOPICS (10 TOPIC CARDS)
+         ======================================================================== -->
+    <section class="app-view hidden" id="view-topics">
+      <div class="view-header-box">
+        <span class="view-badge-indicator">Section A • Complete Fundamentals</span>
+        <h1 class="view-headline">JavaScript Topics</h1>
+        <p class="view-subtext">
+          Master the fundamentals one concept at a time. Click any card to open detailed developer documentation with syntax, interactive code, output, and test points.
+        </p>
+      </div>
+
+      <!-- Topics Grid Container -->
+      <div class="topics-grid-container" id="topics-grid-container"></div>
+    </section>
+
+
+    <!-- ========================================================================
+         VIEW 3: LOGICAL PRACTICE (10 QUESTIONS: 5 HARD, 5 EASY)
+         ======================================================================== -->
+    <section class="app-view hidden" id="view-practice">
+      <div class="view-header-box">
+        <span class="view-badge-indicator">Section B • 10 Core Programs (5 Hard • 5 Easy)</span>
+        <h1 class="view-headline">Logical Practice</h1>
+        <p class="view-subtext">
+          Practice real-world JavaScript logic using simple conditions, functions, arrays, and objects. Click any card to open the coding challenge workspace.
+        </p>
+      </div>
+
+      <!-- Segmented Tab Filter -->
+      <div class="segmented-filter-bar">
+        <button class="filter-tab-btn active" data-practice-filter="all">ALL (10)</button>
+        <button class="filter-tab-btn" data-practice-filter="hard">HARD (5)</button>
+        <button class="filter-tab-btn" data-practice-filter="easy">EASY (5)</button>
+      </div>
+
+      <!-- Section 1: 🔴 Hard Questions (5) -->
+      <div class="practice-section-group" id="hard-questions-group">
+        <div class="practice-group-header">
+          <div class="group-header-left">
+            <span class="diff-badge badge-hard">HARD</span>
+            <h2 class="group-title">Advanced OOP, Cart & System Practice</h2>
+          </div>
+          <span class="group-count-tag">5 Questions</span>
+        </div>
+        <div class="questions-grid-container" id="hard-questions-grid"></div>
+      </div>
+
+      <!-- Section 2: 🟢 Easy Questions (5) -->
+      <div class="practice-section-group" id="easy-questions-group">
+        <div class="practice-group-header">
+          <div class="group-header-left">
+            <span class="diff-badge badge-easy">EASY</span>
+            <h2 class="group-title">Core Logic, Range & Security Drills</h2>
+          </div>
+          <span class="group-count-tag">5 Questions</span>
+        </div>
+        <div class="questions-grid-container" id="easy-questions-grid"></div>
+      </div>
+    </section>
+
+
+    <!-- ========================================================================
+         VIEW 4: JS CHEAT LAB
+         ======================================================================== -->
+    <section class="app-view hidden" id="view-cheat">
+      <div class="view-header-box">
+        <span class="view-badge-indicator">Quick Visual Learning Reference</span>
+        <h1 class="view-headline">JavaScript Cheat Lab</h1>
+        <p class="view-subtext">
+          Understand JavaScript concepts quickly with simple examples, syntax, and easy-to-remember points.
+        </p>
+        <p class="view-subtext-secondary mt-2">
+          No long theory. Just the important JavaScript concepts you need to understand and remember.
+        </p>
+      </div>
+
+      <!-- 1. Quick Learning Reference Cards (WHAT → SYNTAX → EXAMPLE → REMEMBER) -->
+      <div class="practice-section-group">
+        <div class="practice-group-header">
+          <div class="group-header-left">
+            <span class="diff-badge badge-cheat">Core Concepts</span>
+            <h2 class="group-title">⚡ Quick Learning Reference Cards</h2>
+          </div>
+          <span class="group-count-tag">16 Cards</span>
+        </div>
+        <div class="cheat-cards-grid" id="cheat-cards-grid"></div>
+      </div>
+
+      <!-- 2. Special Section: Think Like JavaScript (Logic Formula) -->
+      <div class="practice-section-group mt-8">
+        <div class="practice-group-header">
+          <div class="group-header-left">
+            <span class="diff-badge badge-cheat">Logic Formula</span>
+            <h2 class="group-title">🧠 Think Like JavaScript</h2>
+          </div>
+        </div>
+        <div class="logic-formula-wrapper" id="cheat-formula-container"></div>
+      </div>
+
+      <!-- 3. Special Section: Don't Make These Mistakes -->
+      <div class="practice-section-group mt-8">
+        <div class="practice-group-header">
+          <div class="group-header-left">
+            <span class="diff-badge badge-hard">Common Pitfalls</span>
+            <h2 class="group-title">🚫 Don't Make These Mistakes</h2>
+          </div>
+        </div>
+        <div class="mistakes-cards-grid" id="cheat-mistakes-container"></div>
+      </div>
+
+      <!-- 4. Special Section: "Remember This" Visual Cheat Sheet -->
+      <div class="practice-section-group mt-8">
+        <div class="practice-group-header">
+          <div class="group-header-left">
+            <span class="diff-badge badge-easy">High-Yield Memory</span>
+            <h2 class="group-title">📌 Remember This — Quick Visual Cheat Sheet</h2>
+          </div>
+        </div>
+        <div class="remember-this-grid" id="cheat-remember-container"></div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ==========================================================================
+       Detail Modal Overlay (Developer Documentation / Workspace View)
+       ========================================================================== -->
+  <div class="modal-overlay" id="detail-modal-overlay">
+    <div class="modal-container">
+      <button class="modal-close-btn" id="detail-modal-close" aria-label="Close modal">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <div class="modal-scrollable-body" id="detail-modal-body"></div>
+    </div>
+  </div>
+
+
+  <!-- ==========================================================================
+       Professional Footer
+       ========================================================================== -->
+  <footer class="app-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-brand-title">JS LAB</div>
+        <div>Learn JavaScript. Build Logic. Practice Better.</div>
+        <div class="mt-1" style="font-size: 0.78rem; color: var(--text-dim);">© 2026 JS LAB • Developer Study Workspace</div>
+      </div>
+      <div class="footer-links">
+        <a href="#dashboard" class="footer-link" data-view="dashboard">Dashboard</a>
+        <a href="#topics" class="footer-link" data-view="topics">Topics (10)</a>
+        <a href="#practice" class="footer-link" data-view="practice">Logical Practice (10)</a>
+        <a href="#cheat" class="footer-link" data-view="cheat">JS Cheat Lab</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ==========================================================================
+       JavaScript Application Files
+       ========================================================================== -->
+  <script src="assets/js/runner.js"></script>
+  <script src="assets/js/data/topics-data.js"></script>
+  <script src="assets/js/data/questions-data.js"></script>
+  <script src="assets/js/data/cheat-data.js"></script>
+  <script src="assets/js/app.js"></script>
+
+</body>
+</html>

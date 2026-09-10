@@ -1,0 +1,380 @@
+<!-- Day 10 - Media Query - CSS 3 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 10 – Media Query & Responsive Flex Cards</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <div style="margin-bottom: 20px;">
+        <a href="../../../index.html" style="color: #088f8f; font-weight: bold; text-decoration: none; font-size: 13px; background: white; padding: 6px 14px; border-radius: 20px; border: 1px solid #ccc; display: inline-block;">← Back to DevTask HUB</a>
+    </div>
+
+    <h1>Day 10 - Media Query & Flex Cards</h1>
+
+
+    <!-- Task 1 - Student Cards -->
+
+    <section>
+        <h2>Task 1 - Responsive Student Cards</h2>
+
+        <div class="student-container">
+
+            <div class="student-card">
+                <img src="https://i.pravatar.cc/150?img=1" alt="Student">
+                <h3>Arun</h3>
+                <p>Full Stack Development</p>
+                <p>9876543210</p>
+            </div>
+
+            <div class="student-card">
+                <img src="https://i.pravatar.cc/150?img=2" alt="Student">
+                <h3>Ravi</h3>
+                <p>Web Development</p>
+                <p>9876543211</p>
+            </div>
+
+            <div class="student-card">
+                <img src="https://i.pravatar.cc/150?img=3" alt="Student">
+                <h3>Kumar</h3>
+                <p>Java Development</p>
+                <p>9876543212</p>
+            </div>
+
+            <div class="student-card">
+                <img src="https://i.pravatar.cc/150?img=4" alt="Student">
+                <h3>Vijay</h3>
+                <p>Python Development</p>
+                <p>9876543213</p>
+            </div>
+
+            <div class="student-card">
+                <img src="https://i.pravatar.cc/150?img=5" alt="Student">
+                <h3>Ajay</h3>
+                <p>UI UX Design</p>
+                <p>9876543214</p>
+            </div>
+
+            <div class="student-card">
+                <img src="https://i.pravatar.cc/150?img=6" alt="Student">
+                <h3>Rahul</h3>
+                <p>Data Science</p>
+                <p>9876543215</p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Task 2 - Product Cards -->
+
+    <section>
+        <h2>Task 2 - Responsive Product Cards</h2>
+
+        <div class="product-container">
+
+            <div class="product-card">
+                <img src="https://picsum.photos/200/150?random=1" alt="Product">
+                <h3>Headphones</h3>
+                <p>₹1,500</p>
+                <button>Buy Now</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://picsum.photos/200/150?random=2" alt="Product">
+                <h3>Smart Watch</h3>
+                <p>₹2,500</p>
+                <button>Buy Now</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://picsum.photos/200/150?random=3" alt="Product">
+                <h3>Keyboard</h3>
+                <p>₹1,200</p>
+                <button>Buy Now</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://picsum.photos/200/150?random=4" alt="Product">
+                <h3>Mouse</h3>
+                <p>₹800</p>
+                <button>Buy Now</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://picsum.photos/200/150?random=5" alt="Product">
+                <h3>Laptop</h3>
+                <p>₹45,000</p>
+                <button>Buy Now</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://picsum.photos/200/150?random=6" alt="Product">
+                <h3>Mobile</h3>
+                <p>₹18,000</p>
+                <button>Buy Now</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://picsum.photos/200/150?random=7" alt="Product">
+                <h3>Speaker</h3>
+                <p>₹2,000</p>
+                <button>Buy Now</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://picsum.photos/200/150?random=8" alt="Product">
+                <h3>Camera</h3>
+                <p>₹25,000</p>
+                <button>Buy Now</button>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Task 3 - Company Team -->
+
+    <section>
+        <h2>Task 3 - Company Team</h2>
+
+        <div class="team-container">
+
+            <div class="team-card">
+                <img src="https://i.pravatar.cc/150?img=11" alt="Employee">
+                <h3>Arun Kumar</h3>
+                <p>Development</p>
+                <p>arun@gmail.com</p>
+            </div>
+
+            <div class="team-card">
+                <img src="https://i.pravatar.cc/150?img=12" alt="Employee">
+                <h3>Priya</h3>
+                <p>Design</p>
+                <p>priya@gmail.com</p>
+            </div>
+
+            <div class="team-card">
+                <img src="https://i.pravatar.cc/150?img=13" alt="Employee">
+                <h3>Rahul</h3>
+                <p>Marketing</p>
+                <p>rahul@gmail.com</p>
+            </div>
+
+            <div class="team-card">
+                <img src="https://i.pravatar.cc/150?img=14" alt="Employee">
+                <h3>Divya</h3>
+                <p>Testing</p>
+                <p>divya@gmail.com</p>
+            </div>
+
+            <div class="team-card">
+                <img src="https://i.pravatar.cc/150?img=15" alt="Employee">
+                <h3>Karthik</h3>
+                <p>HR</p>
+                <p>karthik@gmail.com</p>
+            </div>
+
+            <div class="team-card">
+                <img src="https://i.pravatar.cc/150?img=16" alt="Employee">
+                <h3>Vishnu</h3>
+                <p>Accounts</p>
+                <p>vishnu@gmail.com</p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Task 4 - Services -->
+
+    <section class="services-section">
+
+        <h2>Task 4 - Our Services</h2>
+
+        <div class="service-container">
+
+            <div class="service-card">
+                <h3>Web Development</h3>
+                <p>We create modern websites.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>App Development</h3>
+                <p>We develop mobile applications.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>UI/UX Design</h3>
+                <p>We design beautiful interfaces.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>AI Solutions</h3>
+                <p>We provide AI based solutions.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Cloud Services</h3>
+                <p>We provide cloud solutions.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Digital Marketing</h3>
+                <p>We improve online business.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Task 5 - Portfolio -->
+
+    <section class="portfolio">
+
+        <header>
+            <h2>My Portfolio</h2>
+
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">Skills</a>
+                <a href="#">Projects</a>
+                <a href="#">Contact</a>
+            </nav>
+        </header>
+
+
+        <div class="hero">
+
+            <div class="hero-image">
+                <img src="https://i.pravatar.cc/250?img=8" alt="Profile">
+            </div>
+
+            <div class="hero-text">
+                <h2>Hello, I'm a Web Developer</h2>
+                <p>
+                    I create responsive and user-friendly websites
+                    using HTML, CSS and JavaScript.
+                </p>
+                <button>View Projects</button>
+            </div>
+
+        </div>
+
+
+        <div class="skills">
+            <h2>Skills</h2>
+            <p>HTML | CSS | JavaScript | React | Node.js</p>
+        </div>
+
+
+        <div class="projects">
+            <h2>Projects</h2>
+            <p>Portfolio Website</p>
+            <p>E-Commerce Website</p>
+            <p>Student Management System</p>
+        </div>
+
+
+        <div class="contact">
+            <h2>Contact</h2>
+            <p>Email: developer@gmail.com</p>
+            <p>Mobile: 9876543210</p>
+        </div>
+
+
+        <footer>
+            <p>© 2026 My Portfolio</p>
+        </footer>
+
+    </section>
+
+
+    <!-- Challenge Task -->
+
+    <section class="ecommerce">
+
+        <h2>Challenge - E-Commerce Home Page</h2>
+
+
+        <header class="shop-header">
+
+            <h2>My Shop</h2>
+
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">Products</a>
+                <a href="#">Categories</a>
+                <a href="#">Contact</a>
+            </nav>
+
+        </header>
+
+
+        <div class="banner">
+            <h2>Welcome to My Shop</h2>
+            <p>Best Products at Best Prices</p>
+        </div>
+
+
+        <h2>Products</h2>
+
+        <div class="shop-products">
+
+            <div class="shop-card">
+                <img src="https://picsum.photos/200/150?random=20" alt="Product">
+                <h3>Smart Phone</h3>
+                <p>₹20,000</p>
+                <button>Buy Now</button>
+            </div>
+
+            <div class="shop-card">
+                <img src="https://picsum.photos/200/150?random=21" alt="Product">
+                <h3>Laptop</h3>
+                <p>₹50,000</p>
+                <button>Buy Now</button>
+            </div>
+
+            <div class="shop-card">
+                <img src="https://picsum.photos/200/150?random=22" alt="Product">
+                <h3>Headphones</h3>
+                <p>₹2,000</p>
+                <button>Buy Now</button>
+            </div>
+
+            <div class="shop-card">
+                <img src="https://picsum.photos/200/150?random=23" alt="Product">
+                <h3>Smart Watch</h3>
+                <p>₹3,000</p>
+                <button>Buy Now</button>
+            </div>
+
+        </div>
+
+
+        <div class="categories">
+
+            <h2>Categories</h2>
+
+            <div>
+                <span>Mobiles</span>
+                <span>Laptops</span>
+                <span>Accessories</span>
+                <span>Electronics</span>
+            </div>
+
+        </div>
+
+
+        <footer class="shop-footer">
+            <p>© 2026 My Shop</p>
+        </footer>
+
+    </section>
+
+</body>
+</html>

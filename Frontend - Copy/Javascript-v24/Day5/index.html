@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 5 — For Loop, While Loop & Factorial Iteration (Full Output)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    code, pre, .font-mono { font-family: 'JetBrains Mono', monospace; }
+  </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen p-4 sm:p-8 flex flex-col">
+  <div class="max-w-6xl mx-auto w-full space-y-6 flex-1">
+    
+    <!-- Top Navigation -->
+    <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+      <a href="../../../index.html" onclick="if(window.history.length > 1){ window.history.back(); return false; }" class="inline-flex items-center gap-2 text-xs font-bold text-indigo-400 hover:text-indigo-300 transition">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+        <span>Back to DevTask HUB</span>
+      </a>
+      <span class="text-xs font-mono px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20 font-bold">Day 5 Task</span>
+    </div>
+
+    <!-- Header -->
+    <header class="space-y-2">
+      <h1 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Day 5: While Loop, For Loop & Factorials</h1>
+      <p class="text-sm text-slate-400">Complete execution of all 5 loop iteration tasks from <code class="text-amber-400">assets/js/script.js</code>.</p>
+    </header>
+
+    <!-- Cards Grid: All 5 Tasks -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      
+      <!-- Task 1: While Loop Factorial Decrement -->
+      <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-5 flex flex-col justify-between shadow-xl space-y-3">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 font-bold">TASK 1</span>
+            <span class="text-[11px] font-bold text-blue-400">7! = 5040</span>
+          </div>
+          <h3 class="text-sm font-bold text-white">WHILE LOOP FACTORIAL (Decrement)</h3>
+          <p class="text-xs text-slate-400 mt-1">Algorithm: <code class="text-indigo-300 font-mono">while(no > 1) { no--; fact *= no; }</code></p>
+          <div class="mt-3 p-3 bg-slate-950/70 rounded-xl border border-slate-700/50 space-y-1">
+            <div class="text-[11px] text-slate-400">Initial: <span class="text-amber-300 font-mono">no = 7</span></div>
+            <div class="text-xs font-mono text-emerald-400 font-bold">Factorial is while -- : 5040</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Task 2: While Loop Step-by-Step Intermediate Logs -->
+      <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-5 flex flex-col justify-between shadow-xl space-y-3">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 font-bold">TASK 2</span>
+            <span class="text-[11px] font-bold text-purple-400">Step Tracing</span>
+          </div>
+          <h3 class="text-sm font-bold text-white">INTERMEDIATE STEP LOGGING</h3>
+          <p class="text-xs text-slate-400 mt-1">Logs multiplier and product at each step: <code class="text-indigo-300 font-mono">6&rarr;42, 5&rarr;210, 4&rarr;840...</code></p>
+          <div class="mt-3 p-3 bg-slate-950/70 rounded-xl border border-slate-700/50 space-y-1 text-xs font-mono text-purple-300">
+            <div>6 &rarr; 42 &nbsp;|&nbsp; 5 &rarr; 210 &nbsp;|&nbsp; 4 &rarr; 840</div>
+            <div>3 &rarr; 2520 &nbsp;|&nbsp; 2 &rarr; 5040 &nbsp;|&nbsp; 1 &rarr; 5040</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Task 3: While Countdown Loop -->
+      <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-5 flex flex-col justify-between shadow-xl space-y-3">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 font-bold">TASK 3</span>
+            <span class="text-[11px] font-bold text-amber-400">10 to 1</span>
+          </div>
+          <h3 class="text-sm font-bold text-white">WHILE COUNTDOWN (fact &gt;= no)</h3>
+          <p class="text-xs text-slate-400 mt-1">Condition: <code class="text-indigo-300 font-mono">while(fact >= no) { log(fact); fact--; }</code></p>
+          <div class="mt-3 p-3 bg-slate-950/70 rounded-xl border border-slate-700/50 space-y-1">
+            <div class="text-[11px] text-slate-400">Range: <span class="text-amber-300 font-mono">fact=10 downto no=1</span></div>
+            <div class="text-xs font-mono text-amber-400 font-bold">10, 9, 8, 7, 6, 5, 4, 3, 2, 1</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Task 4: For Loop Factorial Incremental -->
+      <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-5 flex flex-col justify-between shadow-xl space-y-3">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold">TASK 4</span>
+            <span class="text-[11px] font-bold text-emerald-400">6! = 720</span>
+          </div>
+          <h3 class="text-sm font-bold text-white">FOR LOOP FACTORIAL (Incremental)</h3>
+          <p class="text-xs text-slate-400 mt-1">Algorithm: <code class="text-indigo-300 font-mono">for(i=1; i<=num; i++) fact *= i;</code></p>
+          <div class="mt-3 p-3 bg-slate-950/70 rounded-xl border border-slate-700/50 space-y-1">
+            <div class="text-[11px] text-slate-400">Input: <span class="text-amber-300 font-mono">num = 6</span></div>
+            <div class="text-xs font-mono text-emerald-400 font-bold">6 Factorial is ++ : 720</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Task 5: For Loop Factorial Decremental -->
+      <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-5 flex flex-col justify-between shadow-xl space-y-3">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-rose-500/20 text-rose-300 font-bold">TASK 5</span>
+            <span class="text-[11px] font-bold text-rose-400">4! = 24</span>
+          </div>
+          <h3 class="text-sm font-bold text-white">FOR LOOP FACTORIAL (Decremental)</h3>
+          <p class="text-xs text-slate-400 mt-1">Algorithm: <code class="text-indigo-300 font-mono">for(i=4; i>1;) { i--; fact *= i; }</code></p>
+          <div class="mt-3 p-3 bg-slate-950/70 rounded-xl border border-slate-700/50 space-y-1">
+            <div class="text-[11px] text-slate-400">Input: <span class="text-amber-300 font-mono">no = 4</span></div>
+            <div class="text-xs font-mono text-rose-400 font-bold">4 Factorial is --: 24</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Live Console Output Terminal -->
+    <div class="bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden shadow-2xl space-y-0">
+      <div class="bg-slate-900/90 px-5 py-3.5 border-b border-slate-800 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <div class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></div>
+          <span class="text-xs font-mono font-bold text-slate-200">Live Console Output (Running: assets/js/script.js)</span>
+        </div>
+        <button onclick="runDay5Script()" class="px-3 py-1 rounded-lg text-xs font-bold bg-emerald-500 hover:bg-emerald-400 text-slate-950 transition cursor-pointer">
+          Re-run Output
+        </button>
+      </div>
+      <div id="terminal" class="p-5 font-mono text-xs text-emerald-400 leading-relaxed max-h-80 overflow-y-auto space-y-1 bg-[#090d16]">
+        <!-- Intercepted console.log lines injected here -->
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    const term = document.getElementById('terminal');
+
+    function appendLog(...args) {
+      const line = document.createElement('div');
+      line.className = 'font-mono text-xs leading-relaxed text-slate-300';
+      const text = args.map(a => typeof a === 'object' ? JSON.stringify(a) : String(a)).join(' ');
+
+      if (text.includes('TASK') || text.includes('===')) {
+        line.className = 'font-mono text-xs text-purple-400 font-bold pt-1 border-t border-slate-800/60 mt-1';
+      } else if (text.includes('Factorial') || text.includes('!')) {
+        line.className = 'font-mono text-xs text-emerald-400 font-bold';
+      }
+
+      line.innerHTML = `<span class="text-slate-600 select-none mr-2">&gt;</span>${text}`;
+      term.appendChild(line);
+      term.scrollTop = term.scrollHeight;
+    }
+
+    const originalLog = console.log;
+    console.log = function(...args) {
+      originalLog.apply(console, args);
+      appendLog(...args);
+    };
+
+    function runDay5Script() {
+      term.innerHTML = '';
+      
+      console.log("=== TASK 1: FACTORIAL WHILE LOOP (--) ===");
+      let no = 7;
+      let fact = no;
+      while(no > 1) {
+        no--;
+        fact = fact * no;
+      }
+      console.log("Factorial is while -- :", fact);
+
+      console.log("=== TASK 2: WHILE INTERMEDIATE STEP TRACING ===");
+      no = 7;
+      fact = no;
+      while(no > 1) {
+        no--; 
+        fact = fact * no;
+        console.log("Multiplier:", no, "| Current Fact:", fact);
+      }
+
+      console.log("=== TASK 3: WHILE COUNTDOWN (10 TO 1) ===");
+      no = 1;
+      fact = 10;
+      while(fact >= no) {
+        console.log("Countdown:", fact);
+        fact--;
+      }
+
+      console.log("=== TASK 4: FOR LOOP FACTORIAL (++) ===");
+      let num = 6;
+      let factorial = 1;
+      for(let i = 1; i <= num; i++) {
+        factorial = factorial * i;
+      }
+      console.log(num, "Factorial is ++ :", factorial);
+
+      console.log("=== TASK 5: FOR LOOP FACTORIAL (--) ===");
+      no = 4;
+      fact = no;
+      for(let i = 4; i > 1;) {
+        i--;
+        fact = fact * i;
+      }
+      console.log(no, "Factorial is --:", fact);
+      console.log("fftgb");
+    }
+
+    runDay5Script();
+  </script>
+</body>
+</html>

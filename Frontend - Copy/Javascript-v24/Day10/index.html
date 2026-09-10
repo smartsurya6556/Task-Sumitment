@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 10 — ES6+ Modern Features (All 7 Tasks & Live Output)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    code, pre, .font-mono { font-family: 'JetBrains Mono', monospace; }
+  </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen p-4 sm:p-8 flex flex-col">
+  <div class="max-w-6xl mx-auto w-full space-y-6 flex-1">
+    
+    <!-- Top Navigation -->
+    <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+      <a href="../../../index.html" onclick="if(window.history.length > 1){ window.history.back(); return false; }" class="inline-flex items-center gap-2 text-xs font-bold text-indigo-400 hover:text-indigo-300 transition">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+        <span>Back to DevTask HUB</span>
+      </a>
+      <span class="text-xs font-mono px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 font-bold">Day 10 Task</span>
+    </div>
+
+    <!-- Header -->
+    <header class="space-y-2">
+      <h1 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Day 10: ES6+ Modern Features</h1>
+      <p class="text-sm text-slate-400">Complete execution of all 7 interview tasks from <code class="text-amber-400">assets/js/script.js</code>: arrow functions, destructuring, rest/spread, classes, optional chaining, and shorthand syntax.</p>
+    </header>
+
+    <!-- Cards Grid: All 7 Tasks -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      
+      <!-- Task 1: Arrow Functions -->
+      <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-5 flex flex-col justify-between shadow-xl space-y-3">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 font-bold">TASK 1</span>
+            <span class="text-[11px] font-bold text-blue-400">Explicit & Implicit</span>
+          </div>
+          <h3 class="text-sm font-bold text-white">ARROW FUNCTIONS</h3>
+          <p class="text-xs text-slate-400 mt-1">Converted ES5 functions:</p>
+          <div class="mt-3 p-3 bg-slate-950/70 rounded-xl border border-slate-700/50 space-y-1 text-xs font-mono">
+            <div>add(41, 40) &rarr; <span class="text-emerald-400 font-bold">81</span></div>
+            <div>square(27) &rarr; <span class="text-emerald-400 font-bold">729</span></div>
+            <div>adding(54) &rarr; <span class="text-emerald-400 font-bold">108</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Task 2: Destructuring -->
+      <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-5 flex flex-col justify-between shadow-xl space-y-3">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 font-bold">TASK 2</span>
+            <span class="text-[11px] font-bold text-purple-400">Array & Object</span>
+          </div>
+          <h3 class="text-sm font-bold text-white">DESTRUCTURING ASSIGNMENT</h3>
+          <p class="text-xs text-slate-400 mt-1">Positional and named property unpacking:</p>
+          <div class="mt-3 p-3 bg-slate-950/70 rounded-xl border border-slate-700/50 space-y-1 text-xs font-mono text-slate-300">
+            <div>Array: [a=5, b=78, c=64, d=12]</div>
+            <div>Object: name="surya", age=21, course="Ai Learning"</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Task 4: Rest & Spread -->
+      <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-5 flex flex-col justify-between shadow-xl space-y-3">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold">TASK 4</span>
+            <span class="text-[11px] font-bold text-emerald-400">...Rest & ...Spread</span>
+          </div>
+          <h3 class="text-sm font-bold text-white">REST & SPREAD SYNTAX</h3>
+          <p class="text-xs text-slate-400 mt-1">Collecting args & merging arrays:</p>
+          <div class="mt-3 p-3 bg-slate-950/70 rounded-xl border border-slate-700/50 space-y-1 text-xs font-mono">
+            <div class="text-emerald-300 font-bold">Merged: [1, 2, 3, 4, 5, 6, 7]</div>
+            <div class="text-slate-400">Rest collected: [6, 8, 4]</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Task 5: Default Parameters & Templates -->
+      <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-5 flex flex-col justify-between shadow-xl space-y-3">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 font-bold">TASK 5</span>
+            <span class="text-[11px] font-bold text-amber-400">Default & Literals</span>
+          </div>
+          <h3 class="text-sm font-bold text-white">DEFAULT PARAMS & TEMPLATES</h3>
+          <p class="text-xs text-slate-400 mt-1">Default <code class="text-amber-300 font-mono">city="Chennai"</code>:</p>
+          <div class="mt-3 p-3 bg-slate-950/70 rounded-xl border border-slate-700/50 space-y-1 text-xs font-mono text-slate-300">
+            <div>Name: Surya | Course: Fullstack</div>
+            <div>City: Velachery</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Task 6: Student Class -->
+      <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-5 flex flex-col justify-between shadow-xl space-y-3">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-teal-500/20 text-teal-300 font-bold">TASK 6</span>
+            <span class="text-[11px] font-bold text-teal-400">ES6 Classes</span>
+          </div>
+          <h3 class="text-sm font-bold text-white">CLASS STUDENT INSTANCES</h3>
+          <p class="text-xs text-slate-400 mt-1">Instantiating 2 student objects:</p>
+          <div class="mt-3 p-3 bg-slate-950/70 rounded-xl border border-slate-700/50 space-y-1 text-xs font-mono text-teal-300">
+            <div>student1: Ravi (Age 20, Mark 85)</div>
+            <div>student2: Arun (Age 21, Mark 90)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Task 8: Optional Chaining & Nullish Coalescing -->
+      <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-5 flex flex-col justify-between shadow-xl space-y-3">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-rose-500/20 text-rose-300 font-bold">TASK 8</span>
+            <span class="text-[11px] font-bold text-rose-400">?. & ??</span>
+          </div>
+          <h3 class="text-sm font-bold text-white">OPTIONAL CHAINING & NULLISH</h3>
+          <p class="text-xs text-slate-400 mt-1">Safe property lookups:</p>
+          <div class="mt-3 p-3 bg-slate-950/70 rounded-xl border border-slate-700/50 space-y-1 text-xs font-mono">
+            <div>city: <span class="text-emerald-400 font-bold">"Chennai"</span></div>
+            <div>age: <span class="text-emerald-400 font-bold">23</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Task 10: ES5 -> ES6 Conversion -->
+      <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-5 flex flex-col justify-between shadow-xl space-y-3 md:col-span-2 lg:col-span-3">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-indigo-500/20 text-indigo-300 font-bold">TASK 10</span>
+            <span class="text-[11px] font-bold text-indigo-400">All 4 Concepts</span>
+          </div>
+          <h3 class="text-sm font-bold text-white">ES5 &rarr; ES6 CONVERSION (Shorthand & Arrow)</h3>
+          <p class="text-xs text-slate-400 mt-1">Using const/let, template literals, object shorthand { name, age }, and arrow function:</p>
+          <div class="mt-3 p-3 bg-slate-950/70 rounded-xl border border-slate-700/50 text-xs font-mono text-emerald-400 font-bold">
+            displayStudent(student) &rarr; "Name: Ravi, Age: 25"
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Live Console Output Terminal -->
+    <div class="bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden shadow-2xl space-y-0">
+      <div class="bg-slate-900/90 px-5 py-3.5 border-b border-slate-800 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <div class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></div>
+          <span class="text-xs font-mono font-bold text-slate-200">Live Console Output (Running: assets/js/script.js)</span>
+        </div>
+        <button onclick="runDay10Script()" class="px-3 py-1 rounded-lg text-xs font-bold bg-emerald-500 hover:bg-emerald-400 text-slate-950 transition cursor-pointer">
+          Re-run Output
+        </button>
+      </div>
+      <div id="terminal" class="p-5 font-mono text-xs text-emerald-400 leading-relaxed max-h-80 overflow-y-auto space-y-1 bg-[#090d16]">
+        <!-- Intercepted console.log lines injected here -->
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    const term = document.getElementById('terminal');
+
+    function appendLog(...args) {
+      const line = document.createElement('div');
+      line.className = 'font-mono text-xs leading-relaxed text-slate-300';
+      const text = args.map(a => typeof a === 'object' ? JSON.stringify(a) : String(a)).join(' ');
+
+      if (text.includes('TASK') || text.includes('===')) {
+        line.className = 'font-mono text-xs text-purple-400 font-bold pt-1 border-t border-slate-800/60 mt-1';
+      } else if (text.includes('Name:') || text.includes('Addition') || text.includes('Square')) {
+        line.className = 'font-mono text-xs text-emerald-400 font-bold';
+      }
+
+      line.innerHTML = `<span class="text-slate-600 select-none mr-2">&gt;</span>${text}`;
+      term.appendChild(line);
+      term.scrollTop = term.scrollHeight;
+    }
+
+    const originalLog = console.log;
+    console.log = function(...args) {
+      originalLog.apply(console, args);
+      appendLog(...args);
+    };
+
+    function runDay10Script() {
+      term.innerHTML = '';
+      
+      console.log("=== Task 1: Arrow Functions ===");
+      function add(a, b) { return a + b; }
+      console.log("Addition : " + add(41, 40));
+      const square = (n) => n * n;
+      console.log("Square Value : " + square(27));
+      const adding = (a) => a + a;
+      console.log("Adding : " + adding(54));
+
+      console.log("=== Task 2: Destructuring ===");
+      let arry = [5, 78, 64, 12];
+      const studentObj = { name: "surya", age: 21, course: "Ai Learning" };
+      let [a = 4, b = 1, c, d] = arry;
+      console.log("Destructured array:", a, b, c, d);
+      const { name: myName, age: myAge, course: myCourse } = studentObj;
+      console.log("Object Detail:", studentObj);
+
+      console.log("=== Task 4: Rest & Spread ===");
+      const fun = (...nums) => {
+        console.log("Numbers:", nums);
+        return [...nums, 78, 64, 45, 32, 18, 97];
+      };
+      console.log("List of Array:", fun(6, 8, 4));
+      const mergeArrays = (...arrays) => [].concat(...arrays);
+      console.log("Merged Arrays:", mergeArrays([1, 2, 3], [4, 5], [6, 7]));
+
+      console.log("=== Task 5: Default Param & Template Literal ===");
+      const details = (name, course, city = "Chennai") => {
+        console.log("Student Details -> Name: " + name + " | Course: " + course + " | City: " + city);
+      };
+      details("Surya", "Fullstack", "Velachery");
+
+      console.log("=== Task 6: Student Class ===");
+      class Student {
+        constructor(name, age, mark) {
+          this.name = name;
+          this.age = age;
+          this.mark = mark;
+        }
+        displayDetails() {
+          console.log("Name: " + this.name + " | Age: " + this.age + " | Mark: " + this.mark);
+        }
+      }
+      const student1 = new Student("Ravi", 20, 85);
+      const student2 = new Student("Arun", 21, 90);
+      student1.displayDetails();
+      student2.displayDetails();
+
+      console.log("=== Task 8: Optional Chaining & Nullish Coalescing ===");
+      const obj = { name: "karthi", age: 23, city: "Chennai" };
+      const city = obj?.city ?? "City Not Available";
+      const age = obj?.age ?? "No Age";
+      console.log("City:", city);
+      console.log("Age:", age);
+
+      console.log("=== Task 10: ES5 -> ES6 Shorthand ===");
+      const name = "Ravi";
+      const studentAge = 25;
+      const student = { name, age: studentAge };
+      const displayStudent = (s) => "Name: " + s.name + ", Age: " + s.age;
+      console.log(displayStudent(student));
+    }
+
+    runDay10Script();
+  </script>
+</body>
+</html>

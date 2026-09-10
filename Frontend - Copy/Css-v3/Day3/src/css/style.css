@@ -1,0 +1,89 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: rgb(246, 241, 241);
+    text-align: center;
+    background-color: black;
+}
+a{
+   text-decoration:dashed;
+   color: inherit;
+}
+nav{
+    color: rgb(8, 8, 8);
+    padding: 20px;
+}
+nav a{
+    background-color: rgb(95, 84, 73);
+    color: rgb(8, 8, 8);
+    padding: 20px;
+    border-radius: 15px;
+    color: aliceblue;
+}
+#top{
+     background-color: rgb(201, 184, 130);
+    color: rgb(8, 8, 8);
+    
+}
+
+.card{
+    background-color: rgb(98, 121, 88);
+    display: block;
+    padding: 100px;
+    border: 3px solid rgba(255, 255, 255, 0.807);
+    color: rgb(8, 8, 8);
+    margin: 50px;
+    display: flex;
+    border-radius: 20px;
+}
+.st{
+    background-color: rgb(149, 217, 231);
+    padding: 20px;
+    border: 3px solid rgba(46, 49, 49, 0.807);
+    color: rgb(8, 8, 8);
+    margin-right: 40px;
+    border-radius: 20px;
+}
+.em{
+    background-color: rgb(138, 183, 151);
+    padding: 20px;
+    border: 3px solid rgba(218, 249, 131, 0.997);
+    color: rgb(8, 8, 8);
+    margin-right: 40px;
+    border-radius: 20px;
+}
+.pr{
+    background-color: rgb(157, 222, 146);
+    padding: 10px;
+    border: 3px solid rgba(39, 199, 231, 0.807);
+    color: rgb(8, 8, 8);
+    margin-right: 40px;
+    border-radius: 20px;
+}
+.movie{
+    background-color: rgb(237, 208, 146);
+    padding: 20px;
+    border: 3px solid rgba(160, 156, 78, 0.807);
+    color: rgb(8, 8, 8);
+    margin-right: 40px;
+    border-radius: 20px;
+}
+.company{
+    background-color: rgb(229, 170, 255);
+    padding: 20px;
+    border: 3px solid rgba(160, 156, 78, 0.807);
+    color: rgb(8, 8, 8);
+    margin-right: 40px;
+    border-radius: 20px;
+}
+#foot{
+    background-color: rgb(154, 141, 98);
+    color: rgb(8, 8, 8);  
+}

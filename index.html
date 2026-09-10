@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="en" class="dark-mode">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="assets/img/D-png.webp">
+  <title>DevTask — Fullstack Engineering Portal</title>
+  
+  <!-- Premium Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- External Design System Stylesheet -->
+  <link rel="stylesheet" href="./style.css" />
+
+  <!-- Embedded Code Datasets for 100% Offline & Local file:/// Compatibility -->
+  <script src="./js_task_codes.js"></script>
+  <script src="./html_task_codes.js"></script>
+  <script src="./css_task_codes.js"></script>
+
+  <!-- Pre-render Theme Sync (Default: Always Dark Mode) -->
+  <script>
+    (function() {
+      try {
+        // One-time default theme initialization to Dark Mode
+        if (!localStorage.getItem('devtask_theme_initialized_v2')) {
+          localStorage.setItem('devtask_theme', 'dark');
+          localStorage.setItem('devtask_theme_initialized_v2', 'true');
+        }
+        var saved = localStorage.getItem('devtask_theme');
+        if (saved === 'light') {
+          document.documentElement.classList.remove('dark-mode');
+        } else {
+          document.documentElement.classList.add('dark-mode');
+        }
+      } catch (e) {
+        document.documentElement.classList.add('dark-mode');
+      }
+    })();
+  </script>
+</head>
+<body data-track="frontend" class="antialiased flex flex-col min-h-screen relative dark-mode">
+
+  <!-- Ambient Radiant Background Glowing Orbs -->
+  <div class="ambient-glow-1"></div>
+  <div class="ambient-glow-2"></div>
+
+  <!-- ================= TOP NAVIGATION BAR (PREMIUM FLOATING GLASS DOCK) ================= -->
+  <header class="sticky top-0 z-50 w-full px-4 sm:px-6 lg:px-8 pt-4 pb-2">
+    <div class="max-w-7xl mx-auto floating-nav rounded-2xl sm:rounded-3xl px-4 sm:px-6 py-3">
+      <div class="flex items-center justify-between gap-4">
+        
+        <!-- Left: Brand Logo & Title (Iconic Terminal Code Prompt Style) -->
+        <div onclick="setDomain('frontend', 'HTML-V5')" class="flex items-center gap-3 cursor-pointer group select-none shrink-0">
+          
+          <!-- 'D' Letter Logo Design -->
+          <div class="w-10 h-10 rounded-xl bg-white border border-slate-200/90 shadow-sm flex items-center justify-center p-1 group-hover:scale-105 group-hover:shadow-md transition-all duration-200 shrink-0 overflow-hidden">
+            <img src="assets/img/D-png.webp" alt="D Logo" class="w-full h-full object-contain" />
+          </div>
+
+          <!-- Brand Title -->
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="font-extrabold text-lg tracking-tight text-slate-900">
+                Dev<span style="color: var(--track-primary)">Task</span>
+              </span>
+              <span class="hub-track-badge inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold shadow-xs">
+                <span class="relative flex h-2.5 w-2.5 items-center justify-center">
+                  <svg class="animate-ping absolute inline-flex h-full w-full opacity-75" style="color: var(--track-primary)" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                  </svg>
+                  <svg class="relative inline-flex h-2.5 w-2.5" style="color: var(--track-primary)" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                  </svg>
+                </span>
+                <span>HUB</span>
+              </span>
+            </div>
+            <p class="leading-none mt-1">
+              <span class="smart-surya-text">SMART SURYA</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- Center / Right: Segmented Dock Navigation & Theme Mode Switcher -->
+        <div class="flex items-center gap-2 sm:gap-3.5 shrink-0 flex-wrap sm:flex-nowrap justify-end">
+          
+          <!-- Track Segmented Dock Navigation -->
+          <div class="segmented-control shrink-0">
+            
+            <!-- Frontend Tab -->
+            <button id="nav-frontend" onclick="setDomain('frontend', 'HTML-V5')" class="segmented-btn active px-3.5 sm:px-4 py-2 rounded-xl text-xs font-extrabold flex items-center gap-2 text-slate-900">
+              <svg class="nav-icon w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <rect x="2" y="3" width="20" height="14" rx="2" stroke-width="2" />
+                <line x1="8" y1="21" x2="16" y2="21" stroke-width="2" stroke-linecap="round" />
+                <line x1="12" y1="17" x2="12" y2="21" stroke-width="2" />
+              </svg>
+              <span>Frontend</span>
+            </button>
+
+            <!-- Backend Tab -->
+            <button id="nav-backend" onclick="setDomain('backend', 'NODEJS-V20')" class="segmented-btn px-3.5 sm:px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-2 text-slate-600 hover:text-slate-900 hover:bg-white/50">
+              <svg class="nav-icon w-4 h-4 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <rect x="2" y="2" width="20" height="8" rx="2" stroke-width="2" />
+                <rect x="2" y="14" width="20" height="8" rx="2" stroke-width="2" />
+                <line x1="6" y1="6" x2="6.01" y2="6" stroke-width="2.5" />
+                <line x1="6" y1="18" x2="6.01" y2="18" stroke-width="2.5" />
+              </svg>
+              <span>Backend</span>
+            </button>
+
+            <!-- Database Tab -->
+            <button id="nav-database" onclick="setDomain('database', 'SQL-POSTGRES')" class="segmented-btn px-3.5 sm:px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-2 text-slate-600 hover:text-slate-900 hover:bg-white/50">
+              <svg class="nav-icon w-4 h-4 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <ellipse cx="12" cy="5" rx="9" ry="3" stroke-width="2" />
+                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" stroke-width="2" />
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" stroke-width="2" />
+              </svg>
+              <span>Database</span>
+            </button>
+
+          </div>
+
+          <!-- Top-Right: Compact & Stylish Capsule Theme Switcher (Default: 🌙 Dark Mode) -->
+          <button
+            id="themeToggleBtn"
+            onclick="toggleTheme()"
+            class="theme-capsule-switch shrink-0 dark"
+            type="button"
+            role="switch"
+            aria-checked="true"
+            aria-label="Toggle light and dark mode"
+            title="Current: 🌙 Dark mode (Click to switch to ☀️ Light mode)"
+          >
+            <!-- Sliding Indicator Knob -->
+            <span class="theme-switch-knob"></span>
+
+            <!-- Sun Icon (☀️ Light) -->
+            <span class="theme-switch-icon icon-sun" title="Light Mode">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              </svg>
+            </span>
+
+            <!-- Moon Icon (🌙 Dark) -->
+            <span class="theme-switch-icon icon-moon" title="Dark Mode">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M21.64 13a1 1 0 00-1.05-.14 8.049 8.049 0 01-3.37.73 8.15 8.15 0 01-8.14-8.14 8.08 8.08 0 01.74-3.39 1 1 0 00-.23-1.08 1 1 0 00-1.09-.17A10.02 10.02 0 002 10c0 5.52 4.48 10 10 10a9.96 9.96 0 008.82-5.32 1 1 0 00-.18-1.08z" />
+              </svg>
+            </span>
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= MAIN CONTENT WRAPPER ================= -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 flex-1 w-full space-y-6 relative z-10">
+
+    <!-- ================= CONTROLLER PANEL ================= -->
+    <div class="portal-card p-6 sm:p-8 space-y-6">
+      
+      <!-- Title & Smart Search Bar -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        
+        <div>
+          <div class="flex items-center gap-2 mb-1.5">
+            <span id="domain-pulse-dot" class="w-2.5 h-2.5 rounded-full animate-pulse" style="background-color: var(--track-primary)"></span>
+            <span id="domain-badge-text" class="text-xs font-mono font-bold uppercase tracking-wider" style="color: var(--track-primary)">
+              Frontend Development
+            </span>
+          </div>
+          <h1 id="domain-heading" class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
+            HTML-V5 <span class="text-indigo-600">Tasks</span>
+          </h1>
+        </div>
+
+        <!-- Smart Instant Search Input -->
+        <div class="relative w-full sm:w-80">
+          <input
+            type="text"
+            id="search-input"
+            oninput="handleSearch(this.value)"
+            placeholder="Type Day 1-10 or Title Letters..."
+            class="w-full pl-9 pr-8 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs text-slate-900 placeholder-slate-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-slate-400/20 focus:border-slate-400 transition"
+          />
+          <svg class="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+          <button id="clear-search-btn" onclick="clearSearch()" class="hidden absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 text-xs p-1">
+            ✕
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Dynamic 4-Module Switcher (3 Core Modules + 1 My Project for each Track) -->
+      <div id="module-selector-container" class="pt-5 border-t border-slate-100 flex flex-wrap items-center gap-2 sm:gap-2.5">
+        <!-- Dynamically rendered 4 module buttons based on active track -->
+      </div>
+
+    </div>
+
+    <!-- ================= 3-COLUMN GRID OF CARDS ================= -->
+    <div id="tasks-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+      <!-- Dynamically populated 3-column grid cards -->
+    </div>
+
+  </main>
+
+  <!-- ================= ATTRACTIVE & UNIQUE MODERN FOOTER ================= -->
+  <footer class="site-footer border-t border-slate-200/80 bg-white/80 backdrop-blur-xl relative z-10 mt-14 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 space-y-8">
+      
+      <!-- Top Grid: 3 Distinct Columns -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+        
+        <!-- Col 1 (5 Cols): Smart Surya Brand & Bio -->
+        <div class="md:col-span-5 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-white border border-slate-200/90 shadow-sm flex items-center justify-center p-1 shrink-0 overflow-hidden">
+              <img src="assets/img/D-png.webp" alt="D Logo" class="w-full h-full object-contain" />
+            </div>
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="font-black text-lg tracking-tight text-slate-900">
+                  Dev<span style="color: var(--track-primary)">Task</span>
+                </span>
+                <span class="hub-track-badge inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold shadow-xs">
+                  <span>HUB</span>
+                </span>
+              </div>
+              <p class="text-xs font-bold text-slate-500">By <span class="smart-surya-text text-xs">SMART SURYA</span></p>
+            </div>
+          </div>
+          
+          <p class="text-xs text-slate-500 leading-relaxed max-w-sm">
+            Interactive fullstack engineering portal featuring structured day-wise coding assignments, instant live execution, and production-ready capstone project suites.
+          </p>
+
+          <!-- Live Portal Status Indicator -->
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-[11px] font-semibold text-emerald-600">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span>All 4 Capstone Projects & 3 Engineering Tracks Active</span>
+          </div>
+        </div>
+
+        <!-- Col 2 (4 Cols): Engineering Roadmaps Interactive Quick Navigation -->
+        <div class="md:col-span-4 space-y-3">
+          <h4 class="text-xs font-bold font-mono uppercase tracking-wider text-slate-800 footer-title flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full" style="background-color: var(--track-primary)"></span>
+            Engineering Roadmaps
+          </h4>
+          <ul class="space-y-2 text-xs">
+            <li>
+              <button onclick="setDomain('frontend', 'HTML-V5')" class="footer-link text-slate-600 hover:text-teal-600 dark:hover:text-[#00F5D4] transition flex items-center gap-2 text-left w-full cursor-pointer">
+                <span class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-teal-50 dark:bg-[#00F5D4]/10 text-teal-700 dark:text-[#00F5D4] border border-teal-200 dark:border-[#00F5D4]/30">Frontend</span>
+                <span>HTML5 • CSS3 • JavaScript V24</span>
+              </button>
+            </li>
+            <li>
+              <button onclick="setDomain('backend', 'NODEJS-V20')" class="footer-link text-slate-600 hover:text-[#8D6E63] transition flex items-center gap-2 text-left w-full cursor-pointer">
+                <span class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-[#8D6E63]/15 text-[#8D6E63] dark:text-[#D7CCC8] border border-[#8D6E63]/30">Backend</span>
+                <span>Node.js V20 • Express • REST APIs</span>
+              </button>
+            </li>
+            <li>
+              <button onclick="setDomain('database', 'SQL-POSTGRES')" class="footer-link text-slate-600 hover:text-[#9E741D] dark:hover:text-[#FDF4D2] transition flex items-center gap-2 text-left w-full cursor-pointer">
+                <span class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-[#FDF4D2] dark:bg-[#FDF4D2]/20 text-[#594109] dark:text-[#FDF4D2] border border-[#E8D494] dark:border-[#FDF4D2]/40">Database</span>
+                <span>SQL • PostgreSQL • Relational Schemas</span>
+              </button>
+            </li>
+            <li>
+              <button onclick="setDomain(activeDomain, 'MY PROJECT')" class="footer-link text-slate-600 hover:text-indigo-600 transition flex items-center gap-2 text-left w-full cursor-pointer">
+                <span class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-indigo-100 text-indigo-700">Projects</span>
+                <span>Capstone 1 to 4 • Instant .Zip Archives</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Col 3 (3 Cols): Developer Capabilities & Quick Jump -->
+        <div class="md:col-span-3 space-y-3">
+          <h4 class="text-xs font-bold font-mono uppercase tracking-wider text-slate-800 footer-title flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-indigo-500"></span>
+            Developer Hub
+          </h4>
+          <div class="space-y-2.5 text-xs text-slate-500">
+            <div class="flex items-center gap-2">
+              <span class="text-slate-400">⚡</span>
+              <span>100% Offline Compatible</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-slate-400">📦</span>
+              <span>In-Browser Client ZIP Engine</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-slate-400">💻</span>
+              <span>Direct GitHub Code Previews</span>
+            </div>
+            <div class="pt-1.5">
+              <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-slate-100 hover:bg-slate-200 text-slate-700 transition flex items-center gap-2 shadow-xs cursor-pointer">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
+                <span>Back to Top</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Divider & Copyright Bar -->
+      <div class="pt-6 border-t border-slate-200/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <p class="text-center sm:text-left">
+          © 2026 <span class="font-extrabold text-slate-800">DevTask HUB</span> • Designed & Developed with precision by <span class="font-extrabold" style="color: var(--track-primary)">Smart Surya</span>
+        </p>
+
+        <!-- Tech Stack Pill Badges -->
+        <div class="flex items-center gap-1.5 flex-wrap justify-center font-mono text-[10px]">
+          <span class="px-2 py-0.5 rounded-md bg-slate-100 text-slate-600 border border-slate-200/60 font-bold">HTML5</span>
+          <span class="px-2 py-0.5 rounded-md bg-slate-100 text-slate-600 border border-slate-200/60 font-bold">CSS3</span>
+          <span class="px-2 py-0.5 rounded-md bg-slate-100 text-slate-600 border border-slate-200/60 font-bold">ES2024</span>
+          <span class="px-2 py-0.5 rounded-md bg-slate-100 text-slate-600 border border-slate-200/60 font-bold">Node.js</span>
+          <span class="px-2 py-0.5 rounded-md bg-slate-100 text-slate-600 border border-slate-200/60 font-bold">PostgreSQL</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ================= PROJECT ZIP GENERATOR & ASSETS BUNDLE ================= -->
+  <script src="project_zip_engine.js"></script>
+  <script src="project2_data1.js"></script>
+  <script src="project2_data2.js"></script>
+  <script src="project3_bundle.js"></script>
+  <script src="project4_bundle.js"></script>
+
+  <!-- ================= JAVASCRIPT LOGIC ================= -->
+  <script>
+    const PORTAL_DATA = {
+      // 1. FRONTEND DEVELOPMENT TRACK (3 MODULES + 1 MY PROJECT)
+      'frontend': {
+        name: 'Frontend Development',
+        modules: ['HTML-V5', 'CSS-V3', 'JAVASCRIPT-V24', 'MY PROJECT'],
+        icons: {
+          'HTML-V5': `<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="8 6 2 12 8 18" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+          'CSS-V3': `<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2" stroke-width="2"/><polyline points="2 17 12 22 22 17" stroke-width="2"/><polyline points="2 12 12 17 22 12" stroke-width="2"/></svg>`,
+          'JAVASCRIPT-V24': `<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>`,
+          'MY PROJECT': `<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09zM12 15l-3-3m0 0l3-3m-3 3h12"/></svg>`
+        },
+        tasks: {
+          'HTML-V5': [
+            { day: 1, title: 'Introduction, Basic Structure, Root & Container Elements', tags: ['HTML5', 'Structure', 'Root Elements'], zip: 'Frontend - Copy/Html-v5/Day1/Jeya_surya.zip', visit: 'Frontend - Copy/Html-v5/Day1/profile.html' },
+            { day: 2, title: 'Block Level, Inline Elements, Formatting & Interactive Tags', tags: ['HTML5', 'Block Elements', 'Inline Elements'], zip: 'Frontend - Copy/Html-v5/Day2/Jeya_ass2.zip', visit: 'Frontend - Copy/Html-v5/Day2/Indext.html' },
+            { day: 3, title: 'Semantic Tags & Accessible Page Layout', tags: ['HTML5', 'Semantic Tags', 'UI/UX'], zip: 'Frontend - Copy/Html-v5/Day3/Ui_Ux_Desinging_ass3.zip', visit: 'Frontend - Copy/Html-v5/Day3/Home.html' },
+            { day: 4, title: 'HTML Attributes, Hyperlinks (href) & Images (src)', tags: ['HTML5', 'Attributes', 'Hyperlinks'], zip: 'Frontend - Copy/Html-v5/Day4/AI%20Project/Ass_4.zip', visit: 'Frontend - Copy/Html-v5/Day4/AI%20Project/website.html' },
+            { day: 5, title: 'HTML Lists, Forms & Complex Tables Showcase', tags: ['HTML5', 'Lists', 'Tables', 'Forms'], zip: 'Frontend - Copy/Html-v5/Day5/Aassgnment_5/Ass_Re5_Ass_6(2).zip', visit: 'Frontend - Copy/Html-v5/Day5/Aassgnment_5/IT_Companys/indext.html' },
+            { day: 6, title: 'Form Handling, Input Elements & Validation', tags: ['HTML5', 'Form Handling', 'Validation'], zip: 'Frontend - Copy/Html-v5/Day6/Ass6.zip', visit: 'Frontend - Copy/Html-v5/Day6/Forms.html' },
+            { day: 7, title: 'Advanced Tables & Multi-Section Admission Form', tags: ['HTML5', 'Data Tables', 'Forms'], zip: 'Frontend - Copy/Html-v5/Day7/Ass_7/Table%26Forms/Ass_7.zip', visit: 'Frontend - Copy/Html-v5/Day7/Form.html' },
+            { day: 8, title: 'HTML Meta Tags, DOCTYPE & HTML5 Standards', tags: ['HTML5', 'DOCTYPE', 'Meta Viewport', 'SEO'], zip: 'Frontend - Copy/Html-v5/Day8/Ass_8.zip', visit: 'Frontend - Copy/Html-v5/Day8/HTML5.html' },
+            { day: 9, title: 'Media Tags, Audio/Video & Collections Portfolio', tags: ['HTML5', 'Audio', 'Video', 'Media Elements'], zip: 'Frontend - Copy/Html-v5/Day9/Ass9/Ass_9.zip', visit: 'Frontend - Copy/Html-v5/Day9/Ass9/My_Collections.html' }
+          ],
+          'CSS-V3': [
+            { day: 1, title: 'CSS Introduction, Inline, Internal & External Styles', tags: ['CSS3', 'Inline Styles', 'External CSS'], zip: 'Frontend - Copy/Css-v3/Day1/Ass_1.zip', css: 'Frontend - Copy/Css-v3/Day1/Ass_1/My_Favorite.html', visit: 'Frontend - Copy/Css-v3/Day1/Ass_1/My_Favorite.html' },
+            { day: 2, title: 'CSS Selectors, Box Model & Multi-Page Layout', tags: ['CSS3', 'Box Model', 'Selectors'], zip: 'Frontend - Copy/Css-v3/Day2/Ass_2.zip', css: 'Frontend - Copy/Css-v3/Day2/assets/css/Home.css', visit: 'Frontend - Copy/Css-v3/Day2/indext.html' },
+            { day: 3, title: 'CSS Positioning, Flexbox & Component Layouts', tags: ['CSS3', 'Flexbox', 'Positioning'], zip: 'Frontend - Copy/Css-v3/Day3/Ass3.zip', css: 'Frontend - Copy/Css-v3/Day3/src/css/style.css', visit: 'Frontend - Copy/Css-v3/Day3/indext.html' },
+            { day: 4, title: 'Bootstrap 5.3 (Day 1) – Components & Responsive Grid System', tags: ['Bootstrap 5.3', 'Day 1', 'Grid System', 'Responsive'], zip: 'Frontend - Copy/Css-v3/Day4/Boostrab-v5.3/Day1/index.html', css: 'Frontend - Copy/Css-v3/Day4/Boostrab-v5.3/Day1/assets/css/style.css', visit: 'Frontend - Copy/Css-v3/Day4/Boostrab-v5.3/Day1/index.html' },
+            { day: 5, title: 'Bootstrap 5.3 (Day 2) – Advanced Multi-Section Responsive Interface', tags: ['Bootstrap 5.3', 'Day 2', 'Utilities', 'Carousels'], zip: 'Frontend - Copy/Css-v3/Day4/Boostrab-v5.3/Day2/index.html', css: 'Frontend - Copy/Css-v3/Day4/Boostrab-v5.3/Day2/index.html', visit: 'Frontend - Copy/Css-v3/Day4/Boostrab-v5.3/Day2/index.html' },
+            { day: 6, title: 'Bootstrap 5.3 (Day 3) – Multi-Column Layouts & Containers', tags: ['Bootstrap 5.3', 'Day 3', 'Grid System', 'Columns'], zip: 'Frontend - Copy/Css-v3/Day4/Boostrab-v5.3/Day3/index.html', css: 'Frontend - Copy/Css-v3/Day4/Boostrab-v5.3/Day3/assets/style.css', visit: 'Frontend - Copy/Css-v3/Day4/Boostrab-v5.3/Day3/index.html' },
+            { day: 7, title: 'Tailwind CSS 4 – Utility-First Responsive Layouts & Cards', tags: ['Tailwind CSS 4', 'Utility First', 'Flexbox'], zip: 'Frontend - Copy/Tailwind-v4.3/Day1/index.html', css: 'Frontend - Copy/Tailwind-v4.3/Day1/index.html', visit: 'Frontend - Copy/Tailwind-v4.3/Day1/index.html' },
+            { day: 8, title: 'CSS3 Pseudo Class & Pseudo Elements (Hover, Focus, Lists & ::before/::after)', tags: ['CSS3', 'Day 8', 'Pseudo-classes', 'Pseudo-elements', 'Hover & Focus'], zip: 'Frontend - Copy/Css-v3/Day8/Task-8.zip', css: 'Frontend - Copy/Css-v3/Day8/assets/style.css', visit: 'Frontend - Copy/Css-v3/Day8/index.html' },
+            { day: 9, title: 'CSS Transition & Transform (Button Hover, Gallery Zoom, Card Lift & 360° Rotate)', tags: ['CSS3', 'Day 9', 'Transitions', 'Transforms', 'Animations'], zip: 'Frontend - Copy/Css-v3/Day9/Task-9.zip', css: 'Frontend - Copy/Css-v3/Day9/assets/style.css', visit: 'Frontend - Copy/Css-v3/Day9/index.html' },
+            { day: 10, title: 'CSS3 Media Queries & Responsive Design (Student Cards, Products & Portfolio)', tags: ['CSS3', 'Day 10', 'Media Queries', 'Responsive', 'Flex Cards'], zip: 'Frontend - Copy/Css-v3/Day10/Task-10.zip', css: 'Frontend - Copy/Css-v3/Day10/assets/style.css', visit: 'Frontend - Copy/Css-v3/Day10/index.html' },
+            { day: 11, title: 'CSS Flexbox – Flex Design, Navigation & Card Wrapping Layout', tags: ['CSS3', 'Day 11', 'Flexbox', 'Flex Wrap', 'Navbar'], zip: 'Frontend - Copy/Css-v3/Day-11/index.html', css: 'Frontend - Copy/Css-v3/Day-11/assets/style.css', visit: 'Frontend - Copy/Css-v3/Day-11/index.html' }
+          ],
+          'JAVASCRIPT-V24': [
+            { day: 1, title: 'JavaScript Introduction & Basics, Casing in IT', tags: ['JavaScript', 'Basics', 'Casing'], zip: 'Frontend - Copy/Javascript-v24/Day1/Task-1.zip', html: 'Frontend - Copy/Javascript-v24/Day1/index.html', js: 'Frontend - Copy/Javascript-v24/Day1/3type_of%20Casing_IT.txt', visit: 'Frontend - Copy/Javascript-v24/Day1/index.html' },
+            { day: 2, title: 'Variables & Data Types (var, let, const)', tags: ['JavaScript', 'Variables', 'Data Types'], zip: 'Frontend - Copy/Javascript-v24/Day2/day-2-task.zip', html: 'Frontend - Copy/Javascript-v24/Day2/index.html', js: 'Frontend - Copy/Javascript-v24/Day2/assets/js/index.js', visit: 'Frontend - Copy/Javascript-v24/Day2/index.html' },
+            { day: 3, title: 'Operators, Statements & Expressions', tags: ['JavaScript', 'Operators', 'Expressions'], zip: 'Frontend - Copy/Javascript-v24/Day3/Task-3.zip', html: 'Frontend - Copy/Javascript-v24/Day3/index.html', js: 'Frontend - Copy/Javascript-v24/Day3/assets/js/script.js', visit: 'Frontend - Copy/Javascript-v24/Day3/index.html' },
+            { day: 4, title: 'Conditions & Control Statements (if/else, switch, ternary)', tags: ['JavaScript', 'Conditionals', 'Logic'], zip: 'Frontend - Copy/Javascript-v24/Day4/Task-4.zip', html: 'Frontend - Copy/Javascript-v24/Day4/index.html', js: 'Frontend - Copy/Javascript-v24/Day4/assets/js/script.js', visit: 'Frontend - Copy/Javascript-v24/Day4/index.html' },
+            { day: 5, title: 'For Loop, While Loop & Factorial Iteration', tags: ['JavaScript', 'Loops', 'Factorials'], zip: 'Frontend - Copy/Javascript-v24/Day5/Task5.zip', html: 'Frontend - Copy/Javascript-v24/Day5/index.html', js: 'Frontend - Copy/Javascript-v24/Day5/assets/js/script.js', visit: 'Frontend - Copy/Javascript-v24/Day5/index.html' },
+            { day: 6, title: 'Algorithmic Looping, Digit Math & String Search', tags: ['JavaScript', 'Algorithms', 'Digit Math'], zip: 'Frontend - Copy/Javascript-v24/Day6/Task-6.zip', html: 'Frontend - Copy/Javascript-v24/Day6/index.html', js: 'Frontend - Copy/Javascript-v24/Day6/assets/js/index.js', visit: 'Frontend - Copy/Javascript-v24/Day6/index.html' },
+            { day: 7, title: 'Non-Primitive Data Types & Looping Algorithms', tags: ['JavaScript', 'Non-Primitive', 'Loops'], zip: 'Frontend - Copy/Javascript-v24/Day7/Task-7.zip', html: 'Frontend - Copy/Javascript-v24/Day7/index.html', js: 'Frontend - Copy/Javascript-v24/Day7/assets/js/script.js', visit: 'Frontend - Copy/Javascript-v24/Day7/index.html' },
+            { day: 8, title: 'Array, Object, Array of Objects & Arrow Functions', tags: ['JavaScript', 'Arrays', 'Objects'], zip: 'Frontend - Copy/Javascript-v24/Day8/Task-8.zip', html: 'Frontend - Copy/Javascript-v24/Day8/index.html', js: 'Frontend - Copy/Javascript-v24/Day8/assets/js/script.js', visit: 'Frontend - Copy/Javascript-v24/Day8/index.html' },
+            { day: 9, title: 'Functions, Parameters, Scopes & Hoisting Mechanics', tags: ['JavaScript', 'Scope', 'Hoisting'], zip: 'Frontend - Copy/Javascript-v24/Day9/Task-9.zip', html: 'Frontend - Copy/Javascript-v24/Day9/index.html', js: 'Frontend - Copy/Javascript-v24/Day9/assets/js/script.js', visit: 'Frontend - Copy/Javascript-v24/Day9/index.html' },
+            { day: 10, title: 'ES6+ Modern Features (Arrow Functions, Destructuring, Spread)', tags: ['JavaScript', 'ES6+', 'Destructuring'], zip: 'Frontend - Copy/Javascript-v24/Day10/Task-10.zip', html: 'Frontend - Copy/Javascript-v24/Day10/index.html', js: 'Frontend - Copy/Javascript-v24/Day10/assets/js/script.js', visit: 'Frontend - Copy/Javascript-v24/Day10/index.html' },
+            { day: 11, title: 'JavaScript Logic Lab (Banking, Cart, ATM, Loan & Results)', tags: ['JavaScript', 'Logic Lab', 'OOP'], zip: 'Frontend - Copy/Javascript-v24/Day10/Task-10.zip', html: 'Frontend - Copy/Javascript-v24/Day11/Task-website/index.html', js: 'Frontend - Copy/Javascript-v24/Day11/Task-website/assets/js/index.js', visit: 'Frontend - Copy/Javascript-v24/Day11/Task-website/index.html' },
+            { day: 12, title: 'Callback Patterns, Closures & Array Mutation Methods', tags: ['JavaScript', 'Callbacks', 'Closures'], zip: 'Frontend - Copy/Javascript-v24/Day12/Task-12.zip', html: 'Frontend - Copy/Javascript-v24/Day12/index.html', js: 'Frontend - Copy/Javascript-v24/Day12/assets/js/script.js', visit: 'Frontend - Copy/Javascript-v24/Day12/index.html' },
+            { day: 13, title: 'Array Methods & HOAM (push, pop, shift, unshift, forEach, map)', tags: ['JavaScript', 'HOAM', 'Array Methods'], zip: 'Frontend - Copy/Javascript-v24/Day13/Task-13.zip', html: 'Frontend - Copy/Javascript-v24/Day13/index.html', js: 'Frontend - Copy/Javascript-v24/Day13/assets/js/script.js', visit: 'Frontend - Copy/Javascript-v24/Day13/index.html' },
+            { day: 14, title: 'DOM Events, Array Calculations & Duplicate Detection', tags: ['JavaScript', 'DOM Events', 'Algorithms'], zip: 'Frontend - Copy/Javascript-v24/Day14/Task-14.zip', html: 'Frontend - Copy/Javascript-v24/Day14/index.html', js: 'Frontend - Copy/Javascript-v24/Day14/assets/js/script.js', visit: 'Frontend - Copy/Javascript-v24/Day14/index.html' },
+            { day: 15, title: 'JavaScript DOM Toggle, Event Listeners & ClassList', tags: ['JavaScript', 'DOM Toggle', 'Interactive'], zip: 'Frontend - Copy/Javascript-v24/Day15/Tast-15.zip', html: 'Frontend - Copy/Javascript-v24/Day15/index.html', js: 'Frontend - Copy/Javascript-v24/Day15/assets/js/script.js', visit: 'Frontend - Copy/Javascript-v24/Day15/index.html' },
+            { day: 16, title: 'JavaScript DOM ClassList & Form Handling (Add, Remove, Toggle & Input)', tags: ['JavaScript', 'DOM ClassList', 'Forms', 'Events'], zip: 'Frontend - Copy/Javascript-v24/Day16/assets/js/script.js', html: 'Frontend - Copy/Javascript-v24/Day16/index.html', js: 'Frontend - Copy/Javascript-v24/Day16/assets/js/script.js', visit: 'Frontend - Copy/Javascript-v24/Day16/index.html' },
+            { day: 17, title: 'JavaScript Object & Array Records Management (Students, Employees & Products DOM Tables)', tags: ['JavaScript', 'DOM Management', 'Objects', 'Data Tables'], zip: 'Frontend - Copy/Javascript-v24/Day17/Task-17.zip', html: 'Frontend - Copy/Javascript-v24/Day17/index.html', js: 'Frontend - Copy/Javascript-v24/Day17/assets/js/script.js', visit: 'Frontend - Copy/Javascript-v24/Day17/index.html' },
+            { day: 18, title: 'User Authentication, Registration, Login & Dashboard Management', tags: ['JavaScript', 'Day 18', 'LocalStorage', 'Auth', 'Forms', 'Dashboard'], zip: 'Frontend - Copy/Javascript-v24/Day18/Task-18.zip', html: 'Frontend - Copy/Javascript-v24/Day18/index.html', js: 'Frontend - Copy/Javascript-v24/Day18/assets/js/script.js', visit: 'Frontend - Copy/Javascript-v24/Day18/index.html' }
+          ],
+          'MY PROJECT': [
+            { day: 1, title: 'C&E • Dual Encyclopedia', tags: ['Tailwind CSS', 'Dual Theme', 'Interactive'], zip: 'Frontend - Copy/Tailwind-v4.3/Day4/Creation%26Evolution.zip', git: 'https://github.com/smartsurya6556/Creation-Evolution.git', live: 'Frontend - Copy/Own_Project/Creation-&-Evolution/index.html' },
+            { day: 2, title: 'JS Lab • Logic & Practice', tags: ['JavaScript', 'Logic Labs', 'Cheat Sheet'], zip: 'Frontend - Copy/Own_Project/Lab-javascript-learning.zip', git: 'https://github.com/smartsurya6556/Lab-javascript.git', live: 'Frontend - Copy/Own_Project/Lab-javascript-learning/index.html' },
+            { day: 3, title: 'DevFolio • React 19 App', tags: ['React 19', 'Tailwind', 'Live Portfolio'], zip: 'Frontend - Copy/Own_Project/my-portfolio.zip', git: 'https://github.com/smartsurya6556/My_Portfolio.git', live: 'https://my-portfolio-gilt-five-64.vercel.app/', visit: 'https://my-portfolio-gilt-five-64.vercel.app/' },
+            { day: 4, title: 'CodeHub • Fullstack Learning', tags: ['Full Stack', 'Web Core', 'Accordion UI'], zip: 'Frontend - Copy/Own_Project/Fullstack-learning-site.zip', git: 'https://github.com/smartsurya6556/CodeHub-Fullstack-Learning.git', live: 'Frontend - Copy/Own_Project/Fullstack-learning-site/index.html' }
+          ]
+        }
+      },
+
+      // 2. BACKEND ENGINEERING TRACK (3 MODULES + 1 MY PROJECT)
+      'backend': {
+        name: 'Backend Engineering',
+        modules: ['NODEJS-V20', 'EXPRESS-V4', 'AUTH-API-V2', 'MY PROJECT'],
+        icons: {
+          'NODEJS-V20': `<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>`,
+          'EXPRESS-V4': `<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2" stroke-width="2"/><rect x="2" y="14" width="20" height="8" rx="2" stroke-width="2"/><line x1="6" y1="6" x2="6.01" y2="6" stroke-width="2.5"/><line x1="6" y1="18" x2="6.01" y2="18" stroke-width="2.5"/></svg>`,
+          'AUTH-API-V2': `<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2" stroke-width="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4" stroke-width="2"/></svg>`,
+          'MY PROJECT': `<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09zM12 15l-3-3m0 0l3-3m-3 3h12"/></svg>`
+        },
+        tasks: {
+          'NODEJS-V20': [
+            { day: 1, title: 'Node.js Architecture, V8 & Event Loop', tags: ['Node.js', 'V8 Engine'], zip: 'https://github.com/devtask-hub/nodejs-day01-task/archive/refs/heads/main.zip', visit: 'https://nodejs-day01.onrender.com' },
+            { day: 2, title: 'Node File System (fs) & Path Modules', tags: ['Node.js', 'fs/promises'], zip: 'https://github.com/devtask-hub/nodejs-day02-task/archive/refs/heads/main.zip', visit: 'https://nodejs-day02.onrender.com' },
+            { day: 3, title: 'Streams, Buffers & Large File Pipes', tags: ['Streams', 'Buffers'], zip: 'https://github.com/devtask-hub/nodejs-day03-task/archive/refs/heads/main.zip', visit: 'https://nodejs-day03.onrender.com' },
+            { day: 4, title: 'Event Emitters & Custom Pub/Sub Pattern', tags: ['Events', 'EventEmitter'], zip: 'https://github.com/devtask-hub/nodejs-day04-task/archive/refs/heads/main.zip', visit: 'https://nodejs-day04.onrender.com' },
+            { day: 5, title: 'Native HTTP Server & URL Routing Engine', tags: ['http', 'Routing'], zip: 'https://github.com/devtask-hub/nodejs-day05-task/archive/refs/heads/main.zip', visit: 'https://nodejs-day05.onrender.com' },
+            { day: 6, title: 'Worker Threads & Clustering Pipelines', tags: ['Workers', 'Clustering'], zip: 'https://github.com/devtask-hub/nodejs-day06-task/archive/refs/heads/main.zip', visit: 'https://nodejs-day06.onrender.com' },
+            { day: 7, title: 'Async Pipelines & Winston Logging System', tags: ['Async', 'Logging'], zip: 'https://github.com/devtask-hub/nodejs-day07-task/archive/refs/heads/main.zip', visit: 'https://nodejs-day07.onrender.com' },
+            { day: 8, title: 'NPM Package Publishing & Semantic Versioning', tags: ['NPM', 'Modules'], zip: 'https://github.com/devtask-hub/nodejs-day08-task/archive/refs/heads/main.zip', visit: 'https://nodejs-day08.onrender.com' },
+            { day: 9, title: 'Process Environment & Security Audits', tags: ['dotenv', 'Security'], zip: 'https://github.com/devtask-hub/nodejs-day09-task/archive/refs/heads/main.zip', visit: 'https://nodejs-day09.onrender.com' },
+            { day: 10, title: 'Full Node.js CLI Tool & Automation Script', tags: ['CLI', 'Node.js'], zip: 'https://github.com/devtask-hub/nodejs-day10-task/archive/refs/heads/main.zip', visit: 'https://nodejs-day10.onrender.com' }
+          ],
+          'EXPRESS-V4': [
+            { day: 1, title: 'Express App Init & Middleware Chain', tags: ['Express', 'Routing'], zip: 'https://github.com/devtask-hub/express-day01-task/archive/refs/heads/main.zip', visit: 'https://express-day01.onrender.com' },
+            { day: 2, title: 'RESTful API Standards & Status Handling', tags: ['REST API', 'JSON'], zip: 'https://github.com/devtask-hub/express-day02-task/archive/refs/heads/main.zip', visit: 'https://express-day02.onrender.com' },
+            { day: 3, title: 'Request Validation & Sanitization with Zod', tags: ['Zod', 'Validation'], zip: 'https://github.com/devtask-hub/express-day03-task/archive/refs/heads/main.zip', visit: 'https://express-day03.onrender.com' },
+            { day: 4, title: 'Global Error Handling & Async Controller Wrappers', tags: ['Error Handling'], zip: 'https://github.com/devtask-hub/express-day04-task/archive/refs/heads/main.zip', visit: 'https://express-day04.onrender.com' },
+            { day: 5, title: 'Multipart File Uploads with Multer Pipeline', tags: ['Multer', 'Uploads'], zip: 'https://github.com/devtask-hub/express-day05-task/archive/refs/heads/main.zip', visit: 'https://express-day05.onrender.com' },
+            { day: 6, title: 'CORS Configuration & Helmet Security Layer', tags: ['CORS', 'Helmet'], zip: 'https://github.com/devtask-hub/express-day06-task/archive/refs/heads/main.zip', visit: 'https://express-day06.onrender.com' },
+            { day: 7, title: 'API Rate Limiting & DDoS Prevention System', tags: ['Rate Limit', 'Security'], zip: 'https://github.com/devtask-hub/express-day07-task/archive/refs/heads/main.zip', visit: 'https://express-day07.onrender.com' },
+            { day: 8, title: 'Real-Time WebSocket Server Integration', tags: ['WebSockets', 'ws'], zip: 'https://github.com/devtask-hub/express-day08-task/archive/refs/heads/main.zip', visit: 'https://express-day08.onrender.com' },
+            { day: 9, title: 'Interactive Swagger / OpenAPI Documentation', tags: ['Swagger', 'OpenAPI'], zip: 'https://github.com/devtask-hub/express-day09-task/archive/refs/heads/main.zip', visit: 'https://express-day09.onrender.com' },
+            { day: 10, title: 'Production Server Clustering & Health Probes', tags: ['PM2', 'Deployment'], zip: 'https://github.com/devtask-hub/express-day10-task/archive/refs/heads/main.zip', visit: 'https://express-day10.onrender.com' }
+          ],
+          'AUTH-API-V2': [
+            { day: 1, title: 'User Registration & Bcrypt Salt Hashing', tags: ['Auth', 'Bcrypt'], zip: 'https://github.com/devtask-hub/auth-day01-task/archive/refs/heads/main.zip', visit: 'https://auth-day01.onrender.com' },
+            { day: 2, title: 'JWT Access & Refresh Token Rotation', tags: ['JWT', 'Tokens'], zip: 'https://github.com/devtask-hub/auth-day02-task/archive/refs/heads/main.zip', visit: 'https://auth-day02.onrender.com' },
+            { day: 3, title: 'HTTP-Only Secure Cookie Storage Protocol', tags: ['Cookies', 'Security'], zip: 'https://github.com/devtask-hub/auth-day03-task/archive/refs/heads/main.zip', visit: 'https://auth-day03.onrender.com' },
+            { day: 4, title: 'Role-Based Access Control (RBAC) Guard', tags: ['RBAC', 'Permissions'], zip: 'https://github.com/devtask-hub/auth-day04-task/archive/refs/heads/main.zip', visit: 'https://auth-day04.onrender.com' },
+            { day: 5, title: 'OAuth 2.0 & Google / GitHub Social Auth', tags: ['OAuth2', 'Social Login'], zip: 'https://github.com/devtask-hub/auth-day05-task/archive/refs/heads/main.zip', visit: 'https://auth-day05.onrender.com' },
+            { day: 6, title: 'Two-Factor Authentication (2FA / TOTP)', tags: ['2FA', 'TOTP'], zip: 'https://github.com/devtask-hub/auth-day06-task/archive/refs/heads/main.zip', visit: 'https://auth-day06.onrender.com' },
+            { day: 7, title: 'Secure Password Reset with Signed Email Tokens', tags: ['Tokens', 'Email'], zip: 'https://github.com/devtask-hub/auth-day07-task/archive/refs/heads/main.zip', visit: 'https://auth-day07.onrender.com' },
+            { day: 8, title: 'Session Revocation & Redis Blacklist Caching', tags: ['Sessions', 'Redis'], zip: 'https://github.com/devtask-hub/auth-day08-task/archive/refs/heads/main.zip', visit: 'https://auth-day08.onrender.com' },
+            { day: 9, title: 'API Key Management & Rate-Limited Endpoints', tags: ['API Keys', 'Limits'], zip: 'https://github.com/devtask-hub/auth-day09-task/archive/refs/heads/main.zip', visit: 'https://auth-day09.onrender.com' },
+            { day: 10, title: 'Complete Enterprise Auth Microservice', tags: ['Microservices', 'Auth'], zip: 'https://github.com/devtask-hub/auth-day10-task/archive/refs/heads/main.zip', visit: 'https://auth-day10.onrender.com' }
+          ],
+          'MY PROJECT': [
+            { day: 1, title: 'Enterprise Microservices API Gateway', tags: ['Node.js', 'Express', 'Docker'], zip: 'https://github.com/devtask-hub/backend-project-gateway/archive/refs/heads/main.zip', git: 'https://github.com/devtask-hub/backend-project-gateway', live: 'https://backend-gateway.onrender.com' },
+            { day: 2, title: 'Realtime Collaborative Chat Server', tags: ['WebSockets', 'Redis', 'Node.js'], zip: 'https://github.com/devtask-hub/backend-project-chat/archive/refs/heads/main.zip', git: 'https://github.com/devtask-hub/backend-project-chat', live: 'https://backend-chat.onrender.com' },
+            { day: 3, title: 'Stripe Billing & Subscription Engine', tags: ['Stripe SDK', 'Webhooks', 'Express'], zip: 'https://github.com/devtask-hub/backend-project-billing/archive/refs/heads/main.zip', git: 'https://github.com/devtask-hub/backend-project-billing', live: 'https://backend-billing.onrender.com' },
+            { day: 4, title: 'High-Throughput Job Queue Worker', tags: ['BullMQ', 'Redis', 'Node.js'], zip: 'https://github.com/devtask-hub/backend-project-queue/archive/refs/heads/main.zip', git: 'https://github.com/devtask-hub/backend-project-queue', live: 'https://backend-queue.onrender.com' },
+            { day: 5, title: 'S3 Media Transcoding & Upload Pipeline', tags: ['AWS S3', 'FFmpeg', 'Multer'], zip: 'https://github.com/devtask-hub/backend-project-s3/archive/refs/heads/main.zip', git: 'https://github.com/devtask-hub/backend-project-s3', live: 'https://backend-s3.onrender.com' },
+            { day: 6, title: 'Zero-Trust RBAC Identity Provider', tags: ['JWT', 'OAuth2', 'Bcrypt'], zip: 'https://github.com/devtask-hub/backend-project-rbac/archive/refs/heads/main.zip', git: 'https://github.com/devtask-hub/backend-project-rbac', live: 'https://backend-rbac.onrender.com' },
+            { day: 7, title: 'Automated Webhook Dispatcher & Retry System', tags: ['Express', 'Axios', 'PostgreSQL'], zip: 'https://github.com/devtask-hub/backend-project-webhooks/archive/refs/heads/main.zip', git: 'https://github.com/devtask-hub/backend-project-webhooks', live: 'https://backend-webhooks.onrender.com' },
+            { day: 8, title: 'Financial Ledger & Transaction API', tags: ['ACID', 'PostgreSQL', 'Node.js'], zip: 'https://github.com/devtask-hub/backend-project-ledger/archive/refs/heads/main.zip', git: 'https://github.com/devtask-hub/backend-project-ledger', live: 'https://backend-ledger.onrender.com' },
+            { day: 9, title: 'GraphQL Aggregator & Federation Gateway', tags: ['Apollo Server', 'GraphQL'], zip: 'https://github.com/devtask-hub/backend-project-graphql/archive/refs/heads/main.zip', git: 'https://github.com/devtask-hub/backend-project-graphql', live: 'https://backend-graphql.onrender.com' },
+            { day: 10, title: 'Dockerized Kubernetes Backend Cluster', tags: ['Docker', 'Kubernetes', 'CI/CD'], zip: 'https://github.com/devtask-hub/backend-project-k8s/archive/refs/heads/main.zip', git: 'https://github.com/devtask-hub/backend-project-k8s', live: 'https://backend-k8s.onrender.com' }
+          ]
+        }
+      },
+
+      // 3. DATABASE TRACK (3 MODULES + 1 MY PROJECT)
+      'database': {
+        name: 'Database',
+        modules: ['SQL-POSTGRES', 'MONGODB-V7', 'REDIS-V7', 'MY PROJECT'],
+        icons: {
+          'SQL-POSTGRES': `<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3" stroke-width="2"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" stroke-width="2"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" stroke-width="2"/></svg>`,
+          'MONGODB-V7': `<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>`,
+          'REDIS-V7': `<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>`,
+          'MY PROJECT': `<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09zM12 15l-3-3m0 0l3-3m-3 3h12"/></svg>`
+        },
+        tasks: {
+          'SQL-POSTGRES': [
+            { day: 1, title: 'Relational Schema Design & Primary Keys', tags: ['SQL', 'Schema'], zip: 'https://github.com/devtask-hub/sql-day01-task/archive/refs/heads/main.zip', visit: 'https://sql-day01.onrender.com' },
+            { day: 2, title: 'SQL CRUD Operations & Prepared Statements', tags: ['SQL', 'CRUD'], zip: 'https://github.com/devtask-hub/sql-day02-task/archive/refs/heads/main.zip', visit: 'https://sql-day02.onrender.com' },
+            { day: 3, title: 'Foreign Keys, Cascades & Integrity Constraints', tags: ['SQL', 'Foreign Keys'], zip: 'https://github.com/devtask-hub/sql-day03-task/archive/refs/heads/main.zip', visit: 'https://sql-day03.onrender.com' },
+            { day: 4, title: 'Advanced JOINs: Inner, Left, Right & Cross', tags: ['SQL', 'JOINs'], zip: 'https://github.com/devtask-hub/sql-day04-task/archive/refs/heads/main.zip', visit: 'https://sql-day04.onrender.com' },
+            { day: 5, title: 'CTEs, Subqueries & Window Functions', tags: ['CTEs', 'Window Functions'], zip: 'https://github.com/devtask-hub/sql-day05-task/archive/refs/heads/main.zip', visit: 'https://sql-day05.onrender.com' },
+            { day: 6, title: 'B-Tree Indexing & EXPLAIN ANALYZE Tuning', tags: ['Indexing', 'Performance'], zip: 'https://github.com/devtask-hub/sql-day06-task/archive/refs/heads/main.zip', visit: 'https://sql-day06.onrender.com' },
+            { day: 7, title: 'ACID Transactions, Savepoints & Locking', tags: ['ACID', 'Transactions'], zip: 'https://github.com/devtask-hub/sql-day07-task/archive/refs/heads/main.zip', visit: 'https://sql-day07.onrender.com' },
+            { day: 8, title: 'Database Migrations & Automated Seeders', tags: ['Migrations', 'Seeds'], zip: 'https://github.com/devtask-hub/sql-day08-task/archive/refs/heads/main.zip', visit: 'https://sql-day08.onrender.com' },
+            { day: 9, title: 'Stored Procedures, Triggers & Event Logs', tags: ['Triggers', 'Procedures'], zip: 'https://github.com/devtask-hub/sql-day09-task/archive/refs/heads/main.zip', visit: 'https://sql-day09.onrender.com' },
+            { day: 10, title: 'Enterprise Table Partitioning & Replica Pooling', tags: ['Partitioning', 'Clustering'], zip: 'https://github.com/devtask-hub/sql-day10-task/archive/refs/heads/main.zip', visit: 'https://sql-day10.onrender.com' }
+          ],
+          'MONGODB-V7': [
+            { day: 1, title: 'MongoDB JSON/BSON Document Modeling', tags: ['MongoDB', 'BSON'], zip: 'https://github.com/devtask-hub/mongo-day01-task/archive/refs/heads/main.zip', visit: 'https://mongo-day01.onrender.com' },
+            { day: 2, title: 'MongoDB CRUD Engine & Query Operators', tags: ['MongoDB', 'CRUD'], zip: 'https://github.com/devtask-hub/mongo-day02-task/archive/refs/heads/main.zip', visit: 'https://mongo-day02.onrender.com' },
+            { day: 3, title: 'Mongoose ODM Schema Rules & Hooks', tags: ['Mongoose', 'ODM'], zip: 'https://github.com/devtask-hub/mongo-day03-task/archive/refs/heads/main.zip', visit: 'https://mongo-day03.onrender.com' },
+            { day: 4, title: 'Aggregation Pipeline ($match, $group, $lookup)', tags: ['Aggregation', 'Pipeline'], zip: 'https://github.com/devtask-hub/mongo-day04-task/archive/refs/heads/main.zip', visit: 'https://mongo-day04.onrender.com' },
+            { day: 5, title: 'Compound, Multikey & Text Indexing', tags: ['Indexes', 'Search'], zip: 'https://github.com/devtask-hub/mongo-day05-task/archive/refs/heads/main.zip', visit: 'https://mongo-day05.onrender.com' },
+            { day: 6, title: 'Embedded vs. Referenced Data Modeling', tags: ['Schema Design'], zip: 'https://github.com/devtask-hub/mongo-day06-task/archive/refs/heads/main.zip', visit: 'https://mongo-day06.onrender.com' },
+            { day: 7, title: 'Multi-Document ACID Transactions', tags: ['ACID', 'Transactions'], zip: 'https://github.com/devtask-hub/mongo-day07-task/archive/refs/heads/main.zip', visit: 'https://mongo-day07.onrender.com' },
+            { day: 8, title: 'Geospatial Location & Time-Series Data', tags: ['Geospatial', 'Time-Series'], zip: 'https://github.com/devtask-hub/mongo-day08-task/archive/refs/heads/main.zip', visit: 'https://mongo-day08.onrender.com' },
+            { day: 9, title: 'GridFS Large Binary File Storage System', tags: ['GridFS', 'Storage'], zip: 'https://github.com/devtask-hub/mongo-day09-task/archive/refs/heads/main.zip', visit: 'https://mongo-day09.onrender.com' },
+            { day: 10, title: 'Production MongoDB Atlas Sharding & Security', tags: ['Sharding', 'Atlas'], zip: 'https://github.com/devtask-hub/mongo-day10-task/archive/refs/heads/main.zip', visit: 'https://mongo-day10.onrender.com' }
+          ],
+          'REDIS-V7': [
+            { day: 1, title: 'Redis In-Memory Key-Value Architecture', tags: ['Redis', 'In-Memory'], zip: 'https://github.com/devtask-hub/redis-day01-task/archive/refs/heads/main.zip', visit: 'https://redis-day01.onrender.com' },
+            { day: 2, title: 'Strings, Hashes, Lists & Sets Commands', tags: ['Data Structures'], zip: 'https://github.com/devtask-hub/redis-day02-task/archive/refs/heads/main.zip', visit: 'https://redis-day02.onrender.com' },
+            { day: 3, title: 'Sorted Sets (ZSet) Realtime Leaderboards', tags: ['ZSet', 'Leaderboards'], zip: 'https://github.com/devtask-hub/redis-day03-task/archive/refs/heads/main.zip', visit: 'https://redis-day03.onrender.com' },
+            { day: 4, title: 'Key Expiration, TTL & LRU Eviction Rules', tags: ['TTL', 'Eviction'], zip: 'https://github.com/devtask-hub/redis-day04-task/archive/refs/heads/main.zip', visit: 'https://redis-day04.onrender.com' },
+            { day: 5, title: 'High-Speed API Response Caching Layer', tags: ['Caching', 'API Speed'], zip: 'https://github.com/devtask-hub/redis-day05-task/archive/refs/heads/main.zip', visit: 'https://redis-day05.onrender.com' },
+            { day: 6, title: 'Redis Pub/Sub Event Messaging Engine', tags: ['Pub/Sub', 'Events'], zip: 'https://github.com/devtask-hub/redis-day06-task/archive/refs/heads/main.zip', visit: 'https://redis-day06.onrender.com' },
+            { day: 7, title: 'Redis Streams & Consumer Group Pipeline', tags: ['Streams', 'Consumers'], zip: 'https://github.com/devtask-hub/redis-day07-task/archive/refs/heads/main.zip', visit: 'https://redis-day07.onrender.com' },
+            { day: 8, title: 'Distributed Lock Protocol (Redlock)', tags: ['Redlock', 'Concurrency'], zip: 'https://github.com/devtask-hub/redis-day08-task/archive/refs/heads/main.zip', visit: 'https://redis-day08.onrender.com' },
+            { day: 9, title: 'Persistence Engine: RDB Snapshots & AOF Logs', tags: ['Persistence', 'RDB/AOF'], zip: 'https://github.com/devtask-hub/redis-day09-task/archive/refs/heads/main.zip', visit: 'https://redis-day09.onrender.com' },
+            { day: 10, title: 'Redis Sentinel & Cluster High Availability', tags: ['Sentinel', 'Clustering'], zip: 'https://github.com/devtask-hub/redis-day10-task/archive/refs/heads/main.zip', visit: 'https://redis-day10.onrender.com' }
+          ],
+          'MY PROJECT': [
+            { day: 1, title: 'Multi-Tenant SaaS Database Architecture', tags: ['PostgreSQL', 'RLS Security'], zip: 'https://github.com/devtask-hub/db-project-multitenant/archive/refs/heads/main.zip', git: 'https://github.com/devtask-hub/db-project-multitenant', live: 'https://db-multitenant.onrender.com' },
+            { day: 2, title: 'High-Volume Analytics Warehouse Hub', tags: ['TimescaleDB', 'SQL', 'Postgres'], zip: 'https://github.com/devtask-hub/db-project-analytics/archive/refs/heads/main.zip', git: 'https://github.com/devtask-hub/db-project-analytics', live: 'https://db-analytics.onrender.com' },
+            { day: 3, title: 'Realtime Gaming Leaderboard & Cache', tags: ['Redis', 'Sorted Sets', 'Node.js'], zip: 'https://github.com/devtask-hub/db-project-leaderboard/archive/refs/heads/main.zip', git: 'https://github.com/devtask-hub/db-project-leaderboard', live: 'https://db-leaderboard.onrender.com' },
+            { day: 4, title: 'Distributed Social Graph & Feed System', tags: ['MongoDB', 'Aggregation', 'Mongoose'], zip: 'https://github.com/devtask-hub/db-project-social-graph/archive/refs/heads/main.zip', git: 'https://github.com/devtask-hub/db-project-social-graph', live: 'https://db-social-graph.onrender.com' },
+            { day: 5, title: 'Automated Blue-Green DB Migration Engine', tags: ['Flyway', 'PostgreSQL', 'CI/CD'], zip: 'https://github.com/devtask-hub/db-project-migrations/archive/refs/heads/main.zip', git: 'https://github.com/devtask-hub/db-project-migrations', live: 'https://db-migrations.onrender.com' },
+            { day: 6, title: 'Encrypted Financial Vault & Audit Trail', tags: ['AES-256', 'pgcrypto', 'Postgres'], zip: 'https://github.com/devtask-hub/db-project-vault/archive/refs/heads/main.zip', git: 'https://github.com/devtask-hub/db-project-vault', live: 'https://db-vault.onrender.com' },
+            { day: 7, title: 'E-Commerce Catalog with Faceted Search', tags: ['MongoDB Atlas', 'Faceted Search'], zip: 'https://github.com/devtask-hub/db-project-catalog/archive/refs/heads/main.zip', git: 'https://github.com/devtask-hub/db-project-catalog', live: 'https://db-catalog.onrender.com' },
+            { day: 8, title: 'Distributed Session & Rate Limit Broker', tags: ['Redis Cluster', 'Lua Scripts'], zip: 'https://github.com/devtask-hub/db-project-broker/archive/refs/heads/main.zip', git: 'https://github.com/devtask-hub/db-project-broker', live: 'https://db-broker.onrender.com' },
+            { day: 9, title: 'Geospatial Fleet Tracking Location Hub', tags: ['PostGIS', 'GeoJSON', 'PostgreSQL'], zip: 'https://github.com/devtask-hub/db-project-fleet/archive/refs/heads/main.zip', git: 'https://github.com/devtask-hub/db-project-fleet', live: 'https://db-fleet.onrender.com' },
+            { day: 10, title: 'Hybrid Polyglot Enterprise Storage Matrix', tags: ['Postgres', 'MongoDB', 'Redis'], zip: 'https://github.com/devtask-hub/db-project-polyglot/archive/refs/heads/main.zip', git: 'https://github.com/devtask-hub/db-project-polyglot', live: 'https://db-polyglot.onrender.com' }
+          ]
+        }
+      }
+    };
+
+    let activeDomain = 'frontend';
+    let activeModule = 'HTML-V5';
+    let searchQuery = '';
+
+
+    function setDomain(domainKey, defaultModule) {
+      activeDomain = domainKey;
+      activeModule = defaultModule || PORTAL_DATA[domainKey].modules[0];
+      try {
+        localStorage.setItem('devtask_active_domain', domainKey);
+        localStorage.setItem('devtask_active_module', activeModule);
+      } catch (e) {}
+
+      // Update Body Track Attribute for Dynamic CSS Themes
+      document.body.setAttribute('data-track', domainKey);
+
+      // Update Segmented Nav Buttons
+      ['frontend', 'backend', 'database'].forEach(key => {
+        const btn = document.getElementById(`nav-${key}`);
+        const icon = btn.querySelector('.nav-icon');
+        if (key === domainKey) {
+          btn.className = 'segmented-btn active px-3.5 sm:px-4 py-2 rounded-xl text-xs font-extrabold flex items-center gap-2 text-slate-900';
+          if (icon) {
+            icon.classList.remove('text-slate-400');
+          }
+        } else {
+          btn.className = 'segmented-btn px-3.5 sm:px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-2 text-slate-600 hover:text-slate-900 hover:bg-white/50';
+          if (icon) {
+            icon.classList.add('text-slate-400');
+          }
+        }
+      });
+
+      renderModuleSelector();
+      updateUI();
+    }
+
+    function setModule(moduleKey) {
+      activeModule = moduleKey;
+      try {
+        localStorage.setItem('devtask_active_module', moduleKey);
+      } catch (e) {}
+      renderModuleSelector();
+      updateUI();
+    }
+
+    function renderModuleSelector() {
+      const container = document.getElementById('module-selector-container');
+      const domain = PORTAL_DATA[activeDomain];
+
+      let html = `<span class="text-xs font-bold text-slate-500 mr-1 hidden sm:inline">Module:</span>`;
+
+      domain.modules.forEach(modKey => {
+        const isActive = modKey === activeModule;
+        const iconSvg = domain.icons[modKey] || '';
+        const activeClass = isActive
+          ? 'btn-track-action shadow-sm'
+          : 'bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200';
+
+        html += `
+          <button onclick="setModule('${modKey}')" class="px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 cursor-pointer ${activeClass}">
+            ${iconSvg}
+            <span>${modKey}</span>
+          </button>
+        `;
+      });
+
+      container.innerHTML = html;
+    }
+
+    function handleSearch(val) {
+      searchQuery = val;
+      const clearBtn = document.getElementById('clear-search-btn');
+      if (val.trim()) {
+        clearBtn.classList.remove('hidden');
+      } else {
+        clearBtn.classList.add('hidden');
+      }
+      renderCards();
+    }
+
+    function clearSearch() {
+      const input = document.getElementById('search-input');
+      input.value = '';
+      searchQuery = '';
+      document.getElementById('clear-search-btn').classList.add('hidden');
+      renderCards();
+    }
+
+    function updateUI() {
+      const domain = PORTAL_DATA[activeDomain];
+      document.getElementById('domain-badge-text').innerText = domain.name;
+      document.getElementById('domain-badge-text').style.color = "var(--track-primary)";
+      document.getElementById('domain-pulse-dot').style.backgroundColor = "var(--track-primary)";
+
+      document.getElementById('domain-heading').innerHTML = `${activeModule} <span style="color: var(--track-primary)">Tasks</span>`;
+
+      renderCards();
+    }
+
+    function renderCards() {
+      const container = document.getElementById('tasks-list');
+      const domain = PORTAL_DATA[activeDomain];
+      let list = [...(domain.tasks[activeModule] || [])];
+
+      // Smart Search Filtering & Priority Sorting
+      if (searchQuery.trim()) {
+        const q = searchQuery.toLowerCase().trim();
+        
+        list = list.filter(t => {
+          const dayNum = `${t.day}`;
+          const dayFull = `day ${t.day}`;
+          const projFull = `project ${t.day}`;
+          const taskFull = `task ${t.day}`;
+          const title = (t.title || '').toLowerCase();
+          const tagsMatch = t.tags && t.tags.some(tag => tag.toLowerCase().includes(q));
+
+          return (
+            dayNum === q ||
+            dayFull.includes(q) ||
+            projFull.includes(q) ||
+            taskFull.includes(q) ||
+            title.includes(q) ||
+            tagsMatch
+          );
+        });
+
+        // Priority Sort: Exact day number or Title starting with query comes first
+        list.sort((a, b) => {
+          const aDayExact = `${a.day}` === q || `day ${a.day}` === q || `project ${a.day}` === q;
+          const bDayExact = `${b.day}` === q || `day ${b.day}` === q || `project ${b.day}` === q;
+          if (aDayExact && !bDayExact) return -1;
+          if (!aDayExact && bDayExact) return 1;
+
+          const aStarts = (a.title || '').toLowerCase().startsWith(q);
+          const bStarts = (b.title || '').toLowerCase().startsWith(q);
+          if (aStarts && !bStarts) return -1;
+          if (!aStarts && bStarts) return 1;
+
+          return a.day - b.day;
+        });
+      }
+
+      // If No Cards Found
+      if (list.length === 0) {
+        container.className = "col-span-full py-12 text-center";
+        container.innerHTML = `
+          <div class="portal-card max-w-md mx-auto p-8 space-y-3">
+            <div class="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center mx-auto">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+            </div>
+            <h3 class="font-extrabold text-lg text-slate-900">No matching tasks found</h3>
+            <p class="text-xs text-slate-500">Try searching for a number (e.g. 1 to 10) or title keywords.</p>
+            <button onclick="clearSearch()" class="px-4 py-2 rounded-xl btn-track-action font-bold text-xs shadow-sm">
+              Clear Search
+            </button>
+          </div>
+        `;
+        return;
+      }
+
+      container.className = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6";
+
+      const isProjectModule = activeModule === 'MY PROJECT';
+
+      container.innerHTML = list.map((t, index) => {
+        const animDelay = `animation-delay: ${index * 30}ms;`;
+        const tagsHtml = t.tags ? `
+          <div class="flex items-center gap-1.5 mt-2 flex-wrap">
+            ${t.tags.map(tag => `<span class="text-[10px] font-semibold font-mono px-2 py-0.5 rounded-md bg-slate-100/90 text-slate-600 border border-slate-200/70">${tag}</span>`).join('')}
+          </div>
+        ` : '';
+
+        // 1. FOR "MY PROJECT" (Across Frontend, Backend & Database):
+        // Left top: Project X, Right top: Project, Action Buttons: .Zip, Git, Live
+        if (isProjectModule) {
+          return `
+            <div class="portal-card card-animate p-5 flex flex-col justify-between h-full space-y-4" style="${animDelay}">
+              
+              <!-- Card Header: Left top = Project X, Right top = Project -->
+              <div>
+                <div class="flex items-center justify-between mb-3">
+                  <span class="track-day-badge text-[11px] font-mono font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-xs">
+                    Project ${t.day}
+                  </span>
+                  <span class="text-[10px] font-mono font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-slate-100/90 text-slate-500 border border-slate-200/70 shadow-xs">
+                    Project
+                  </span>
+                </div>
+
+                <!-- Title (Light-weight bold / font-semibold) & Tech Tags -->
+                <h3 onclick="${ (t.live || t.visit || '').startsWith('http') ? `window.open('${t.live || t.visit}', '_blank')` : `window.location.href='${t.live || t.visit}'` }" class="font-semibold text-[15px] text-slate-800 tracking-tight leading-snug cursor-pointer hover:text-sky-600 transition" title="Open Live Application">
+                  ${t.title || `Project ${t.day}`}
+                </h3>
+                ${tagsHtml}
+              </div>
+
+              <!-- Action Buttons: .Zip, Git Repo, Live -->
+              <div class="pt-3 border-t border-slate-100 flex items-center justify-center gap-1.5 sm:gap-2">
+                <a href="javascript:void(0)" onclick="downloadProjectZip(${t.day}, '${(t.title || '').replace(/'/g, "\\'")}')" title="Download .Zip File Archive" class="btn-zip-action flex-1 max-w-[95px] sm:max-w-[105px] py-1.5 sm:py-2 px-2 rounded-xl font-bold text-[11px] flex items-center justify-center gap-1 shadow-xs cursor-pointer">
+                  <svg class="w-3.5 h-3.5 text-slate-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                  <span>.Zip</span>
+                </a>
+
+                <a href="${t.git || t.visit}" ${(t.git || t.visit || '').startsWith('http') ? 'target="_blank" rel="noopener noreferrer"' : ''} title="View Source Code on GitHub" class="btn-git-action flex-1 max-w-[95px] sm:max-w-[105px] py-1.5 sm:py-2 px-2 rounded-xl font-bold text-[11px] flex items-center justify-center gap-1 shadow-sm">
+                  <svg class="w-3.5 h-3.5 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" /></svg>
+                  <span>Git</span>
+                </a>
+
+                <a href="${t.live || t.visit}" ${(t.live || t.visit || '').startsWith('http') ? 'target="_blank" rel="noopener noreferrer"' : ''} title="Open Live Application" class="btn-track-action flex-1 max-w-[95px] sm:max-w-[105px] py-1.5 sm:py-2 px-2 rounded-xl font-bold text-[11px] flex items-center justify-center gap-1 shadow-sm">
+                  <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                  <span>Live</span>
+                </a>
+              </div>
+
+            </div>
+          `;
+        }
+
+        // 2. FOR ALL 9 STANDARD ROADMAP MODULES:
+        // Left top: Day X, Right top: Task, Action Buttons: .Zip File and Visit (Opens 2 options)
+        let rightBadgeText = 'Task';
+        if (activeModule === 'JAVASCRIPT-V24') rightBadgeText = 'JS Task';
+        else if (activeModule === 'HTML-V5') rightBadgeText = 'HTML Task';
+        else if (activeModule === 'CSS-V3') rightBadgeText = 'CSS Task';
+
+        const actionButtons = `
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-center gap-2.5 sm:gap-3">
+            <a href="${t.zip}" download title="Download .Zip File Archive" class="btn-zip-action flex-1 max-w-[125px] sm:max-w-[135px] py-1.5 sm:py-2 px-3 rounded-xl font-bold text-xs flex items-center justify-center gap-1.5 shadow-xs">
+              <svg class="w-3.5 h-3.5 text-slate-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+              </svg>
+              <span>.Zip File</span>
+            </a>
+
+            <button onclick="openViewChooser(${t.day}, '${t.title.replace(/'/g, "\\'")}', '${t.html || t.visit}', '${t.css || t.js || t.code || t.visit}', '${activeModule}')" title="Visit Options: Live Webpage or Source Code" class="btn-track-action flex-1 max-w-[125px] sm:max-w-[135px] py-1.5 sm:py-2 px-3 rounded-xl font-bold text-xs flex items-center justify-center gap-1.5 shadow-sm cursor-pointer">
+              <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+              </svg>
+              <span>Visit</span>
+            </button>
+          </div>
+        `;
+
+        return `
+          <div class="portal-card card-animate p-5 flex flex-col justify-between h-full space-y-4" style="${animDelay}">
+            
+            <!-- Card Header: Left top = Day X, Right top = Task/JS Task -->
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="track-day-badge text-[11px] font-mono font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-xs">
+                  Day ${t.day}
+                </span>
+                <span class="text-[10px] font-mono font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-slate-100/90 text-slate-500 border border-slate-200/70 shadow-xs">
+                  ${rightBadgeText}
+                </span>
+              </div>
+
+              <!-- Title (Light-weight bold / font-semibold) & Tech Tags -->
+              <h3 onclick="openViewChooser(${t.day}, '${t.title.replace(/'/g, "\\'")}', '${t.html || t.visit}', '${t.css || t.js || t.code || t.visit}', '${activeModule}')" class="font-semibold text-[15px] text-slate-800 tracking-tight leading-snug cursor-pointer transition">
+                ${t.title || `Day ${t.day} Task`}
+              </h3>
+              ${tagsHtml}
+            </div>
+
+            <!-- Action Buttons -->
+            ${actionButtons}
+
+          </div>
+        `;
+      }).join('');
+    }
+
+    // ================= VIEW CHOOSER & CODE VIEWER LOGIC =================
+    let currentChooserDay = null;
+    let currentChooserTitle = '';
+    let currentChooserHtmlPath = '';
+    let currentChooserJsPath = '';
+    let currentChooserModule = '';
+    let currentModalCode = '';
+
+    // Preloaded Codebase for JavaScript, HTML, and CSS (Loaded from respective dataset files)
+    window.JS_TASK_CODES = window.JS_TASK_CODES || {};
+    window.HTML_TASK_CODES = window.HTML_TASK_CODES || {};
+    window.CSS_TASK_CODES = window.CSS_TASK_CODES || {};
+
+    function openViewChooser(day, title, htmlPath, jsPath, moduleKey) {
+      currentChooserDay = day;
+      currentChooserTitle = title;
+      currentChooserHtmlPath = htmlPath;
+      currentChooserJsPath = jsPath;
+      currentChooserModule = moduleKey || activeModule;
+
+      const modal = document.getElementById('viewChooserModal');
+      const badge = document.getElementById('chooserDayBadge');
+      const titleEl = document.getElementById('chooserTitle');
+      const codeTitleEl = document.getElementById('chooserCodeTitle');
+      const codeDescEl = document.getElementById('chooserCodeDesc');
+
+      if (badge) badge.innerText = `Day ${day}`;
+      if (titleEl) titleEl.innerText = title;
+
+      if (codeTitleEl && codeDescEl) {
+        if (currentChooserModule === 'JAVASCRIPT-V24') {
+          codeTitleEl.innerText = 'JS Source Code';
+          codeDescEl.innerText = 'View & Copy Pure JavaScript';
+        } else if (currentChooserModule === 'HTML-V5') {
+          codeTitleEl.innerText = 'HTML Source Code';
+          codeDescEl.innerText = 'View & Copy HTML Markup';
+        } else if (currentChooserModule === 'CSS-V3') {
+          codeTitleEl.innerText = 'CSS Source Code';
+          codeDescEl.innerText = 'View & Copy CSS Styles';
+        } else {
+          codeTitleEl.innerText = 'Source Code';
+          codeDescEl.innerText = 'View & Copy Source Code';
+        }
+      }
+
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeViewChooser() {
+      const modal = document.getElementById('viewChooserModal');
+      if (modal) modal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    function launchChooserHtml() {
+      if (currentChooserHtmlPath) {
+        if (currentChooserHtmlPath.startsWith('http')) {
+          window.open(currentChooserHtmlPath, '_blank');
+        } else {
+          window.location.href = currentChooserHtmlPath;
+        }
+      }
+      closeViewChooser();
+    }
+
+    function launchChooserJs() {
+      const day = currentChooserDay;
+      const title = currentChooserTitle;
+      const jsPath = currentChooserJsPath;
+      const mod = currentChooserModule;
+      closeViewChooser();
+      openCodeViewer(day, title, jsPath, mod);
+    }
+
+    function openCodeViewer(day, title, visitPath, moduleKey) {
+      const modal = document.getElementById('codeModal');
+      const badge = document.getElementById('modalTaskBadge');
+      const titleEl = document.getElementById('modalTitle');
+      const pathEl = document.getElementById('modalPath');
+      const rawLink = document.getElementById('modalRawLink');
+      const codeEl = document.getElementById('modalCodeContent');
+
+      const mod = moduleKey || activeModule;
+      badge.innerText = `Day ${day}`;
+      titleEl.innerText = `${mod} — ${title}`;
+      pathEl.innerText = visitPath;
+      rawLink.href = visitPath;
+
+      const footerLabel = document.getElementById('modalFooterLabel');
+      if (footerLabel) {
+        if (mod === 'HTML-V5') {
+          footerLabel.innerText = 'HTML5 Semantic Markup / Structure Task';
+        } else if (mod === 'CSS-V3') {
+          footerLabel.innerText = 'CSS3 Responsive Styling / Design System Task';
+        } else if (mod === 'JAVASCRIPT-V24') {
+          footerLabel.innerText = 'JavaScript ECMAScript / Logic Task';
+        } else {
+          footerLabel.innerText = `${mod} Task Source Code`;
+        }
+      }
+
+      // Look up code from preloaded datasets
+      let code = '';
+      if (mod === 'JAVASCRIPT-V24' && window.JS_TASK_CODES && window.JS_TASK_CODES[day]) {
+        code = window.JS_TASK_CODES[day];
+      } else if (mod === 'HTML-V5' && window.HTML_TASK_CODES && window.HTML_TASK_CODES[day]) {
+        code = window.HTML_TASK_CODES[day];
+      } else if (mod === 'CSS-V3' && window.CSS_TASK_CODES && window.CSS_TASK_CODES[day]) {
+        code = window.CSS_TASK_CODES[day];
+      } else {
+        code = `// ${mod} — Day ${day}: ${title}\n// File Path: ${visitPath}\n\n// Code is accessible via 'Open File' button above.`;
+      }
+      currentModalCode = code;
+      codeEl.textContent = code;
+
+      // Also attempt fetch in case running on HTTP server and preloaded dataset was empty
+      if (window.location.protocol.startsWith('http') && !visitPath.startsWith('http') && !code) {
+        fetch(visitPath)
+          .then(res => { if (res.ok) return res.text(); })
+          .then(text => {
+            if (text && text.trim()) {
+              currentModalCode = text;
+              codeEl.textContent = text;
+            }
+          })
+          .catch(() => { /* fallback already rendered */ });
+      }
+
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeCodeModal() {
+      const modal = document.getElementById('codeModal');
+      modal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    function copyModalCode() {
+      if (!currentModalCode) return;
+      navigator.clipboard.writeText(currentModalCode).then(() => {
+        const btnText = document.getElementById('copyBtnText');
+        const orig = btnText.innerText;
+        btnText.innerText = 'Copied!';
+        setTimeout(() => {
+          btnText.innerText = orig;
+        }, 2000);
+      });
+    }
+
+    // Close modals on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        const chooserModal = document.getElementById('viewChooserModal');
+        if (chooserModal && !chooserModal.classList.contains('hidden')) {
+          closeViewChooser();
+          return;
+        }
+        const modal = document.getElementById('codeModal');
+        if (modal && !modal.classList.contains('hidden')) {
+          closeCodeModal();
+        }
+      }
+    });
+
+    // ================= THEME SWITCHER LOGIC (☀️ Light mode / 🌙 Dark mode) =================
+    function toggleTheme() {
+      const isDark = document.body.classList.contains('dark-mode');
+      setTheme(isDark ? 'light' : 'dark');
+    }
+
+    function setTheme(mode) {
+      const toggleBtn = document.getElementById('themeToggleBtn');
+
+      if (mode === 'dark') {
+        document.body.classList.add('dark-mode');
+        document.documentElement.classList.add('dark-mode');
+        if (toggleBtn) {
+          toggleBtn.classList.add('dark');
+          toggleBtn.setAttribute('aria-checked', 'true');
+          toggleBtn.title = 'Current: 🌙 Dark mode (Click to switch to ☀️ Light mode)';
+        }
+        try { localStorage.setItem('devtask_theme', 'dark'); } catch (e) {}
+      } else {
+        document.body.classList.remove('dark-mode');
+        document.documentElement.classList.remove('dark-mode');
+        if (toggleBtn) {
+          toggleBtn.classList.remove('dark');
+          toggleBtn.setAttribute('aria-checked', 'false');
+          toggleBtn.title = 'Current: ☀️ Light mode (Click to switch to 🌙 Dark mode)';
+        }
+        try { localStorage.setItem('devtask_theme', 'light'); } catch (e) {}
+      }
+    }
+
+    // Initialize on page load (Default: ALWAYS Dark Mode)
+    try {
+      const savedTheme = localStorage.getItem('devtask_theme');
+      if (savedTheme === 'light') {
+        setTheme('light');
+      } else {
+        setTheme('dark');
+      }
+    } catch (e) {
+      setTheme('dark');
+    }
+
+    try {
+      const savedDomain = localStorage.getItem('devtask_active_domain');
+      const savedModule = localStorage.getItem('devtask_active_module');
+      if (savedDomain && PORTAL_DATA[savedDomain]) {
+        const validModule = (PORTAL_DATA[savedDomain].modules.includes(savedModule)) ? savedModule : null;
+        setDomain(savedDomain, validModule);
+      } else {
+        setDomain('frontend', 'HTML-V5');
+      }
+    } catch (e) {
+      setDomain('frontend', 'HTML-V5');
+    }
+  </script>
+
+  <!-- ================= VIEW CHOOSER MODAL (COMPACT & SIMPLE) ================= -->
+  <div id="viewChooserModal" class="fixed inset-0 z-50 hidden bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-4 transition-all duration-200" onclick="if(event.target === this) closeViewChooser()">
+    <div class="bg-white border border-slate-200 rounded-2xl shadow-2xl w-full max-w-sm overflow-hidden flex flex-col transition-all duration-150 transform">
+      
+      <!-- Modal Header -->
+      <div class="px-5 py-4 border-b border-slate-100 flex items-center justify-between bg-slate-50/80">
+        <div class="flex items-center gap-2 min-w-0">
+          <span id="chooserDayBadge" class="track-day-badge text-[11px] font-mono font-bold uppercase px-2.5 py-0.5 rounded-full shadow-xs shrink-0">Day 1</span>
+          <h3 id="chooserTitle" class="text-sm font-bold text-slate-800 truncate">Task Title</h3>
+        </div>
+        <button onclick="closeViewChooser()" class="p-1 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-200 transition shrink-0 ml-2" title="Close (Esc)">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <!-- Modal Body (Two Sleek Developer Action Cards) -->
+      <div class="p-4 sm:p-5 space-y-3">
+        <!-- Button 1: Live Webpage -->
+        <button onclick="launchChooserHtml()" class="group w-full p-3.5 rounded-xl bg-gradient-to-r from-teal-700 via-teal-600 to-[#00B4A0] hover:from-teal-600 hover:to-[#00D8BC] text-white shadow-md hover:shadow-lg transition-all duration-200 flex items-center justify-between text-left cursor-pointer border border-[#00F5D4]/30">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-white/15 flex items-center justify-center shrink-0 border border-white/20 group-hover:scale-105 transition">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+              </svg>
+            </div>
+            <div>
+              <div class="flex items-center gap-1.5">
+                <span class="font-bold text-sm text-white">Live Webpage</span>
+                <span class="text-[9px] font-mono font-extrabold uppercase px-1.5 py-0.5 rounded bg-white/20 text-teal-100">Live UI</span>
+              </div>
+              <p class="text-[11px] text-teal-100/90 font-medium">Browser Webpage & Execution</p>
+            </div>
+          </div>
+          <svg class="w-4 h-4 text-white/70 group-hover:text-white group-hover:translate-x-0.5 transition shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+
+        <!-- Button 2: JS Source Code -->
+        <button onclick="launchChooserJs()" class="group w-full p-3.5 rounded-xl bg-gradient-to-r from-slate-900 to-slate-800 hover:from-slate-950 hover:to-slate-900 text-white shadow-md hover:shadow-lg transition-all duration-200 flex items-center justify-between text-left cursor-pointer border border-slate-700/80 hover:border-amber-400/50">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-amber-400/10 flex items-center justify-center shrink-0 border border-amber-400/30 group-hover:scale-105 transition">
+              <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
+            </div>
+            <div>
+              <div class="flex items-center gap-1.5">
+                <span id="chooserCodeTitle" class="font-bold text-sm text-amber-300">JS Source Code</span>
+                <span id="chooserCodeBadge" class="text-[9px] font-mono font-extrabold uppercase px-1.5 py-0.5 rounded bg-amber-400/20 text-amber-300 border border-amber-400/30">100% Full</span>
+              </div>
+              <p id="chooserCodeDesc" class="text-[11px] text-slate-300 font-medium">View & Copy Pure JavaScript</p>
+            </div>
+          </div>
+          <svg class="w-4 h-4 text-slate-400 group-hover:text-amber-400 group-hover:translate-x-0.5 transition shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Footer -->
+      <div class="px-5 py-2.5 border-t border-slate-100 bg-slate-50/70 flex items-center justify-between text-xs text-slate-400">
+        <span class="text-[11px]">Press <kbd class="px-1.5 py-0.5 rounded bg-slate-200 text-slate-600 font-mono text-[10px]">Esc</kbd> to close</span>
+        <button onclick="closeViewChooser()" class="font-semibold text-slate-500 hover:text-slate-800 transition">
+          Cancel
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= IN-PORTAL CODE VIEWER MODAL ================= -->
+  <div id="codeModal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6 transition-all duration-200" onclick="if(event.target === this) closeCodeModal()">
+    <div class="bg-slate-900 border border-slate-700/80 rounded-2xl shadow-2xl w-full max-w-4xl max-h-[88vh] flex flex-col overflow-hidden text-slate-100">
+      
+      <!-- Modal Header -->
+      <div class="flex items-center justify-between px-5 py-4 border-b border-slate-800 bg-slate-950/80">
+        <div class="flex items-center gap-3 min-w-0">
+          <div class="w-8 h-8 rounded-xl bg-amber-400/10 text-amber-400 border border-amber-400/20 flex items-center justify-center shrink-0">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+          </div>
+          <div class="min-w-0">
+            <div class="flex items-center gap-2 flex-wrap">
+              <span id="modalTaskBadge" class="text-[11px] font-mono font-bold uppercase px-2.5 py-0.5 rounded-md bg-amber-400/20 text-amber-300 border border-amber-400/30">Day 1</span>
+              <h3 id="modalTitle" class="text-sm font-bold text-slate-100 truncate">JavaScript Task Code</h3>
+            </div>
+            <p id="modalPath" class="text-[11px] font-mono text-slate-400 mt-0.5 truncate">Frontend - Copy/Javascript-v24/...</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2 shrink-0">
+          <!-- Copy Code Button -->
+          <button id="modalCopyBtn" onclick="copyModalCode()" class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 flex items-center gap-1.5 transition">
+            <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
+            <span id="copyBtnText">Copy Code</span>
+          </button>
+
+          <!-- Raw Source Link -->
+          <a id="modalRawLink" href="#" class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 flex items-center gap-1.5 transition" title="Open raw file in current tab">
+            <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            <span class="hidden sm:inline">Open File</span>
+          </a>
+
+          <!-- Close Button -->
+          <button onclick="closeCodeModal()" class="p-1.5 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition" title="Close (Esc)">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Modal Code Viewport -->
+      <div class="p-4 sm:p-5 overflow-y-auto flex-1 font-mono text-xs sm:text-[13px] leading-relaxed bg-[#0d1117] select-text">
+        <pre><code id="modalCodeContent" class="text-slate-200 whitespace-pre"></code></pre>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="px-5 py-3 border-t border-slate-800 bg-slate-950/60 flex items-center justify-between text-xs text-slate-400">
+        <span id="modalFooterLabel" class="font-mono text-[11px]">JavaScript ECMAScript / Logic Task</span>
+        <button onclick="closeCodeModal()" class="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 transition">
+          Done
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

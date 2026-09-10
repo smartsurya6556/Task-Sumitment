@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College Admission Form</title>
+</head>
+<body>
+
+    <div><h2>Engineering College Admission Form</h2>
+
+        <form>
+            <label>Student Name:</label>
+            <input type="text" name="studentName"><br><br>
+
+            <label>Father Name:</label>
+            <input type="text" name="fatherName"><br><br>
+
+            <label>Mother Name:</label>
+            <input type="text" name="motherName"><br><br>
+
+            <label>Email:</label>
+            <input type="email" name="email"><br><br>
+
+            <label>Phone:</label>
+            <input type="tel" name="phone"><br><br>
+
+            <label>Date of Birth:</label>
+            <input type="date" name="dob"><br><br>
+
+            <label>Gender:</label>
+            <input type="radio" name="gender" value="Male"> Male
+            <input type="radio" name="gender" value="Female"> Female
+            <input type="radio" name="gender" value="Other"> Other
+            <br><br>
+
+            <label>Department:</label>
+            <select name="department">
+                <option>CSE</option>
+                <option>ECE</option>
+                <option>EEE</option>
+                <option>Mechanical</option>
+                <option>Civil</option>
+                <option>IT</option>
+            </select>
+            <br><br>
+
+            <label>Percentage:</label>
+            <input type="number" name="percentage" min="0" max="100">
+            <br><br>
+
+            <label>Address:</label><br>
+            <textarea name="address" rows="4" cols="30"></textarea>
+            <br><br>
+
+            <label>Passport Size Photo:</label>
+            <input type="file" name="photo">
+            <br><br>
+
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </form>
+
+    </div>
+
+<hr>
+
+<h2>Admission Applications</h2>
+
+<table border="2" cellpadding="8">
+    <tr>
+        <th>Application ID</th>
+        <th>Student Name</th>
+        <th>Department</th>
+        <th>Percentage</th>
+        <th>Email</th>
+        <th>Admission Status</th>
+    </tr>
+
+    <tr>
+        <td>1001</td>
+        <td>Rahul Kumar</td>
+        <td>CSE</td>
+        <td>91%</td>
+        <td>rahul@gmail.com</td>
+        <td>Pending</td>
+    </tr>
+
+    <tr>
+        <td>1002</td>
+        <td>Priya Sharma</td>
+        <td>ECE</td>
+        <td>95%</td>
+        <td>priya@gmail.com</td>
+        <td>Approved</td>
+    </tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 15 - DOM Toggle & Event Listeners</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    code, pre, .font-mono { font-family: 'JetBrains Mono', monospace; }
+
+    /* User DOM Animation Styles */
+    .content {
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .content.show {
+      opacity: 1;
+      max-height: 120px;
+    }
+
+    .box {
+      width: 140px;
+      height: 140px;
+      background-color: #ef4444;
+      border-radius: 12px;
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    }
+    .box.green {
+      background-color: #10b981;
+      border-radius: 9999px;
+      width: 220px;
+      transform: rotate(360deg);
+      box-shadow: 0 10px 15px -3px rgb(16 185 129 / 0.3);
+    }
+
+    .details {
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .details.show {
+      opacity: 1;
+      max-height: 160px;
+    }
+  </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen p-4 sm:p-8 flex flex-col">
+  <div class="max-w-5xl mx-auto w-full space-y-6 flex-1">
+    
+    <!-- Top Navigation -->
+    <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+      <a href="../../../index.html" onclick="if(window.history.length > 1){ window.history.back(); return false; }" class="inline-flex items-center gap-2 text-xs font-bold text-indigo-400 hover:text-indigo-300 transition">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+        <span>Back to DevTask HUB</span>
+      </a>
+      <span class="text-xs font-mono px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 font-bold">Day 15 Task</span>
+    </div>
+
+    <!-- Header -->
+    <header class="space-y-2">
+      <h1 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">JavaScript DOM Toggle & Event Listeners</h1>
+      <p class="text-sm text-slate-400">Interactive DOM manipulation: <code class="text-amber-400">classList.toggle()</code>, event listeners, dynamic button labels, and animated CSS transitions.</p>
+    </header>
+
+    <!-- Interactive Grid (3 Interactive Demos) -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      
+      <!-- Demo 1: Show/Hide Text Accordion -->
+      <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 flex flex-col justify-between shadow-xl space-y-4">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-indigo-500/20 text-indigo-300 font-bold">Demo 1</span>
+            <span class="text-xs text-slate-400">Text Toggle</span>
+          </div>
+          <h2 class="text-base font-bold text-white mb-2">Accordion Content</h2>
+          <p class="text-xs text-slate-400 mb-4">Click button to toggle visibility and switch button text between "Show" and "Hide".</p>
+          
+          <div class="bg-slate-900/60 rounded-xl p-3 border border-slate-700/50 min-h-[90px] flex items-center">
+            <p id="text" class="content text-xs text-slate-300 leading-relaxed font-medium">
+              🎉 This is the hidden paragraph! Click the button below to toggle and animate smoothly.
+            </p>
+          </div>
+        </div>
+
+        <button id="btn" class="w-full py-2.5 px-4 rounded-xl bg-indigo-600 hover:bg-indigo-500 active:scale-[0.98] text-white font-bold text-xs transition cursor-pointer shadow-md">
+          Show Content
+        </button>
+      </div>
+
+      <!-- Demo 2: Dynamic Shape & Color Mutator -->
+      <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 flex flex-col justify-between shadow-xl space-y-4">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold">Demo 2</span>
+            <span class="text-xs text-slate-400">Class Toggle</span>
+          </div>
+          <h2 class="text-base font-bold text-white mb-2">Color & Shape Morph</h2>
+          <p class="text-xs text-slate-400 mb-4">Click button to toggle class <code class="text-emerald-400">.green</code> which changes color, width, and border radius.</p>
+          
+          <div class="bg-slate-900/60 rounded-xl p-4 border border-slate-700/50 flex items-center justify-center min-h-[160px] overflow-hidden">
+            <div id="box" class="box flex items-center justify-center text-white font-bold text-xs select-none">
+              Morph Me
+            </div>
+          </div>
+        </div>
+
+        <button id="colorBtn" class="w-full py-2.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 active:scale-[0.98] text-white font-bold text-xs transition cursor-pointer shadow-md">
+          Change Color
+        </button>
+      </div>
+
+      <!-- Demo 3: Image Card with Expanding Details -->
+      <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 flex flex-col justify-between shadow-xl space-y-4">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 font-bold">Demo 3</span>
+            <span class="text-xs text-slate-400">Course Card</span>
+          </div>
+
+          <div class="card p-0 border-0 m-0 w-full space-y-3">
+            <div class="rounded-xl overflow-hidden border border-slate-700 bg-slate-950 aspect-video flex items-center justify-center">
+              <img src="./assets/image/micro Brain.webp" class="w-full h-full object-cover" alt="JavaScript Neural Brain">
+            </div>
+
+            <h2 class="text-base font-bold text-white">JavaScript Course</h2>
+
+            <div id="details" class="details">
+              <p class="text-xs text-slate-300 bg-slate-900/80 p-3 rounded-xl border border-slate-700/60 leading-relaxed">
+                JavaScript is a high-level, just-in-time compiled language conforming to the ECMAScript standard for interactive web development.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <button id="detailsBtn" class="w-full py-2.5 px-4 rounded-xl bg-purple-600 hover:bg-purple-500 active:scale-[0.98] text-white font-bold text-xs transition cursor-pointer shadow-md">
+          Show Details
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Live Event Activity Window -->
+    <div class="bg-slate-950 border border-slate-800 rounded-2xl p-4 shadow-xl space-y-2">
+      <div class="flex items-center justify-between border-b border-slate-800 pb-2">
+        <div class="flex items-center gap-2">
+          <div class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></div>
+          <span class="text-xs font-mono font-bold text-slate-300">Live DOM Event Activity</span>
+        </div>
+        <span class="text-[11px] text-slate-500">Interactive Console</span>
+      </div>
+      <div id="terminal" class="font-mono text-xs text-emerald-400 space-y-1 max-h-32 overflow-y-auto p-1">
+        <div class="text-slate-500">// Ready. Click the buttons above to trigger DOM events.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- User's script.js handles all DOM toggles -->
+  <script src="./assets/js/script.js"></script>
+
+  <!-- Event logger helper -->
+  <script>
+    const term = document.getElementById('terminal');
+    function logEvent(msg) {
+      const line = document.createElement('div');
+      line.className = 'text-emerald-400';
+      line.textContent = `[${new Date().toLocaleTimeString()}] ${msg}`;
+      term.appendChild(line);
+      term.scrollTop = term.scrollHeight;
+    }
+    document.getElementById('btn').addEventListener('click', () => logEvent('Event: #btn clicked -> toggled #text show'));
+    document.getElementById('colorBtn').addEventListener('click', () => logEvent('Event: #colorBtn clicked -> toggled #box .green'));
+    document.getElementById('detailsBtn').addEventListener('click', () => logEvent('Event: #detailsBtn clicked -> toggled #details show'));
+  </script>
+</body>
+</html>

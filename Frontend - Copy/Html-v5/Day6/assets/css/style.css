@@ -1,0 +1,224 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    
+}
+a{
+    text-decoration: none;
+}
+.nav{
+    background-color: rgba(117, 122, 99, 0.714);
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+    gap: 20px;
+    height: 80px;
+    box-shadow:  4px 3px 4px 1px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    
+}
+.nav > a{
+    color: rgb(12, 12, 12);
+    padding: 10px;
+    font-size: large;
+    font-weight: 500;
+}
+
+.nav a:hover{
+    background-color: #363637c2;
+    padding: 12px;
+    color: aliceblue;
+    border-radius: 8px;
+    box-shadow: 4px 2px 4px 2px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.zoho{
+    height: 420px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 800px;
+    border-radius: 10px;
+    position: relative;
+    top: 20px;
+    left: 250px;
+    z-index: 0;
+    border: none;
+    
+
+}
+.zoho > div{
+    font-size: large;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    width: 550px;
+    height: 300px;
+    z-index: 1;
+    background-color: rgb(242, 244, 246);
+    border: none;
+    border-radius: 15px;
+    position: absolute;
+    top: 80px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.2) 2px 3px 4px 2px;
+}
+.zoho > h2{
+    font-size: 34px;
+    position: relative;
+    bottom: 25px;
+    color: rgba(27, 32, 83, 0.956);
+
+}
+
+.zoho > div > form{
+    font-weight: 600;
+    padding: 20px;
+    position: absolute;
+    right: 160px;
+    top: 60px;
+    line-height: 2.5;
+    
+}
+.zoho h3{
+    color: rgba(2, 55, 16, 0.86);
+    padding: 20px;
+}
+.login-btn{
+    background-color: rgb(32, 98, 156);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 35px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    position: relative;
+    left: 250px;
+}
+
+.login-btn:hover{
+    transition: all 0.3s ease;
+    transform: scale(1.1)translateY(-1.5px);
+}
+
+.login-btn:active{
+transform: scale(0.95);
+background-color: rgb(49, 46, 46);
+}
+
+.zoho > div > form >input[type="text"]{
+    width: 180px;
+    height: 35px;
+    padding: 10px;
+    border-radius: 10px;
+    position: relative;
+    left: 62px;
+    border: none;
+    box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.2);
+}
+.zoho > div > form >input[type="password"]{
+     width: 180px;
+    height: 35px;
+    padding: 10px;
+    border-radius: 10px;
+    position: relative;
+    left: 140px;
+    border: none;
+    /* box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.2); */
+}
+.zoho > div > form >input[type="checkbox"]{
+    width: 50px ;
+    height: 20px;
+    border: none;
+    
+}
+
+.par{
+
+    position: relative;
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sla{
+    background-color:antiquewhite;
+    height: 1000px;
+    font-size: large;
+    position: relative;
+    bottom: 30px;
+    width: 600px;
+    top: 20px;
+    right: 115px;
+    z-index: 1;
+    background-color: rgb(242, 244, 246);
+    border: none;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.2) 2px 3px 4px 2px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sla > form{
+    padding: 30px;
+    display: flex;
+    font-size:large;
+    flex-direction: column;
+    right: 160px;
+    top: 60px;
+    line-height: 2.5;
+}
+.sla > h3{
+    position: relative;
+    padding: 20px;
+    left: 152px;
+    color: rgba(2, 55, 16, 0.86);
+}
+
+.par > h2{
+    font-size: 34px;
+    position: relative;
+    bottom: 25px;
+    color: rgba(27, 32, 83, 0.956);
+    position: relative;
+    right: 78px;
+    top: 5px;
+}
+
+.re-btn{
+    position: relative;
+    
+    top: 50px;
+
+    width: 60px;
+    height: 35px;
+    border-radius: 10px;
+    left: 220px;
+}
+#btn input{
+    background-color: rgb(32, 98, 156);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 35px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    position: relative;
+    left: 250px;
+}

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 2 — Variables & Data Types (All 54 Declarations & Live Output)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    code, pre, .font-mono { font-family: 'JetBrains Mono', monospace; }
+  </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen p-4 sm:p-8 flex flex-col">
+  <div class="max-w-6xl mx-auto w-full space-y-6 flex-1">
+    
+    <!-- Top Navigation -->
+    <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+      <a href="../../../index.html" onclick="if(window.history.length > 1){ window.history.back(); return false; }" class="inline-flex items-center gap-2 text-xs font-bold text-indigo-400 hover:text-indigo-300 transition">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+        <span>Back to DevTask HUB</span>
+      </a>
+      <span class="text-xs font-mono px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20 font-bold">Day 2 Task</span>
+    </div>
+
+    <!-- Header -->
+    <header class="space-y-2">
+      <h1 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Day 2: Variables & Data Types (var, let, const)</h1>
+      <p class="text-sm text-slate-400">Complete execution of all 54 variable declarations across 3 scopes from <code class="text-amber-400">assets/js/index.js</code>.</p>
+    </header>
+
+    <!-- Cards Grid: 3 Scopes with Full 54 Declarations -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      
+      <!-- Section 1: var variables -->
+      <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-5 flex flex-col justify-between shadow-xl space-y-3">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 font-bold">SECTION 1</span>
+            <span class="text-[11px] font-mono font-bold text-blue-400">18 var Variables</span>
+          </div>
+          <h3 class="text-sm font-bold text-white">STRING & IDENTITY DECLARATIONS</h3>
+          <div class="mt-3 space-y-1.5 max-h-80 overflow-y-auto pr-1">
+            <div class="flex justify-between text-xs font-mono p-1.5 bg-slate-950/60 rounded border border-slate-700/40"><span class="text-slate-400">userName</span><span class="text-blue-300 font-bold">"Surya"</span></div>
+            <div class="flex justify-between text-xs font-mono p-1.5 bg-slate-950/60 rounded border border-slate-700/40"><span class="text-slate-400">whereCity</span><span class="text-blue-300 font-bold">"Chennai"</span></div>
+            <div class="flex justify-between text-xs font-mono p-1.5 bg-slate-950/60 rounded border border-slate-700/40"><span class="text-slate-400">whereCountry</span><span class="text-blue-300 font-bold">"India"</span></div>
+            <div class="flex justify-between text-xs font-mono p-1.5 bg-slate-950/60 rounded border border-slate-700/40"><span class="text-slate-400">whatCourse</span><span class="text-blue-300 font-bold">"JavaScript"</span></div>
+            <div class="flex justify-between text-xs font-mono p-1.5 bg-slate-950/60 rounded border border-slate-700/40"><span class="text-slate-400">whatLanguage</span><span class="text-blue-300 font-bold">"English"</span></div>
+            <div class="flex justify-between text-xs font-mono p-1.5 bg-slate-950/60 rounded border border-slate-700/40"><span class="text-slate-400">myCompany</span><span class="text-blue-300 font-bold">"Google"</span></div>
+            <div class="flex justify-between text-xs font-mono p-1.5 bg-slate-950/60 rounded border border-slate-700/40"><span class="text-slate-400">jobRoll</span><span class="text-blue-300 font-bold">"Developer"</span></div>
+            <div class="flex justify-between text-xs font-mono p-1.5 bg-slate-950/60 rounded border border-slate-700/40"><span class="text-slate-400">skyColor</span><span class="text-blue-300 font-bold">"Blue"</span></div>
+            <div class="flex justify-between text-xs font-mono p-1.5 bg-slate-950/60 rounded border border-slate-700/40"><span class="text-slate-400">todayFood</span><span class="text-blue-300 font-bold">"Biryani"</span></div>
+            <div class="flex justify-between text-xs font-mono p-1.5 bg-slate-950/60 rounded border border-slate-700/40"><span class="text-slate-400">favoretMovie</span><span class="text-blue-300 font-bold">"Avatar"</span></div>
+            <div class="flex justify-between text-xs font-mono p-1.5 bg-slate-950/60 rounded border border-slate-700/40"><span class="text-slate-400">favroretSport</span><span class="text-blue-300 font-bold">"Kabaddi"</span></div>
+            <div class="flex justify-between text-xs font-mono p-1.5 bg-slate-950/60 rounded border border-slate-700/40"><span class="text-slate-400">myCollege</span><span class="text-blue-300 font-bold">"Govt College"</span></div>
+            <div class="flex justify-between text-xs font-mono p-1.5 bg-slate-950/60 rounded border border-slate-700/40"><span class="text-slate-400">netBrowser</span><span class="text-blue-300 font-bold">"Chrome"</span></div>
+            <div class="flex justify-between text-xs font-mono p-1.5 bg-slate-950/60 rounded border border-slate-700/40"><span class="text-slate-400">usingDevice</span><span class="text-blue-300 font-bold">"Laptop"</span></div>
+            <div class="flex justify-between text-xs font-mono p-1.5 bg-slate-950/60 rounded border border-slate-700/40"><span class="text-slate-400">itSubject</span><span class="text-blue-300 font-bold">"Computer Sci"</span></div>
+            <div class="flex justify-between text-xs font-mono p-1.5 bg-slate-950/60 rounded border border-slate-700/40"><span class="text-slate-400">todayIs</span><span class="text-blue-300 font-bold">"Monday"</span></div>
+            <div class="flex justify-between text-xs font-mono p-1.5 bg-slate-950/60 rounded border border-slate-700/40"><span class="text-slate-400">firstMessage</span><span class="text-blue-300 font-bold">"Hello"</span></div>
+            <div class="flex justify-between text-xs font-mono p-1.5 bg-slate-950/60 rounded border border-slate-700/40"><span class="text-slate-400">crentStatus</span><span class="text-blue-300 font-bold">"Active"</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 2: let variables -->
+      <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-5 flex flex-col justify-between shadow-xl space-y-3">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold">SECTION 2</span>
+            <span class="text-[11px] font-mono font-bold text-emerald-400">18 let Variables</span>
+          </div>
+          <h3 class="text-sm font-bold text-white">NUMERIC METRICS & COUNTERS</h3>
+          <div class="mt-3 space-y-1.5 max-h-80 overflow-y-auto pr-1">
+            <div class="flex justify-between text-xs font-mono p-1.5 bg-slate-950/60 rounded border border-slate-700/40"><span class="text-slate-400">userAge</span><span class="text-emerald-300 font-bold">20</span></div>
+            <div class="flex justify-between text-xs font-mono p-1.5 bg-slate-950/60 rounded border border-slate-700/40"><span class="text-slate-400">userMarks</span><span class="text-emerald-300 font-bold">85</span></div>
+            <div class="flex justify-between text-xs font-mono p-1.5 bg-slate-950/60 rounded border border-slate-700/40"><span class="text-slate-400">userSalary</span><span class="text-emerald-300 font-bold">25000</span></div>
+            <div class="flex justify-between text-xs font-mono p-1.5 bg-slate-950/60 rounded border border-slate-700/40"><span class="text-slate-400">nowYear</span><span class="text-emerald-300 font-bold">2026</span></div>
+            <div class="flex justify-between text-xs font-mono p-1.5 bg-slate-950/60 rounded border border-slate-700/40"><span class="text-slate-400">appleCount</span><span class="text-emerald-300 font-bold">10</span></div>
+            <div class="flex justify-between text-xs font-mono p-1.5 bg-slate-950/60 rounded border border-slate-700/40"><span class="text-slate-400">teamScore</span><span class="text-emerald-300 font-bold">95</span></div>
+            <div class="flex justify-between text-xs font-mono p-1.5 bg-slate-950/60 rounded border border-slate-700/40"><span class="text-slate-400">priceAmount</span><span class="text-emerald-300 font-bold">500</span></div>
+            <div class="flex justify-between text-xs font-mono p-1.5 bg-slate-950/60 rounded border border-slate-700/40"><span class="text-slate-400">foodQuantity</span><span class="text-emerald-300 font-bold">5</span></div>
+            <div class="flex justify-between text-xs font-mono p-1.5 bg-slate-950/60 rounded border border-slate-700/40"><span class="text-slate-400">myRank</span><span class="text-emerald-300 font-bold">1</span></div>
+            <div class="flex justify-between text-xs font-mono p-1.5 bg-slate-950/60 rounded border border-slate-700/40"><span class="text-slate-400">studentsName</span><span class="text-emerald-300 font-bold">50</span></div>
+            <div class="flex justify-between text-xs font-mono p-1.5 bg-slate-950/60 rounded border border-slate-700/40"><span class="text-slate-400">daysNum</span><span class="text-emerald-300 font-bold">30</span></div>
+            <div class="flex justify-between text-xs font-mono p-1.5 bg-slate-950/60 rounded border border-slate-700/40"><span class="text-slate-400">hoursCount</span><span class="text-emerald-300 font-bold">8</span></div>
+            <div class="flex justify-between text-xs font-mono p-1.5 bg-slate-950/60 rounded border border-slate-700/40"><span class="text-slate-400">minutesCount</span><span class="text-emerald-300 font-bold">60</span></div>
+            <div class="flex justify-between text-xs font-mono p-1.5 bg-slate-950/60 rounded border border-slate-700/40"><span class="text-slate-400">secondsCount</span><span class="text-emerald-300 font-bold">30</span></div>
+            <div class="flex justify-between text-xs font-mono p-1.5 bg-slate-950/60 rounded border border-slate-700/40"><span class="text-slate-400">pageNumber</span><span class="text-emerald-300 font-bold">100</span></div>
+            <div class="flex justify-between text-xs font-mono p-1.5 bg-slate-950/60 rounded border border-slate-700/40"><span class="text-slate-400">gameTotal</span><span class="text-emerald-300 font-bold">1000</span></div>
+            <div class="flex justify-between text-xs font-mono p-1.5 bg-slate-950/60 rounded border border-slate-700/40"><span class="text-slate-400">workExperience</span><span class="text-emerald-300 font-bold">2</span></div>
+            <div class="flex justify-between text-xs font-mono p-1.5 bg-slate-950/60 rounded border border-slate-700/40"><span class="text-slate-400">lerlingPercentage</span><span class="text-emerald-300 font-bold">90</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 3: const variables -->
+      <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-5 flex flex-col justify-between shadow-xl space-y-3">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 font-bold">SECTION 3</span>
+            <span class="text-[11px] font-mono font-bold text-purple-400">18 const Flags</span>
+          </div>
+          <h3 class="text-sm font-bold text-white">BOOLEAN SYSTEM FLAGS</h3>
+          <div class="mt-3 space-y-1.5 max-h-80 overflow-y-auto pr-1">
+            <div class="flex justify-between text-xs font-mono p-1.5 bg-slate-950/60 rounded border border-slate-700/40"><span class="text-slate-400">isStudent</span><span class="text-emerald-400 font-bold">true</span></div>
+            <div class="flex justify-between text-xs font-mono p-1.5 bg-slate-950/60 rounded border border-slate-700/40"><span class="text-slate-400">isLoggedIn</span><span class="text-emerald-400 font-bold">true</span></div>
+            <div class="flex justify-between text-xs font-mono p-1.5 bg-slate-950/60 rounded border border-slate-700/40"><span class="text-slate-400">isActive</span><span class="text-rose-400 font-bold">false</span></div>
+            <div class="flex justify-between text-xs font-mono p-1.5 bg-slate-950/60 rounded border border-slate-700/40"><span class="text-slate-400">isAvailable</span><span class="text-emerald-400 font-bold">true</span></div>
+            <div class="flex justify-between text-xs font-mono p-1.5 bg-slate-950/60 rounded border border-slate-700/40"><span class="text-slate-400">isCompleted</span><span class="text-rose-400 font-bold">false</span></div>
+            <div class="flex justify-between text-xs font-mono p-1.5 bg-slate-950/60 rounded border border-slate-700/40"><span class="text-slate-400">isValid</span><span class="text-emerald-400 font-bold">true</span></div>
+            <div class="flex justify-between text-xs font-mono p-1.5 bg-slate-950/60 rounded border border-slate-700/40"><span class="text-slate-400">isOnline</span><span class="text-emerald-400 font-bold">true</span></div>
+            <div class="flex justify-between text-xs font-mono p-1.5 bg-slate-950/60 rounded border border-slate-700/40"><span class="text-slate-400">isAdmin</span><span class="text-rose-400 font-bold">false</span></div>
+            <div class="flex justify-between text-xs font-mono p-1.5 bg-slate-950/60 rounded border border-slate-700/40"><span class="text-slate-400">isPermission</span><span class="text-emerald-400 font-bold">true</span></div>
+            <div class="flex justify-between text-xs font-mono p-1.5 bg-slate-950/60 rounded border border-slate-700/40"><span class="text-slate-400">isReady</span><span class="text-emerald-400 font-bold">true</span></div>
+            <div class="flex justify-between text-xs font-mono p-1.5 bg-slate-950/60 rounded border border-slate-700/40"><span class="text-slate-400">isOpen</span><span class="text-rose-400 font-bold">false</span></div>
+            <div class="flex justify-between text-xs font-mono p-1.5 bg-slate-950/60 rounded border border-slate-700/40"><span class="text-slate-400">isPaid</span><span class="text-emerald-400 font-bold">true</span></div>
+            <div class="flex justify-between text-xs font-mono p-1.5 bg-slate-950/60 rounded border border-slate-700/40"><span class="text-slate-400">isSuccess</span><span class="text-emerald-400 font-bold">true</span></div>
+            <div class="flex justify-between text-xs font-mono p-1.5 bg-slate-950/60 rounded border border-slate-700/40"><span class="text-slate-400">isError</span><span class="text-rose-400 font-bold">false</span></div>
+            <div class="flex justify-between text-xs font-mono p-1.5 bg-slate-950/60 rounded border border-slate-700/40"><span class="text-slate-400">isVisible</span><span class="text-emerald-400 font-bold">true</span></div>
+            <div class="flex justify-between text-xs font-mono p-1.5 bg-slate-950/60 rounded border border-slate-700/40"><span class="text-slate-400">isEnabled</span><span class="text-emerald-400 font-bold">true</span></div>
+            <div class="flex justify-between text-xs font-mono p-1.5 bg-slate-950/60 rounded border border-slate-700/40"><span class="text-slate-400">isSelected</span><span class="text-rose-400 font-bold">false</span></div>
+            <div class="flex justify-between text-xs font-mono p-1.5 bg-slate-950/60 rounded border border-slate-700/40"><span class="text-slate-400">isData</span><span class="text-emerald-400 font-bold">true</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Live Console Output Terminal -->
+    <div class="bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden shadow-2xl space-y-0">
+      <div class="bg-slate-900/90 px-5 py-3.5 border-b border-slate-800 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <div class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></div>
+          <span class="text-xs font-mono font-bold text-slate-200">Live Console Output (54 Outputs from: assets/js/index.js)</span>
+        </div>
+        <button onclick="runDay2Script()" class="px-3 py-1 rounded-lg text-xs font-bold bg-emerald-500 hover:bg-emerald-400 text-slate-950 transition cursor-pointer">
+          Re-run Output
+        </button>
+      </div>
+      <div id="terminal" class="p-5 font-mono text-xs text-emerald-400 leading-relaxed max-h-80 overflow-y-auto space-y-1 bg-[#090d16]">
+        <!-- Intercepted console.log outputs injected here -->
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    const term = document.getElementById('terminal');
+
+    function appendLog(arg) {
+      const line = document.createElement('div');
+      line.className = 'font-mono text-xs leading-relaxed';
+      const text = typeof arg === 'object' ? JSON.stringify(arg) : String(arg);
+
+      if (text === 'true') {
+        line.className += ' text-emerald-400 font-bold';
+      } else if (text === 'false') {
+        line.className += ' text-rose-400 font-bold';
+      } else if (!isNaN(text)) {
+        line.className += ' text-amber-300 font-semibold';
+      } else {
+        line.className += ' text-blue-300';
+      }
+
+      line.innerHTML = `<span class="text-slate-600 select-none mr-2">&gt;</span>${text}`;
+      term.appendChild(line);
+      term.scrollTop = term.scrollHeight;
+    }
+
+    const originalLog = console.log;
+    console.log = function(...args) {
+      originalLog.apply(console, args);
+      args.forEach(a => appendLog(a));
+    };
+
+    function runDay2Script() {
+      term.innerHTML = '';
+      
+      // Load assets/js/index.js code execution
+      // 1. var using
+      var userName = "Surya"; console.log(userName);
+      var whereCity = "Chennai"; console.log(whereCity);
+      var whereCountry = "India"; console.log(whereCountry);
+      var whatCourse = "JavaScript"; console.log(whatCourse);
+      var whatLanguage = "English"; console.log(whatLanguage);
+      var myCompany = "Google"; console.log(myCompany);
+      var jobRoll = "Developer"; console.log(jobRoll);
+      var skyColor = "Blue"; console.log(skyColor);
+      var todayFood = "Biryani"; console.log(todayFood);
+      var favoretMovie = "Avatar"; console.log(favoretMovie);
+      var favroretSport = "Kabaddi"; console.log(favroretSport);
+      var myCollege = "Government College"; console.log(myCollege);
+      var netBrowser = "Chrome"; console.log(netBrowser);
+      var usingDevice = "Laptop"; console.log(usingDevice);
+      var itSubject = "Computer Science"; console.log(itSubject);
+      var todayIs = "Monday"; console.log(todayIs);
+      var firstMessage = "Hello"; console.log(firstMessage);
+      var crentStatus = "Active"; console.log(crentStatus);
+
+      // 2. let using
+      let userAge = 20; console.log(userAge);
+      let userMarks = 85; console.log(userMarks);
+      let userSalary = 25000; console.log(userSalary);
+      let nowYear = 2026; console.log(nowYear);
+      let appleCount = 10; console.log(appleCount);
+      let teamScore = 95; console.log(teamScore);
+      let priceAmount = 500; console.log(priceAmount);
+      let foodQuantity = 5; console.log(foodQuantity);
+      let myRank = 1; console.log(myRank);
+      let studentsName = 50; console.log(studentsName);
+      let daysNum = 30; console.log(daysNum);
+      let hoursCount = 8; console.log(hoursCount);
+      let minutesCount = 60; console.log(minutesCount);
+      let secondsCount = 30; console.log(secondsCount);
+      let pageNumber = 100; console.log(pageNumber);
+      let gameTotal = 1000; console.log(gameTotal);
+      let workExperience = 2; console.log(workExperience);
+      let lerlingPercentage = 90; console.log(lerlingPercentage);
+
+      // 3. const using
+      const isStudent = true; console.log(isStudent);
+      const isLoggedIn = true; console.log(isLoggedIn);
+      const isActive = false; console.log(isActive);
+      const isAvailable = true; console.log(isAvailable);
+      const isCompleted = false; console.log(isCompleted);
+      const isValid = true; console.log(isValid);
+      const isOnline = true; console.log(isOnline);
+      const isAdmin = false; console.log(isAdmin);
+      const isPermission = true; console.log(isPermission);
+      const isReady = true; console.log(isReady);
+      const isOpen = false; console.log(isOpen);
+      const isPaid = true; console.log(isPaid);
+      const isSuccess = true; console.log(isSuccess);
+      const isError = false; console.log(isError);
+      const isVisible = true; console.log(isVisible);
+      const isEnabled = true; console.log(isEnabled);
+      const isSelected = false; console.log(isSelected);
+      const isData = true; console.log(isData);
+    }
+
+    runDay2Script();
+  </script>
+</body>
+</html>

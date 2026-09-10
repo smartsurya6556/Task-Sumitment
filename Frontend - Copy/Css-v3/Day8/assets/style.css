@@ -1,0 +1,159 @@
+
+
+/*Day 8 - Pseudo Class & Pseudo Elements*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    padding: 30px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+section {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+}
+
+section h2 {
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   Task 1 - :hover
+   ========================= */
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.buttons button {
+    padding: 12px 25px;
+    border: none;
+    background-color: #333;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.buttons button:hover {
+    background-color: orange;
+    color: black;
+}
+
+
+/* =========================
+   Task 2 - :focus
+   ========================= */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+}
+
+form input {
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+form input:focus {
+    border-color: blue;
+    background-color: #eaf2ff;
+}
+
+form button {
+    padding: 12px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+
+/* =========================
+   Task 3 - :first-child
+   :last-child
+   ========================= */
+
+.student-list {
+    padding-left: 30px;
+}
+
+.student-list li {
+    padding: 8px;
+}
+
+.student-list li:first-child {
+    background-color: lightgreen;
+    color: darkgreen;
+}
+
+.student-list li:last-child {
+    background-color: lightcoral;
+    color: darkred;
+}
+
+
+/* =========================
+   Task 4 - ::before
+   ::after
+   ========================= */
+
+.headings h3 {
+    margin: 15px 0;
+    font-size: 24px;
+}
+
+.headings h3::before {
+    content: "★ ";
+    color: orange;
+}
+
+.headings h3::after {
+    content: " ✔";
+    color: green;
+}
+
+
+/* =========================
+   Task 5 - ::first-letter
+   ::first-line
+   ::selection
+   ========================= */
+
+.paragraphs p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.paragraphs p::first-letter {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.paragraphs p::first-line {
+    color: blue;
+}
+
+.paragraphs p::selection {
+    background-color: yellow;
+    color: black;
+}

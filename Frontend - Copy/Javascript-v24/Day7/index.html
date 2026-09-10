@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 7 — Non-Primitive Data Types & Looping Algorithms (Full Tasks)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    code, pre, .font-mono { font-family: 'JetBrains Mono', monospace; }
+  </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen p-4 sm:p-8 flex flex-col">
+  <div class="max-w-6xl mx-auto w-full space-y-6 flex-1">
+    
+    <!-- Top Navigation -->
+    <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+      <a href="../../../index.html" onclick="if(window.history.length > 1){ window.history.back(); return false; }" class="inline-flex items-center gap-2 text-xs font-bold text-indigo-400 hover:text-indigo-300 transition">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+        <span>Back to DevTask HUB</span>
+      </a>
+      <span class="text-xs font-mono px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-bold">Day 7 Task</span>
+    </div>
+
+    <!-- Header -->
+    <header class="space-y-2">
+      <h1 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Day 7: Non-Primitive Data Types & Looping Algorithms</h1>
+      <p class="text-sm text-slate-400">Complete execution of all 7 non-primitive data algorithms from <code class="text-amber-400">assets/js/script.js</code>.</p>
+    </header>
+
+    <!-- Cards Grid: All 7 Tasks -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      
+      <!-- Task 1: Reverse Number Printing -->
+      <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-5 flex flex-col justify-between shadow-xl space-y-3">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 font-bold">TASK 1</span>
+            <span class="text-[11px] font-bold text-blue-400">Math Loop</span>
+          </div>
+          <h3 class="text-sm font-bold text-white">REVERSE NUMBER PRINTING</h3>
+          <p class="text-xs text-slate-400 mt-1">Input: <code class="text-indigo-300 font-mono">num = 19456873</code></p>
+          <div class="mt-3 p-3 bg-slate-950/70 rounded-xl border border-slate-700/50 space-y-1">
+            <div class="text-[11px] text-slate-400">Reversed: <span class="text-emerald-400 font-mono font-bold">37865491</span></div>
+            <div class="text-xs font-mono text-slate-400">Total Digits: 8</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Task 2: Front Number Printing -->
+      <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-5 flex flex-col justify-between shadow-xl space-y-3">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-indigo-500/20 text-indigo-300 font-bold">TASK 2</span>
+            <span class="text-[11px] font-bold text-indigo-400">String Iteration</span>
+          </div>
+          <h3 class="text-sm font-bold text-white">FRONT NUMBER DIGIT EXTRACTION</h3>
+          <p class="text-xs text-slate-400 mt-1">Input: <code class="text-indigo-300 font-mono">num = 649721</code></p>
+          <div class="mt-3 p-3 bg-slate-950/70 rounded-xl border border-slate-700/50 space-y-1">
+            <div class="text-[11px] text-slate-400">Digits: <span class="text-indigo-300 font-mono font-bold">6, 4, 9, 7, 2, 1</span></div>
+            <div class="text-xs font-mono text-slate-400">Count: 6 digits</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Task 3: Array Access Fruits -->
+      <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-5 flex flex-col justify-between shadow-xl space-y-3">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold">TASK 3</span>
+            <span class="text-[11px] font-bold text-emerald-400">4 Fruits</span>
+          </div>
+          <h3 class="text-sm font-bold text-white">FRUITS INVENTORY & PRICING</h3>
+          <p class="text-xs text-slate-400 mt-1">Pricing and origin details:</p>
+          <div class="mt-3 p-3 bg-slate-950/70 rounded-xl border border-slate-700/50 space-y-1 text-xs font-mono">
+            <div class="text-emerald-300">Apple &rarr; ₹98 (India)</div>
+            <div class="text-amber-300">Orange &rarr; ₹75 (Kamala)</div>
+            <div class="text-yellow-300">Mango &rarr; ₹67 (Salem)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Task 4: Student Object Access -->
+      <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-5 flex flex-col justify-between shadow-xl space-y-3">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 font-bold">TASK 4</span>
+            <span class="text-[11px] font-bold text-purple-400">Nested Object</span>
+          </div>
+          <h3 class="text-sm font-bold text-white">STUDENT PROFILE (Object Access)</h3>
+          <p class="text-xs text-slate-400 mt-1">Properties: name, age, course, mark, grade, from</p>
+          <div class="mt-3 p-3 bg-slate-950/70 rounded-xl border border-slate-700/50 space-y-1 text-xs font-mono text-slate-300">
+            <div>Name: <span class="text-purple-300 font-bold">Surya</span> | Age: 25</div>
+            <div>Course: HTML | Mark: 99 (A+)</div>
+            <div>From: Tenkasi (720648)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Task 5: Array of Objects -->
+      <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-5 flex flex-col justify-between shadow-xl space-y-3">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-teal-500/20 text-teal-300 font-bold">TASK 5</span>
+            <span class="text-[11px] font-bold text-teal-400">3 Students</span>
+          </div>
+          <h3 class="text-sm font-bold text-white">STUDENT ROSTER (Array of Objects)</h3>
+          <p class="text-xs text-slate-400 mt-1">Iterating objects with for loop:</p>
+          <div class="mt-3 p-3 bg-slate-950/70 rounded-xl border border-slate-700/50 space-y-1 text-xs font-mono text-teal-300">
+            <div>1. Surya &mdash; 25 yrs &mdash; Grade A+</div>
+            <div>2. Karthi &mdash; 21 yrs &mdash; Grade B</div>
+            <div>3. Swetha &mdash; 23 yrs &mdash; Grade A</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Task 6: Find a Student -->
+      <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-5 flex flex-col justify-between shadow-xl space-y-3">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-rose-500/20 text-rose-300 font-bold">TASK 6</span>
+            <span class="text-[11px] font-bold text-rose-400">Search Match</span>
+          </div>
+          <h3 class="text-sm font-bold text-white">FIND STUDENT BY NAME</h3>
+          <p class="text-xs text-slate-400 mt-1">Target query: <code class="text-indigo-300 font-mono">search = "Swetha"</code></p>
+          <div class="mt-3 p-3 bg-slate-950/70 rounded-xl border border-slate-700/50 space-y-1 text-xs font-mono">
+            <div class="text-emerald-400 font-bold">&check; Found: Swetha</div>
+            <div class="text-slate-300">Grade: A | Course: CSS</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Task 7: Salary Filter -->
+      <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-5 flex flex-col justify-between shadow-xl space-y-3 md:col-span-2 lg:col-span-3">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 font-bold">TASK 7</span>
+            <span class="text-[11px] font-bold text-amber-400">Filter Criteria: &gt; ₹40,000</span>
+          </div>
+          <h3 class="text-sm font-bold text-white">EMPLOYEE SALARY FILTER (&gt; ₹40,000)</h3>
+          <p class="text-xs text-slate-400 mt-1">Filtering 5 employees (Surya ₹48k, Arun ₹35k, Kumar ₹38k, Ravi ₹45k, Vijay ₹42k):</p>
+          <div class="mt-3 grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs font-mono">
+            <div class="p-2.5 bg-slate-950/70 rounded-xl border border-slate-700/50 text-emerald-400">
+              <div class="font-bold">Surya (TCS)</div>
+              <div>Salary: ₹48,000 (+₹8,000)</div>
+            </div>
+            <div class="p-2.5 bg-slate-950/70 rounded-xl border border-slate-700/50 text-emerald-400">
+              <div class="font-bold">Ravi (Zoho)</div>
+              <div>Salary: ₹45,000 (+₹5,000)</div>
+            </div>
+            <div class="p-2.5 bg-slate-950/70 rounded-xl border border-slate-700/50 text-emerald-400">
+              <div class="font-bold">Vijay (Accenture)</div>
+              <div>Salary: ₹42,000 (+₹2,000)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Live Console Output Terminal -->
+    <div class="bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden shadow-2xl space-y-0">
+      <div class="bg-slate-900/90 px-5 py-3.5 border-b border-slate-800 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <div class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></div>
+          <span class="text-xs font-mono font-bold text-slate-200">Live Console Output (Running: assets/js/script.js)</span>
+        </div>
+        <button onclick="runDay7Script()" class="px-3 py-1 rounded-lg text-xs font-bold bg-emerald-500 hover:bg-emerald-400 text-slate-950 transition cursor-pointer">
+          Re-run Output
+        </button>
+      </div>
+      <div id="terminal" class="p-5 font-mono text-xs text-emerald-400 leading-relaxed max-h-80 overflow-y-auto space-y-1 bg-[#090d16]">
+        <!-- Intercepted console.log lines injected here -->
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    const term = document.getElementById('terminal');
+
+    function appendLog(...args) {
+      const line = document.createElement('div');
+      line.className = 'font-mono text-xs leading-relaxed text-slate-300';
+      const text = args.map(a => typeof a === 'object' ? JSON.stringify(a) : String(a)).join(' ');
+
+      if (text.includes('TASK') || text.includes('===')) {
+        line.className = 'font-mono text-xs text-purple-400 font-bold pt-1 border-t border-slate-800/60 mt-1';
+      } else if (text.includes('Name is') || text.includes('Found')) {
+        line.className = 'font-mono text-xs text-emerald-400 font-bold';
+      }
+
+      line.innerHTML = `<span class="text-slate-600 select-none mr-2">&gt;</span>${text}`;
+      term.appendChild(line);
+      term.scrollTop = term.scrollHeight;
+    }
+
+    const originalLog = console.log;
+    console.log = function(...args) {
+      originalLog.apply(console, args);
+      appendLog(...args);
+    };
+
+    function runDay7Script() {
+      term.innerHTML = '';
+      
+      console.log("=== 1. Reverse Number Printing Loop ===");
+      let num = 19456873;
+      let line = "";
+      let count = 0;
+      for(; num > 0; num = Math.floor(num / 10)) {
+        line += num % 10;
+        count += 1;
+      }
+      console.log("Reverse Number of :\n " + line);
+      console.log("Total Digits Of :", count);
+
+      console.log("=== 2. Front Number Printing Loop ===");
+      num = 649721;
+      count = 0;
+      for(let i = 0; i < num.toString().length; i++) {
+        console.log("Digit:", num.toString()[i]);
+        count += 1;
+      }
+      console.log("Total Front Digits Count:", count);
+
+      console.log("=== 3. Array Access (Fruits) ===");
+      let fruits = ["Apple", "Orange", "Mango", "Banana"];
+      for(let i = 0; i < fruits.length; i++) {
+        if(fruits[i] === "Apple") console.log(fruits[i], "\n This is Making From India\n Rs 98");
+        if(fruits[i] === "Orange") console.log(fruits[i], "\n This is Kamala Orange\n Rs 75");
+        if(fruits[i] === "Mango") { console.log(fruits[i], "\n This is Making From Salem\n Rs 67"); break; }
+      }
+      console.log("Total Fruits :", fruits.length);
+
+      console.log("=== 4. Object Access (Student Profile) ===");
+      let students = {
+        name: "surya",
+        age: 25,
+        course: "HTML",
+        mark: "99",
+        grade: "A+",
+        from: { name: "Tenkasi", pincode: 720648 }
+      };
+      console.log("Name:", students.name);
+      console.log("Age:", students.age);
+      console.log("From:", students.from.name);
+
+      console.log("=== 5. Array of Objects ===");
+      let studentList = [
+        { name: "surya", age: 25, course: "HTML", mark: "99", grade: "A+" },
+        { name: "Karthi", age: 21, course: "HTML", mark: "78", grade: "B" },
+        { name: "Swetha", age: 23, course: "CSS", mark: "85", grade: "A" }
+      ];
+      for(let i = 0; i < studentList.length; i++) {
+        console.log("Name:", studentList[i].name, "| Age:", studentList[i].age, "| Grade:", studentList[i].grade);
+      }
+
+      console.log("=== 6. Find a Student (Swetha) ===");
+      let search = "Swetha";
+      for(let i = 0; i < studentList.length; i++) {
+        if(studentList[i].name === search) {
+          console.log("Found Name:", studentList[i].name, "| Grade:", studentList[i].grade);
+        }
+      }
+
+      console.log("=== 7. Employee Salary Filter (> 40000) ===");
+      let greater = 40000;
+      let employees = [
+        { name: "Surya", company: "TCS", role: "Frontend Developer", salary: 48000 },
+        { name: "Arun", company: "Infosys", role: "Java Developer", salary: 35000 },
+        { name: "Kumar", company: "Wipro", role: "Python Developer", salary: 38000 },
+        { name: "Ravi", company: "Zoho", role: "Software Developer", salary: 45000 },
+        { name: "Vijay", company: "Accenture", role: "Web Developer", salary: 42000 }
+      ];
+      for(let i = 0; i < employees.length; i++) {
+        if(employees[i].salary > greater) {
+          console.log("Name is :", employees[i].name, "| Salary is :", employees[i].salary, "| Greater than >", employees[i].salary - greater, "| Company :", employees[i].company);
+        }
+      }
+    }
+
+    runDay7Script();
+  </script>
+</body>
+</html>

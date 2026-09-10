@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Creation & Evolution (C&E) — A massive dual-realm encyclopedia exploring 400+ milestones of Human Inventions, Ancient Siddhars, Prehistoric Dinosaurs, Avian Flight, and Biological Adaptations." />
+  <meta name="keywords" content="history of technology, human inventions, dinosaurs, avian evolution, siddhars, biological adaptation, timeline, 1440 to present" />
+  <meta name="author" content="Creation & Evolution Editorial" />
+  <link rel="icon" type="image/png" href=".//assets/icons/evol.png">
+  <title>Creation & Evolution (C&E) — The Dual Encyclopedia of Human Inventions & Biological Origins</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Newsreader', 'Georgia', 'serif'],
+            display: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              200: '#bae6fd',
+              500: '#0ea5e9',
+              600: '#0284c7',
+              700: '#0369a1',
+              800: '#075985',
+              900: '#0c4a6e',
+            },
+            cegreen: {
+              50: '#ecfdf5',
+              100: '#d1fae5',
+              600: '#059669',
+              700: '#047857',
+              800: '#065f46',
+              900: '#064e3b',
+            }
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-100 selection:text-brand-900 flex flex-col min-h-screen">
+
+  <!-- TOP PROFESSIONAL DUAL-REALM NAVBAR -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-xs transition-all duration-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 sm:h-18">
+        
+        <!-- Brand Identity with Custom C&E Logo Set -->
+        <a href="#hero" class="flex items-center space-x-3 group focus:outline-none focus:ring-2 focus:ring-brand-600 rounded-md p-1">
+          <!-- Bespoke C&E Emblem Logo -->
+          <div class="relative w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-br from-slate-950 via-slate-900 to-sky-950 flex items-center justify-center text-white shadow-lg border border-slate-700/80 group-hover:border-sky-500/60 group-hover:shadow-sky-900/30 transition-all duration-300 shrink-0">
+            <svg class="w-6 h-6 sm:w-7 sm:h-7" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="16" cy="16" r="14" stroke="url(#ce-grad-1)" stroke-width="1.5" stroke-dasharray="3 3" class="opacity-60 group-hover:rotate-45 transition-transform duration-700 origin-center" />
+              <path d="M16 4C10 9 10 23 16 28C22 23 22 9 16 4Z" stroke="url(#ce-grad-2)" stroke-width="1.75" fill="url(#ce-grad-3)" fill-opacity="0.2" />
+              <circle cx="16" cy="16" r="3.5" fill="url(#ce-grad-2)" />
+              <path d="M7 11C13 13 19 19 25 21" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round" />
+              <path d="M7 21C13 19 19 13 25 11" stroke="#34d399" stroke-width="1.5" stroke-linecap="round" />
+              <defs>
+                <linearGradient id="ce-grad-1" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#38bdf8" />
+                  <stop offset="1" stop-color="#34d399" />
+                </linearGradient>
+                <linearGradient id="ce-grad-2" x1="16" y1="4" x2="16" y2="28" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#38bdf8" />
+                  <stop offset="1" stop-color="#10b981" />
+                </linearGradient>
+                <linearGradient id="ce-grad-3" x1="16" y1="4" x2="16" y2="28" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#0284c7" />
+                  <stop offset="1" stop-color="#059669" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <div>
+            <div class="flex items-center gap-1.5">
+              <span class="text-base sm:text-lg font-extrabold tracking-tight text-slate-900 font-display leading-none">
+                Creation &amp; Evolution
+              </span>
+              <span class="px-1.5 py-0.5 text-[9px] font-mono font-bold bg-gradient-to-r from-sky-500 to-emerald-500 text-white rounded shadow-2xs">
+                C&amp;E
+              </span>
+            </div>
+            <span class="block text-[11px] text-slate-500 font-medium tracking-wide mt-0.5">
+              Grand Dual-Realm Chronicle • 406+ Dossiers
+            </span>
+          </div>
+        </a>
+
+        <!-- Center: Super Friendly Realm Segmented Switcher -->
+        <div class="hidden md:flex items-center p-1 bg-slate-100/90 rounded-2xl border border-slate-200/90 shadow-inner">
+          <button
+            id="nav-realm-human-btn"
+            type="button"
+            class="px-3.5 py-2 rounded-xl text-xs font-bold bg-slate-900 text-white shadow-xs transition-all flex items-center gap-2"
+          >
+            <span class="text-sm">🏛️</span>
+            <div class="text-left leading-tight">
+              <div class="font-bold">Human Inventions</div>
+              <div class="text-[9px] font-mono opacity-80">204 Topics • 1440&ndash;Now</div>
+            </div>
+          </button>
+          <button
+            id="nav-realm-fauna-btn"
+            type="button"
+            class="px-3.5 py-2 rounded-xl text-xs font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-200/60 transition-all flex items-center gap-2"
+          >
+            <span class="text-sm">🦖</span>
+            <div class="text-left leading-tight">
+              <div class="font-bold">Creature Evolution</div>
+              <div class="text-[9px] font-mono opacity-80">202 Topics • Deep Time</div>
+            </div>
+          </button>
+        </div>
+
+        <!-- Desktop Quick Search & Jump Shortcuts -->
+        <div class="flex items-center space-x-2 sm:space-x-3">
+          <a href="#inventions" class="hidden xl:inline-block text-xs font-semibold text-slate-600 hover:text-brand-600 transition-colors">
+            Dossiers
+          </a>
+          <a href="#timeline" class="hidden xl:inline-block text-xs font-semibold text-slate-600 hover:text-brand-600 transition-colors">
+            Timeline
+          </a>
+          <a href="#comparison" class="hidden xl:inline-block text-xs font-semibold text-slate-600 hover:text-brand-600 transition-colors">
+            Shift Matrix
+          </a>
+
+          <a href="../../../index.html" class="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-bold rounded-xl border border-sky-300 bg-sky-50 text-sky-800 hover:bg-sky-100 transition-all shadow-xs">
+            ← DevTask HUB
+          </a>
+
+          <!-- Quick Jump Search Button -->
+          <a href="#search-filter-section" id="quick-search-btn" class="inline-flex items-center gap-2 px-3 py-1.5 text-xs font-semibold rounded-xl border border-slate-300 bg-slate-50 hover:bg-white text-slate-700 hover:border-slate-400 transition-all shadow-xs">
+            <svg class="w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+            <span class="hidden sm:inline">Search</span>
+            <kbd class="hidden sm:inline-block px-1.5 py-0.5 text-[9px] font-mono bg-slate-200 text-slate-600 rounded border border-slate-300">Ctrl+K</kbd>
+          </a>
+          
+          <!-- Mobile Menu Toggle Button -->
+          <button id="mobile-menu-toggle" type="button" aria-label="Toggle navigation menu" class="md:hidden p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-brand-600">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Dropdown Menu -->
+      <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 py-3 space-y-2">
+        <div class="grid grid-cols-2 gap-2 pb-2 mb-2 border-b border-slate-200">
+          <button onclick="switchRealmMode('human')" class="px-3 py-2 rounded-xl text-xs font-bold bg-slate-900 text-white text-center">
+            🏛️ Human &amp; Tech (204)
+          </button>
+          <button onclick="switchRealmMode('fauna')" class="px-3 py-2 rounded-xl text-xs font-bold bg-emerald-800 text-white text-center">
+            🦖 Dinosaurs &amp; Fauna (202)
+          </button>
+        </div>
+        <a href="#inventions" class="block px-3 py-1.5 rounded-md text-xs font-medium text-slate-700 hover:bg-slate-100">Dossiers Grid</a>
+        <a href="#timeline" class="block px-3 py-1.5 rounded-md text-xs font-medium text-slate-700 hover:bg-slate-100">Chronological Continuum</a>
+        <a href="#evolution-reasons" class="block px-3 py-1.5 rounded-md text-xs font-medium text-slate-700 hover:bg-slate-100">Drivers of Evolution</a>
+        <a href="#comparison" class="block px-3 py-1.5 rounded-md text-xs font-medium text-slate-700 hover:bg-slate-100">Generational Shift Matrix</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main class="flex-grow">
+    
+    <!-- DYNAMIC DUAL-REALM HERO BANNER -->
+    <section id="hero" class="hero-compact-bg text-white py-8 sm:py-12 border-b border-slate-800 relative overflow-hidden">
+      <!-- Subtle Background Ambient Accents -->
+      <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:12px_12px] pointer-events-none"></div>
+      
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <!-- Top Row: Welcome Tag + Stats Strip -->
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 pb-5 border-b border-slate-800/80 mb-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold tracking-wide bg-brand-950/80 text-brand-200 border border-brand-700/60 shadow-2xs" id="hero-badge-container">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span id="hero-badge-text">Interactive Dual Encyclopedia • 406+ Total Dossiers</span>
+          </div>
+
+          <!-- Quick Stats Pill Bar -->
+          <div class="flex items-center gap-3 sm:gap-4 text-xs font-medium text-slate-300">
+            <div><strong class="text-white font-bold font-mono text-sm">406+</strong> Dossiers</div>
+            <span class="text-slate-600">•</span>
+            <div><strong class="text-white font-bold font-mono text-sm">20</strong> Domains</div>
+            <span class="text-slate-600">•</span>
+            <div><strong class="text-white font-bold font-mono text-sm">12-Pt</strong> Research</div>
+          </div>
+        </div>
+
+        <!-- Main Banner Grid: Left Headline & Right Interactive World Switcher Cards -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          <!-- Banner Left Column (7 cols) -->
+          <div class="lg:col-span-7">
+            <h1 class="text-2xl sm:text-4xl lg:text-5xl font-black font-display tracking-tight text-white leading-tight" id="hero-main-title">
+              Creation &amp; Evolution: Human Ingenuity &amp; Ancient Wisdom
+            </h1>
+            <p class="text-xs sm:text-base text-slate-300 font-serif mt-3 leading-relaxed" id="hero-main-subtitle">
+              From ancient Siddhars, sacred alchemy, and irrigation to microchips, steam locomotives, and quantum artificial intelligence.
+            </p>
+
+            <!-- 3-Step Friendly Quick Start Bar -->
+            <div class="mt-6 p-3 rounded-2xl bg-slate-900/90 border border-slate-800 grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-[11px] shadow-sm">
+              <div class="flex items-center gap-2 text-slate-300">
+                <span class="w-5 h-5 rounded-full bg-brand-600/30 text-brand-400 font-bold flex items-center justify-center shrink-0 text-[10px] border border-brand-500/40">1</span>
+                <span><strong>Select Realm:</strong> Human Tech or Animals</span>
+              </div>
+              <div class="flex items-center gap-2 text-slate-300">
+                <span class="w-5 h-5 rounded-full bg-brand-600/30 text-brand-400 font-bold flex items-center justify-center shrink-0 text-[10px] border border-brand-500/40">2</span>
+                <span><strong>Filter Domain:</strong> Pick category or search</span>
+              </div>
+              <div class="flex items-center gap-2 text-slate-300">
+                <span class="w-5 h-5 rounded-full bg-brand-600/30 text-brand-400 font-bold flex items-center justify-center shrink-0 text-[10px] border border-brand-500/40">3</span>
+                <span><strong>Click Read:</strong> 12-point deep dossier</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Banner Right Column: Interactive Dual Realm Selector Cards (5 cols) -->
+          <div class="lg:col-span-5 flex flex-col sm:flex-row lg:flex-col gap-3.5">
+            
+            <!-- Realm Card 1: Human Inventions -->
+            <button
+              id="hero-realm-human-btn"
+              type="button"
+              onclick="switchRealmMode('human')"
+              class="w-full text-left p-4 rounded-2xl border-2 transition-all duration-300 bg-slate-900/90 border-sky-500 shadow-lg shadow-sky-950/40 hover:scale-[1.02] focus:outline-none cursor-pointer"
+            >
+              <div class="flex items-center justify-between mb-1.5">
+                <div class="flex items-center gap-2.5">
+                  <span class="text-2xl">🏛️</span>
+                  <div>
+                    <h3 class="text-sm font-bold text-white font-display">Page 1: Human Inventions</h3>
+                    <span class="text-[10px] text-sky-400 font-mono font-semibold">204 Breakthrough Dossiers</span>
+                  </div>
+                </div>
+                <span class="px-2 py-0.5 rounded-full text-[9px] font-extrabold uppercase tracking-wider bg-sky-500 text-slate-950" id="hero-human-status-pill">
+                  Active
+                </span>
+              </div>
+              <p class="text-[11px] text-slate-400 line-clamp-1 mt-1">
+                Alchemy, Wheel, Bike, Car, TV, Phone, Microchip, AI &amp; Spacecraft
+              </p>
+            </button>
+
+            <!-- Realm Card 2: Fauna & Dinosaurs -->
+            <button
+              id="hero-realm-fauna-btn"
+              type="button"
+              onclick="switchRealmMode('fauna')"
+              class="w-full text-left p-4 rounded-2xl border transition-all duration-300 bg-slate-900/50 border-slate-800 hover:border-emerald-500/60 hover:bg-slate-900/80 hover:scale-[1.02] focus:outline-none cursor-pointer"
+            >
+              <div class="flex items-center justify-between mb-1.5">
+                <div class="flex items-center gap-2.5">
+                  <span class="text-2xl">🦖</span>
+                  <div>
+                    <h3 class="text-sm font-bold text-white font-display">Page 2: Animals &amp; Dinosaurs</h3>
+                    <span class="text-[10px] text-emerald-400 font-mono font-semibold">202 Prehistoric &amp; Avian Dossiers</span>
+                  </div>
+                </div>
+                <span class="px-2 py-0.5 rounded-full text-[9px] font-extrabold uppercase tracking-wider bg-slate-800 text-slate-400 border border-slate-700" id="hero-fauna-status-pill">
+                  Switch
+                </span>
+              </div>
+              <p class="text-[11px] text-slate-400 line-clamp-1 mt-1">
+                T-Rex, Spinosaurus, Peregrine Falcon, Mammoth, Megalodon, Dragons
+              </p>
+            </button>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECONDARY SPECIALIZED DOMAIN SUB-NAVBAR -->
+    <nav id="search-filter-section" aria-label="Domain categories and search" class="subnav-sticky py-3.5 border-b border-slate-200 sticky top-16 sm:top-18 z-30 shadow-xs">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3">
+          
+          <!-- Category Tabs Navigation for Current Page -->
+          <div class="flex items-center gap-2 overflow-x-auto pb-1 lg:pb-0 scrollbar-none" id="category-filters-container" role="tablist">
+            <!-- Dynamically populated via script.js -->
+          </div>
+
+          <!-- Live Search Input -->
+          <div class="w-full lg:max-w-xs relative shrink-0">
+            <label for="search-input" class="sr-only">Search encyclopedia</label>
+            <div class="relative">
+              <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+              </div>
+              <input
+                type="text"
+                id="search-input"
+                placeholder="Search 400+ topics, objects..."
+                class="w-full pl-8 pr-8 py-1.5 bg-slate-100/90 border border-slate-300/80 rounded-lg text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-600 focus:border-brand-600 focus:bg-white transition-all shadow-xs"
+              />
+              <button
+                id="search-clear-btn"
+                type="button"
+                aria-label="Clear search input"
+                class="hidden absolute inset-y-0 right-0 pr-2.5 flex items-center text-slate-400 hover:text-slate-600"
+              >
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Active Filter Indicator & Count Bar -->
+        <div class="mt-2.5 flex items-center justify-between text-[11px] text-slate-500 pt-2 border-t border-slate-100">
+          <span id="results-count-text">Showing all dossiers</span>
+          <button id="reset-all-filters-btn" class="hidden text-brand-600 hover:text-brand-800 font-semibold focus:outline-none">
+            Reset filters
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- INVENTIONS & EVOLUTION CARD GRID SECTION -->
+    <section id="inventions" class="py-10 sm:py-14 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="mb-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div>
+            <h2 class="text-xl sm:text-2xl font-bold font-display text-slate-900 tracking-tight" id="grid-heading-text">
+              Inventions &amp; Civilizational Dossiers
+            </h2>
+            <p class="text-xs sm:text-sm text-slate-600 mt-1 font-serif" id="grid-subheading-text">
+              Click &ldquo;Read Article&rdquo; on any entry to inspect its complete 12-point structured dossier and Then vs. Now metrics.
+            </p>
+          </div>
+        </div>
+
+        <!-- Inventions Grid Container (Responsive 4-Column Grid) -->
+        <div id="inventions-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5">
+          <!-- Inventions rendered via script.js -->
+        </div>
+
+        <!-- Load More Pagination Button -->
+        <div id="load-more-container" class="text-center mt-10 hidden">
+          <button
+            id="load-more-btn"
+            type="button"
+            class="px-6 py-3 text-xs sm:text-sm font-semibold text-slate-900 bg-white border border-slate-300 rounded-xl hover:bg-slate-100 hover:border-slate-400 shadow-xs transition-all focus:outline-none focus:ring-2 focus:ring-brand-600"
+          >
+            Load More Dossiers &darr;
+          </button>
+        </div>
+
+        <!-- Zero Results State -->
+        <div id="no-results-state" class="hidden text-center py-16 bg-white rounded-xl border border-slate-200 p-8 shadow-xs">
+          <div class="w-12 h-12 rounded-full bg-slate-100 text-slate-400 mx-auto flex items-center justify-center mb-4">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-base font-bold text-slate-800 font-display">No matching dossiers found</h3>
+          <p class="text-xs text-slate-500 max-w-md mx-auto mt-1">
+            Try adjusting your search terms or switching between Page 1 (Human Inventions) and Page 2 (Fauna &amp; Dinosaurs).
+          </p>
+          <button id="no-results-reset-btn" class="mt-4 px-4 py-2 text-xs font-semibold text-white bg-slate-900 rounded-lg hover:bg-brand-600 transition-colors">
+            Show All Dossiers
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- INTERACTIVE CHRONOLOGICAL CONTINUUM SECTION -->
+    <section id="timeline" class="py-14 bg-white border-y border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8 gap-4">
+          <div>
+            <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-slate-100 text-slate-700 border border-slate-200 mb-2">
+              Chronology &amp; Deep Time
+            </div>
+            <h2 class="text-xl sm:text-3xl font-bold font-display text-slate-900 tracking-tight">
+              Milestones of Creation &amp; Evolutionary Radiations
+            </h2>
+            <p class="text-xs sm:text-sm text-slate-600 mt-1 font-serif">
+              An interactive continuum spanning from ancient origins to 1440 and the Modern Era.
+            </p>
+          </div>
+
+          <!-- Timeline Navigation Buttons (Desktop) -->
+          <div class="hidden lg:flex items-center space-x-2">
+            <button
+              id="timeline-scroll-left-btn"
+              type="button"
+              aria-label="Scroll timeline left"
+              class="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg border border-slate-300 transition-colors shadow-xs"
+            >
+              &larr; Earlier Epoch
+            </button>
+            <button
+              id="timeline-scroll-right-btn"
+              type="button"
+              aria-label="Scroll timeline right"
+              class="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-semibold bg-slate-900 hover:bg-brand-600 text-white rounded-lg transition-colors shadow-xs"
+            >
+              Later Epoch &rarr;
+            </button>
+          </div>
+        </div>
+
+        <!-- Desktop Horizontal Timeline Track -->
+        <div class="hidden lg:block timeline-track-container overflow-x-auto pb-6 pt-2" id="desktop-timeline-track">
+          <div class="flex items-center justify-between text-xs text-slate-400 mb-2 px-2">
+            <span>&larr; Scroll horizontally to explore timeline milestones &rarr;</span>
+            <span class="font-mono">Chronological Continuum</span>
+          </div>
+          <div class="relative min-w-max flex items-start justify-between px-6 gap-6" id="desktop-timeline-container">
+            <div class="timeline-connector"></div>
+            <!-- Populated via script.js -->
+          </div>
+        </div>
+
+        <!-- Mobile & Tablet Vertical Timeline -->
+        <div class="block lg:hidden relative pl-6 space-y-6" id="mobile-timeline-container">
+          <div class="vertical-timeline-line"></div>
+          <!-- Populated via script.js -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- DRIVERS OF EVOLUTION SECTION -->
+    <section id="evolution-reasons" class="py-14 bg-slate-900 text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-3xl mb-10">
+          <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-brand-900/80 text-brand-200 border border-brand-700/60 mb-2">
+            Theoretical Framework
+          </div>
+          <h2 class="text-xl sm:text-3xl font-bold font-display text-white tracking-tight">
+            Why Systems Evolve: The 8 Universal Drivers
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-300 mt-1 font-serif">
+            The universal forces shaping human technology and natural biological adaptation alike.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5" id="drivers-grid">
+          
+          <div class="bg-slate-800/80 border border-slate-700/80 rounded-xl p-5 hover:border-slate-600 transition-colors">
+            <div class="text-[10px] font-mono font-semibold text-brand-400 uppercase tracking-wider mb-1.5">Driver 01</div>
+            <h3 class="text-base font-bold font-display text-white mb-1.5">Environmental Pressure</h3>
+            <p class="text-xs text-slate-300 font-serif leading-relaxed">
+              Shifting climates, resource scarcity, and survival challenges drive organisms and civilizational toolmakers to invent new adaptations.
+            </p>
+          </div>
+
+          <div class="bg-slate-800/80 border border-slate-700/80 rounded-xl p-5 hover:border-slate-600 transition-colors">
+            <div class="text-[10px] font-mono font-semibold text-brand-400 uppercase tracking-wider mb-1.5">Driver 02</div>
+            <h3 class="text-base font-bold font-display text-white mb-1.5">Speed &amp; Latency</h3>
+            <p class="text-xs text-slate-300 font-serif leading-relaxed">
+              Whether cheetah acceleration, peregrine dives, or fiber optic telecom, compressing time delivers decisive survival and economic advantages.
+            </p>
+          </div>
+
+          <div class="bg-slate-800/80 border border-slate-700/80 rounded-xl p-5 hover:border-slate-600 transition-colors">
+            <div class="text-[10px] font-mono font-semibold text-brand-400 uppercase tracking-wider mb-1.5">Driver 03</div>
+            <h3 class="text-base font-bold font-display text-white mb-1.5">Defense &amp; Armor</h3>
+            <p class="text-xs text-slate-300 font-serif leading-relaxed">
+              From triceratops frills and ankylosaur plates to Kevlar armor and automated cybersecurity firewalls, defensive systems constantly co-evolve.
+            </p>
+          </div>
+
+          <div class="bg-slate-800/80 border border-slate-700/80 rounded-xl p-5 hover:border-slate-600 transition-colors">
+            <div class="text-[10px] font-mono font-semibold text-brand-400 uppercase tracking-wider mb-1.5">Driver 04</div>
+            <h3 class="text-base font-bold font-display text-white mb-1.5">Energy &amp; Caloric Efficiency</h3>
+            <p class="text-xs text-slate-300 font-serif leading-relaxed">
+              Maximizing energetic yield while minimizing metabolic or electrical waste defines both animal physiology and clean tech engineering.
+            </p>
+          </div>
+
+          <div class="bg-slate-800/80 border border-slate-700/80 rounded-xl p-5 hover:border-slate-600 transition-colors">
+            <div class="text-[10px] font-mono font-semibold text-brand-400 uppercase tracking-wider mb-1.5">Driver 05</div>
+            <h3 class="text-base font-bold font-display text-white mb-1.5">Portability &amp; Miniaturization</h3>
+            <p class="text-xs text-slate-300 font-serif leading-relaxed">
+              Transitioning from massive room-scale machinery to silicon microchips, and from bulky sauropods to agile lightweight avian fliers.
+            </p>
+          </div>
+
+          <div class="bg-slate-800/80 border border-slate-700/80 rounded-xl p-5 hover:border-slate-600 transition-colors">
+            <div class="text-[10px] font-mono font-semibold text-brand-400 uppercase tracking-wider mb-1.5">Driver 06</div>
+            <h3 class="text-base font-bold font-display text-white mb-1.5">Interconnectivity &amp; Swarms</h3>
+            <p class="text-xs text-slate-300 font-serif leading-relaxed">
+              Isolated units aggregate into networked hives—from ant swarm intelligence and wolf packs to global cellular networks and distributed cloud compute.
+            </p>
+          </div>
+
+          <div class="bg-slate-800/80 border border-slate-700/80 rounded-xl p-5 hover:border-slate-600 transition-colors">
+            <div class="text-[10px] font-mono font-semibold text-brand-400 uppercase tracking-wider mb-1.5">Driver 07</div>
+            <h3 class="text-base font-bold font-display text-white mb-1.5">Sensory Mastery</h3>
+            <p class="text-xs text-slate-300 font-serif leading-relaxed">
+              Organisms develop echolocation and infrared pits; humans engineer electron microscopes, radar, and satellite telescopes to map the invisible.
+            </p>
+          </div>
+
+          <div class="bg-slate-800/80 border border-slate-700/80 rounded-xl p-5 hover:border-slate-600 transition-colors">
+            <div class="text-[10px] font-mono font-semibold text-brand-400 uppercase tracking-wider mb-1.5">Driver 08</div>
+            <h3 class="text-base font-bold font-display text-white mb-1.5">Consciousness &amp; Wisdom</h3>
+            <p class="text-xs text-slate-300 font-serif leading-relaxed">
+              From early hominid symbolic culture and ancient Siddhar yoga systems to generative machine intelligence and transhuman horizons.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- THEN VS NOW COMPARISON SECTION -->
+    <section id="comparison" class="py-14 bg-slate-50 border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-3xl mb-8">
+          <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-slate-200 text-slate-800 mb-2">
+            Comparative Matrix
+          </div>
+          <h2 class="text-xl sm:text-3xl font-bold font-display text-slate-900 tracking-tight">
+            Then vs. Now: Evolutionary Shift Matrix
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 mt-1 font-serif">
+            Directly inspect how physical scale, speed, function, sensory communication, and energy efficiency evolved over historical and deep time epochs.
+          </p>
+        </div>
+
+        <!-- Item Selector Tabs -->
+        <div class="flex items-center gap-2 overflow-x-auto pb-3 mb-5 scrollbar-none" id="comparison-selector-tabs">
+          <!-- Dynamically populated via script.js -->
+        </div>
+
+        <!-- Active Comparison Table Card -->
+        <div class="bg-white rounded-xl border border-slate-200 shadow-xs p-5 sm:p-7">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-5 mb-5 border-b border-slate-200 gap-3">
+            <div>
+              <span class="text-[11px] font-semibold text-brand-600 uppercase tracking-wider" id="comp-category-badge">Transportation</span>
+              <h3 class="text-lg sm:text-xl font-bold font-display text-slate-900" id="comp-title">Automobile — Generational Shift</h3>
+            </div>
+            <button id="comp-view-article-btn" class="inline-flex items-center gap-1.5 text-xs font-semibold text-brand-700 bg-brand-50 hover:bg-brand-100 px-3.5 py-1.5 rounded-lg border border-brand-200 transition-colors">
+              Read Complete Dossier &rarr;
+            </button>
+          </div>
+
+          <!-- Comparison Table -->
+          <div class="comparison-table-wrapper">
+            <table class="min-w-full divide-y divide-slate-200 text-left text-xs sm:text-sm">
+              <thead>
+                <tr>
+                  <th scope="col" class="px-4 py-3 text-slate-700 w-1/4">Key Dimension</th>
+                  <th scope="col" class="px-4 py-3 text-slate-700 w-3/8 bg-amber-50/50">Ancestral / Early Era (Then)</th>
+                  <th scope="col" class="px-4 py-3 text-slate-700 w-3/8 bg-brand-50/50">Modern / Apex Era (Now)</th>
+                </tr>
+              </thead>
+              <tbody id="comparison-table-body" class="divide-y divide-slate-200 text-slate-700 font-sans">
+                <!-- Injected via script.js -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ARTICLE DETAIL MODAL / DEEP-DIVE READER -->
+  <div id="article-modal" class="fixed inset-0 z-50 hidden overflow-y-auto" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    
+    <!-- Modal Backdrop Overlay -->
+    <div id="modal-backdrop" class="fixed inset-0 bg-slate-900/80 backdrop-blur-xs transition-opacity opacity-0"></div>
+
+    <!-- Modal Dialog Scroll Wrapper -->
+    <div class="min-h-screen px-4 text-center flex items-center justify-center py-6 sm:py-10">
+      
+      <!-- Modal Inner Card Container -->
+      <div id="modal-card" class="inline-block w-full max-w-4xl bg-white text-left align-middle shadow-2xl rounded-2xl border border-slate-200 overflow-hidden transform transition-all opacity-0 scale-95 my-6">
+        
+        <!-- Modal Sticky Top Header -->
+        <div class="sticky top-0 z-20 bg-white/95 backdrop-blur-sm border-b border-slate-200 px-6 sm:px-8 py-3.5 flex items-center justify-between">
+          <div class="flex items-center space-x-3">
+            <span id="modal-category-badge" class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-brand-50 text-brand-700 border border-brand-200">
+              Category
+            </span>
+            <span id="modal-period-badge" class="text-xs font-medium text-slate-500 font-mono">
+              Milestone: 1886
+            </span>
+          </div>
+          
+          <button id="modal-close-btn" type="button" aria-label="Close article modal" class="p-1.5 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors focus:outline-none focus:ring-2 focus:ring-brand-600">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Modal Body Content -->
+        <div class="px-6 sm:px-10 py-7 max-h-[80vh] overflow-y-auto space-y-8 font-sans text-slate-800" id="modal-scrollable-body">
+          
+          <!-- Article Title Block -->
+          <div>
+            <h2 id="modal-title" class="text-2xl sm:text-3xl font-extrabold font-display text-slate-900 tracking-tight">
+              Dossier Title
+            </h2>
+            <p id="modal-subtitle" class="text-sm sm:text-base text-slate-600 mt-1.5 font-serif leading-relaxed">
+              Subtitle &amp; Evolutionary Significance.
+            </p>
+          </div>
+
+          <!-- Fast Facts Meta Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-xs">
+            <div>
+              <span class="block font-semibold text-slate-500 uppercase tracking-wider">Lineage / Pioneers</span>
+              <span id="modal-meta-who" class="block font-medium text-slate-900 mt-0.5">Historical Pioneers / Species</span>
+            </div>
+            <div>
+              <span class="block font-semibold text-slate-500 uppercase tracking-wider">Epoch / Timeline</span>
+              <span id="modal-meta-when" class="block font-medium text-slate-900 mt-0.5">Milestone Dates</span>
+            </div>
+            <div>
+              <span class="block font-semibold text-slate-500 uppercase tracking-wider">Geographic Habitat / Origin</span>
+              <span id="modal-meta-where" class="block font-medium text-slate-900 mt-0.5">Origins</span>
+            </div>
+          </div>
+
+          <!-- Structured 12-Section Historical Dossier -->
+          <div class="space-y-6 divide-y divide-slate-100 text-xs sm:text-sm leading-relaxed">
+            
+            <!-- 1. What is it? -->
+            <div class="pt-5">
+              <h3 class="text-base font-bold font-display text-slate-900 article-section-title mb-2">1. What is it?</h3>
+              <p id="modal-sec-what" class="text-slate-700 font-serif leading-relaxed"></p>
+            </div>
+
+            <!-- 2. Why was it created? -->
+            <div class="pt-5">
+              <h3 class="text-base font-bold font-display text-slate-900 article-section-title mb-2">2. Why was it created / Evolved?</h3>
+              <p id="modal-sec-why-created" class="text-slate-700 font-serif leading-relaxed"></p>
+            </div>
+
+            <!-- 3. What problem existed before it? -->
+            <div class="pt-5">
+              <h3 class="text-base font-bold font-display text-slate-900 article-section-title mb-2">3. What problem / pressure existed before it?</h3>
+              <p id="modal-sec-problem-before" class="text-slate-700 font-serif leading-relaxed"></p>
+            </div>
+
+            <!-- 4. Who created or developed it? -->
+            <div class="pt-5">
+              <h3 class="text-base font-bold font-display text-slate-900 article-section-title mb-2">4. Who created / evolved it? (Lineage &amp; Pioneers)</h3>
+              <p id="modal-sec-who" class="text-slate-700 font-serif leading-relaxed"></p>
+            </div>
+
+            <!-- 5. When and Where did it originate? -->
+            <div class="pt-5">
+              <h3 class="text-base font-bold font-display text-slate-900 article-section-title mb-2">5. When &amp; Where did it originate?</h3>
+              <p id="modal-sec-when-where" class="text-slate-700 font-serif leading-relaxed"></p>
+            </div>
+
+            <!-- 6. How did older generations use it? -->
+            <div class="pt-5">
+              <h3 class="text-base font-bold font-display text-slate-900 article-section-title mb-2">6. How did ancestral generations use/possess it?</h3>
+              <p id="modal-sec-older-usage" class="text-slate-700 font-serif leading-relaxed"></p>
+            </div>
+
+            <!-- 7. What were its limitations? -->
+            <div class="pt-5">
+              <h3 class="text-base font-bold font-display text-slate-900 article-section-title mb-2">7. What were its early limitations / trade-offs?</h3>
+              <p id="modal-sec-limitations" class="text-slate-700 font-serif leading-relaxed"></p>
+            </div>
+
+            <!-- 8. Why did it evolve? -->
+            <div class="pt-5">
+              <h3 class="text-base font-bold font-display text-slate-900 article-section-title mb-2">8. Why did it evolve? (Catalysts for Transition)</h3>
+              <p id="modal-sec-why-evolve" class="text-slate-700 font-serif leading-relaxed"></p>
+            </div>
+
+            <!-- 9. How did it evolve? -->
+            <div class="pt-5">
+              <h3 class="text-base font-bold font-display text-slate-900 article-section-title mb-2">9. How did it evolve? (Chronological Steps)</h3>
+              <div id="modal-sec-evolution-steps" class="space-y-2.5 font-serif text-slate-700"></div>
+            </div>
+
+            <!-- 10. What is the modern version? -->
+            <div class="pt-5">
+              <h3 class="text-base font-bold font-display text-slate-900 article-section-title mb-2">10. What is the modern version / Descendant?</h3>
+              <p id="modal-sec-modern-version" class="text-slate-700 font-serif leading-relaxed"></p>
+            </div>
+
+            <!-- 11. How do humans / nature use it today? -->
+            <div class="pt-5">
+              <h3 class="text-base font-bold font-display text-slate-900 article-section-title mb-2">11. How is it used / manifested today?</h3>
+              <p id="modal-sec-modern-usage" class="text-slate-700 font-serif leading-relaxed"></p>
+            </div>
+
+            <!-- 12. What could come next? -->
+            <div class="pt-5">
+              <h3 class="text-base font-bold font-display text-slate-900 article-section-title mb-2">12. What could come next? (Future Horizon)</h3>
+              <p id="modal-sec-future" class="text-slate-700 font-serif leading-relaxed"></p>
+            </div>
+
+          </div>
+
+          <!-- Specific Comparison Table Preview -->
+          <div class="pt-5 border-t border-slate-200">
+            <h3 class="text-sm font-bold font-display text-slate-900 mb-2.5">Generational Snapshot: Then vs. Now</h3>
+            <div class="comparison-table-wrapper">
+              <table class="min-w-full divide-y divide-slate-200 text-left text-xs">
+                <thead>
+                  <tr>
+                    <th scope="col" class="px-3 py-2 text-slate-700">Feature Dimension</th>
+                    <th scope="col" class="px-3 py-2 text-slate-700 bg-amber-50/50">Early / Ancestral Era</th>
+                    <th scope="col" class="px-3 py-2 text-slate-700 bg-brand-50/50">Modern / Apex Era</th>
+                  </tr>
+                </thead>
+                <tbody id="modal-comparison-tbody" class="divide-y divide-slate-200 text-slate-700">
+                  <!-- Injected via script.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Modal Footer -->
+        <div class="bg-slate-50 px-6 sm:px-10 py-3.5 border-t border-slate-200 flex items-center justify-between">
+          <span class="text-[11px] text-slate-500">C&amp;E Curated Research Dossier</span>
+          <button id="modal-footer-close-btn" type="button" class="px-3.5 py-1.5 text-xs font-semibold text-slate-700 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 transition-colors">
+            Close Dossier
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- EDITORIAL FOOTER -->
+  <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 pb-8 border-b border-slate-800">
+        
+        <div class="md:col-span-2">
+          <div class="flex items-center space-x-2.5 text-white font-bold font-display text-lg mb-2.5">
+            <div class="w-8 h-8 rounded-xl bg-gradient-to-br from-slate-800 to-slate-950 border border-slate-700 flex items-center justify-center text-white text-xs font-mono font-bold shadow-xs">
+              <span class="bg-gradient-to-r from-sky-400 to-emerald-400 bg-clip-text text-transparent">C&amp;E</span>
+            </div>
+            <span>Creation &amp; Evolution Encyclopedia</span>
+          </div>
+          <p class="text-slate-400 font-serif leading-relaxed max-w-md text-xs">
+            An open educational platform exploring 406+ milestones across dual realms: from human tools, Siddhars, and computing to prehistoric dinosaurs, avian flight, and extreme biological marvels.
+          </p>
+          <div class="flex items-center gap-3 mt-4">
+            <button onclick="switchRealmMode('human')" class="px-3 py-1 rounded-md text-[11px] font-semibold bg-slate-800 text-slate-300 hover:text-white border border-slate-700 transition-colors">
+              🏛️ Page 1: Human Inventions
+            </button>
+            <button onclick="switchRealmMode('fauna')" class="px-3 py-1 rounded-md text-[11px] font-semibold bg-emerald-950 text-emerald-300 hover:text-white border border-emerald-800 transition-colors">
+              🦖 Page 2: Animals &amp; Dinosaurs
+            </button>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-white font-semibold text-xs tracking-wider uppercase mb-2.5">Page 1: Human Domains</h4>
+          <ul class="space-y-1.5 text-[11px]">
+            <li><a href="#inventions" onclick="switchRealmMode('human'); filterByCategory('Transportation')" class="hover:text-white transition-colors">Transportation</a></li>
+            <li><a href="#inventions" onclick="switchRealmMode('human'); filterByCategory('Communication')" class="hover:text-white transition-colors">Communication</a></li>
+            <li><a href="#inventions" onclick="switchRealmMode('human'); filterByCategory('Computing')" class="hover:text-white transition-colors">Computing &amp; AI</a></li>
+            <li><a href="#inventions" onclick="switchRealmMode('human'); filterByCategory('Home')" class="hover:text-white transition-colors">Home &amp; Living</a></li>
+            <li><a href="#inventions" onclick="switchRealmMode('human'); filterByCategory('AncientWisdom')" class="hover:text-white transition-colors">Ancient Wisdom &amp; Siddhars</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-semibold text-xs tracking-wider uppercase mb-2.5">Page 2: Fauna Domains</h4>
+          <ul class="space-y-1.5 text-[11px]">
+            <li><a href="#inventions" onclick="switchRealmMode('fauna'); filterByCategory('Dinosaurs')" class="hover:text-white transition-colors">Dinosaurs &amp; Archosaurs</a></li>
+            <li><a href="#inventions" onclick="switchRealmMode('fauna'); filterByCategory('AvianEvolution')" class="hover:text-white transition-colors">Birds &amp; Avian Flight</a></li>
+            <li><a href="#inventions" onclick="switchRealmMode('fauna'); filterByCategory('OceanLeviathans')" class="hover:text-white transition-colors">Marine Ocean Giants</a></li>
+            <li><a href="#inventions" onclick="switchRealmMode('fauna'); filterByCategory('MythicalBiology')" class="hover:text-white transition-colors">Mythical &amp; Dragon Archetypes</a></li>
+            <li><a href="#inventions" onclick="switchRealmMode('fauna'); filterByCategory('SensoryAdaptations')" class="hover:text-white transition-colors">Sensory Bio-Engineering</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-500 gap-3">
+        <div>
+          &copy; 2026 Creation &amp; Evolution (C&amp;E) Project. Educational Resource.
+        </div>
+        <div>
+          Crafted with semantic HTML5, Tailwind CSS, and Modular Vanilla JavaScript.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Master JavaScript File -->
+  <script src="script.js"></script>
+</body>
+</html>

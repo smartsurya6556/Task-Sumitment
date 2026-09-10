@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 6 — Algorithmic Looping, Digit Math & String Search</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #0b1120;
+            color: #f8fafc;
+            margin: 0;
+            padding: 24px;
+        }
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            background: #131d32;
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid #1e293b;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .back-link {
+            color: #c084fc;
+            background: #3b0764;
+            border: 1px solid #6b21a8;
+            padding: 8px 16px;
+            border-radius: 9999px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 13px;
+            transition: 0.2s;
+        }
+        .back-link:hover { background: #581c87; color: #fff; }
+        .day-badge {
+            background: rgba(168, 85, 247, 0.15);
+            color: #d8b4fe;
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-size: 12px;
+            font-family: monospace;
+            font-weight: 700;
+        }
+        h1 { color: #facc15; margin: 0 0 8px 0; font-size: 26px; }
+        p.lead { color: #94a3b8; font-size: 14px; margin: 0 0 24px 0; }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .algo-card {
+            background: #0f172a;
+            border: 1px solid #1e293b;
+            border-radius: 14px;
+            padding: 18px;
+        }
+        .algo-card h3 {
+            margin: 0 0 10px 0;
+            font-size: 14px;
+            font-weight: bold;
+            color: #38bdf8;
+            display: flex;
+            justify-content: space-between;
+        }
+        .badge {
+            font-size: 10px;
+            font-family: monospace;
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-weight: bold;
+            background: #1e3a8a;
+            color: #93c5fd;
+        }
+        .calc-res {
+            font-family: monospace;
+            font-size: 13px;
+            background: #050811;
+            padding: 10px 14px;
+            border-radius: 8px;
+            border: 1px solid #1e293b;
+            color: #4ade80;
+            line-height: 1.5;
+        }
+
+        /* Terminal Window */
+        .terminal-box {
+            background: #050811;
+            border: 1px solid #22c55e44;
+            border-radius: 14px;
+            overflow: hidden;
+        }
+        .terminal-header {
+            background: #091122;
+            padding: 10px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #1e293b;
+        }
+        .terminal-title {
+            font-family: monospace;
+            font-size: 12px;
+            color: #4ade80;
+            font-weight: 700;
+        }
+        .terminal-body {
+            padding: 16px;
+            font-family: 'Consolas', monospace;
+            font-size: 12px;
+            line-height: 1.6;
+            color: #86efac;
+            max-height: 250px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="top-bar">
+            <a href="../../../index.html" onclick="if(window.history.length > 1){ window.history.back(); return false; }" class="back-link">← Back to DevTask HUB</a>
+            <span class="day-badge">Day 6 / JAVASCRIPT-V24</span>
+        </div>
+
+        <h1>Day 6: Algorithmic Looping, Digit Math & Search</h1>
+        <p class="lead">Loop-based search algorithms, digit breakdown, string character matching, and number reversal.</p>
+
+        <div class="cards-grid">
+            <div class="algo-card">
+                <h3>1–3. Range & Parity Iteration <span class="badge">Loops</span></h3>
+                <p style="font-size:12px; color:#94a3b8; margin:0 0 6px 0;">Counts 1–10, Evens (20 down to 1), Odds (1–25):</p>
+                <div class="calc-res">Total Evens: <strong>10</strong> | Total Odds: <strong>13</strong></div>
+            </div>
+
+            <div class="algo-card">
+                <h3>4–6. Value & String Search <span class="badge">Linear Search</span></h3>
+                <p style="font-size:12px; color:#94a3b8; margin:0 0 6px 0;">Find 84, Target 2 in array, 'm' in "Agreement":</p>
+                <div class="calc-res">Index of 2: <strong>3</strong> | Index of 'm': <strong>4</strong></div>
+            </div>
+
+            <div class="algo-card">
+                <h3>7–9. Digit Math & Length <span class="badge">Math.floor</span></h3>
+                <p style="font-size:12px; color:#94a3b8; margin:0 0 6px 0;">Find digit 9 in 4897136, count 15-digit number:</p>
+                <div class="calc-res">Digit 9 Pos: <strong>5</strong> | 852565489974523 Digits: <strong>15</strong></div>
+            </div>
+
+            <div class="algo-card">
+                <h3>10–14. Reverse & Single-Line <span class="badge">Reversals</span></h3>
+                <p style="font-size:12px; color:#94a3b8; margin:0 0 6px 0;">Reverse numbers 15–1, reverse digits of 4578964302:</p>
+                <div class="calc-res">Reversed: <strong>2034698754</strong></div>
+            </div>
+
+            <div class="algo-card">
+                <h3>15–17. Number Sums & Counters <span class="badge">Accumulators</span></h3>
+                <p style="font-size:12px; color:#94a3b8; margin:0 0 6px 0;">Sum 1–20, sum of evens 1–50, total odds in 1–100:</p>
+                <div class="calc-res">Sum(1-20): <strong>210</strong> | Sum(Evens 1-50): <strong>650</strong> | Total Odds: <strong>50</strong></div>
+            </div>
+
+            <div class="algo-card">
+                <h3>18–21. Break Search & Char Match <span class="badge">Break & Scan</span></h3>
+                <p style="font-size:12px; color:#94a3b8; margin:0 0 6px 0;">Find 65, reverse "Confirmed", find 'r' in "Javascript":</p>
+                <div class="calc-res">Target 'r' in "Javascript": <strong>Index 5</strong></div>
+            </div>
+        </div>
+
+        <!-- Live Output Terminal -->
+        <div class="terminal-box">
+            <div class="terminal-header">
+                <span class="terminal-title">● Live JavaScript Execution Output (All 21 Tasks Executed)</span>
+                <button onclick="runDay6()" style="background:#22c55e; color:#052e16; border:none; padding:4px 10px; border-radius:6px; font-weight:bold; font-size:11px; cursor:pointer;">Re-run All Tasks</button>
+            </div>
+            <div id="outputLog" class="terminal-body"></div>
+        </div>
+    </div>
+
+    <script>
+        function logLine(text) {
+            const out = document.getElementById('outputLog');
+            const div = document.createElement('div');
+            div.innerHTML = `<span style="color:#64748b">&gt;</span> ${text}`;
+            out.appendChild(div);
+        }
+
+        function runDay6() {
+            const out = document.getElementById('outputLog');
+            out.innerHTML = '';
+
+            logLine("<strong>TASK 1 — PRINT 1 TO 10</strong>");
+            let t1 = [];
+            for (let s = 1; s <= 10; s++) t1.push(s);
+            logLine(`Numbers 1-10: [${t1.join(', ')}]`);
+
+            logLine("<br><strong>TASK 2 — EVEN NUMBERS 20 DOWN TO 1</strong>");
+            let t2 = [], totalEven = 0;
+            for (let i = 20; i >= 1; i--) {
+                if (i % 2 === 0) { t2.push(i); totalEven++; }
+            }
+            logLine(`Even Numbers: [${t2.join(', ')}] | Total Count: <strong>${totalEven}</strong>`);
+
+            logLine("<br><strong>TASK 3 — ODD NUMBERS 1 TO 25</strong>");
+            let t3 = [], totalOdd = 0;
+            for (let i = 1; i <= 25; i++) {
+                if (i % 2 !== 0) { t3.push(i); totalOdd++; }
+            }
+            logLine(`Odd Numbers: [${t3.join(', ')}] | Total Count: <strong>${totalOdd}</strong>`);
+
+            logLine("<br><strong>TASK 4 — FIND A NUMBER (84 in 1-100)</strong>");
+            let find = 84;
+            for (let i = 1; i <= 100; i++) {
+                if (i === find) {
+                    logLine(`Found target number: <strong>${i}</strong>`);
+                    break;
+                }
+            }
+
+            logLine("<br><strong>TASK 5 — FIND A NUMBER IN AN ARRAY</strong>");
+            let numbers = [47, 74, 40, 2, 3, 24, 87, 65];
+            let findnum = 2;
+            for (let i = 0; i < numbers.length; i++) {
+                if (numbers[i] === findnum) {
+                    logLine(`Number ${findnum} found at array index: <strong>${i}</strong>`);
+                    break;
+                }
+            }
+
+            logLine("<br><strong>TASK 6 — STRING CHARACTER FINDER</strong>");
+            let word = "Agreement";
+            let findChar = "m";
+            for (let i = 0; i < word.length; i++) {
+                if (word[i] === findChar) {
+                    logLine(`Character '${findChar}' in "${word}" found at index: <strong>${i}</strong>`);
+                    break;
+                }
+            }
+
+            logLine("<br><strong>TASK 7 — FIND DIGIT IN A NUMBER</strong>");
+            let num7 = 4897136, finddigit = 9, count7 = 0, found7 = false;
+            for (let n = num7; n > 0; n = Math.floor(n / 10)) {
+                count7++;
+                if (n % 10 === finddigit) { found7 = true; break; }
+            }
+            logLine(`Number: ${num7} | Found digit ${finddigit}? <strong>${found7}</strong> at position: <strong>${count7}</strong>`);
+
+            logLine("<br><strong>TASK 8 — COUNT TOTAL DIGITS</strong>");
+            let num8 = 852565489974523, count8 = 0;
+            for (let n = num8; n > 0; n = Math.floor(n / 10)) count8++;
+            logLine(`Number: ${num8} | Total digits: <strong>${count8}</strong>`);
+
+            logLine("<br><strong>TASK 9 — COUNT STRING CHARACTERS</strong>");
+            let str9 = "ghsfxcsesgsswsbwsvxxv";
+            logLine(`String: "${str9}" | Total character length: <strong>${str9.length}</strong>`);
+
+            logLine("<br><strong>TASK 10 — REVERSE NUMBERS 15 DOWN TO 1</strong>");
+            let t10 = [];
+            for (let i = 15; i >= 1; i--) t10.push(i);
+            logLine(`Reverse 15 to 1: [${t10.join(', ')}]`);
+
+            logLine("<br><strong>TASK 11 & 12 — REVERSE DIGITS & FRONT DIGITS</strong>");
+            let num11 = "4578964302";
+            let rev11 = num11.split('').reverse().join('');
+            logLine(`Original: ${num11} | Reversed: <strong>${rev11}</strong>`);
+
+            logLine("<br><strong>TASK 13 & 14 — SINGLE-LINE EVEN & ODD NUMBERS (1 to 50)</strong>");
+            let evens50 = [], odds50 = [];
+            for (let i = 1; i <= 50; i++) {
+                if (i % 2 === 0) evens50.push(i);
+                else odds50.push(i);
+            }
+            logLine(`Evens (1-50): ${evens50.join(' ')}`);
+            logLine(`Odds (1-50): ${odds50.join(' ')}`);
+
+            logLine("<br><strong>TASK 15 & 16 — SUMMATION CALCULATIONS</strong>");
+            let sum20 = 0;
+            for (let s = 1; s <= 20; s++) sum20 += s;
+            let sumEven50 = 0, countEven50 = 0;
+            for (let i = 1; i <= 50; i++) {
+                if (i % 2 === 0) { sumEven50 += i; countEven50++; }
+            }
+            logLine(`Sum of 1-20: <strong>${sum20}</strong>`);
+            logLine(`Sum of Evens (1-50): <strong>${sumEven50}</strong> (Count: ${countEven50})`);
+
+            logLine("<br><strong>TASK 17 — COUNT ODD NUMBERS (1 to 100)</strong>");
+            let countOdds100 = 0;
+            for (let i = 1; i <= 100; i++) {
+                if (i % 2 === 1) countOdds100++;
+            }
+            logLine(`Total Odd Numbers in 1 to 100: <strong>${countOdds100}</strong>`);
+
+            logLine("<br><strong>TASK 18 — STOP AT TARGET 65 (100 down to 1)</strong>");
+            let foundTarget = 65;
+            for (let i = 100; i >= 1; i--) {
+                if (i === foundTarget) {
+                    logLine(`Loop stopped at target: <strong>${foundTarget}</strong>`);
+                    break;
+                }
+            }
+
+            logLine("<br><strong>TASK 19 & 20 — REVERSE NUMBERS & STRING</strong>");
+            let num19 = "1876984164";
+            logLine(`Reverse number ${num19}: <strong>${num19.split('').reverse().join('')}</strong>`);
+            let str20 = "Confirmed";
+            logLine(`Reverse string "${str20}": <strong>${str20.split('').reverse().join('')}</strong> (Chars: ${str20.length})`);
+
+            logLine("<br><strong>TASK 21 — FIND CHARACTER IN 'Javascript'</strong>");
+            let text21 = "Javascript", target21 = "r";
+            for (let i = 0; i < text21.length; i++) {
+                if (text21[i] === target21) {
+                    logLine(`Target Achieved: '${target21}' at index <strong>${i}</strong>`);
+                    break;
+                }
+            }
+        }
+
+        runDay6();
+    </script>
+</body>
+</html>

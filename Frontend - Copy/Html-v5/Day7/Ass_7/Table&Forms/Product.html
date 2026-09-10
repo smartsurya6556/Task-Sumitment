@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Electronics Shop Inventory System</title>
+</head>
+<body>
+
+    <div>
+        <h2>Electronics Shop Inventory Form</h2>
+        <form>
+            <label>Product ID:</label>
+            <input type="text" name="productid"><br><br>
+
+            <label>Product Name:</label>
+            <input type="text" name="productname"><br><br>
+
+            <label>Brand:</label>
+            <input type="text" name="brand"><br><br>
+
+            <label>Category:</label>
+            <select name="category">
+                <option>Mobile</option>
+                <option>Laptop</option>
+                <option>Television</option>
+                <option>Headphones</option>
+                <option>Accessories</option>
+            </select><br><br>
+
+            <label>Price:</label>
+            <input type="number" name="price"><br><br>
+
+            <label>Quantity:</label>
+            <input type="number" name="quantity"><br><br>
+
+            <label>Supplier:</label>
+            <input type="text" name="supplier"><br><br>
+
+            <label>Product Image:</label>
+            <input type="file" name="productimage"><br><br>
+
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </form>
+    </div>
+    <hr>
+
+    <div>
+            <h2>Inventory Details</h2>
+
+        <table border="1" cellpadding="8">
+            <tr>
+                <th>Product ID</th>
+                <th>Product Name</th>
+                <th>Brand</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Stock Status</th>
+            </tr>
+
+            <tr>
+                <td>P101</td>
+                <td>Galaxy S24</td>
+                <td>Samsung</td>
+                <td>₹75,000</td>
+                <td>20</td>
+                <td>In Stock</td>
+            </tr>
+
+            <tr>
+                <td>P102</td>
+                <td>Inspiron 15</td>
+                <td>Dell</td>
+                <td>₹62,000</td>
+                <td>5</td>
+                <td>Low Stock</td>
+            </tr>
+
+            <tr>
+                <td>P103</td>
+                <td>Smart TV</td>
+                <td>LG</td>
+                <td>₹48,000</td>
+                <td>0</td>
+                <td>Out of Stock</td>
+            </tr>
+
+        </table>
+    </div>
+
+</body>
+</html>

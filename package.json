@@ -1,0 +1,15 @@
+{
+  "name": "fullstack-task-portal",
+  "version": "1.0.0",
+  "description": "Fullstack Task Submission Portal with 10 Frontend Tasks, Express Backend & SQLite Database",
+  "scripts": {
+    "backend:install": "cd Backend && npm install",
+    "frontend:install": "cd Frontend && npm install",
+    "install:all": "npm run backend:install && npm run frontend:install",
+    "backend:dev": "cd Backend && npm start",
+    "frontend:dev": "cd Frontend && npm run dev"
+  },
+  "keywords": ["react", "express", "sqlite", "tailwind", "task-portal", "fullstack"],
+  "author": "",
+  "license": "MIT"
+}

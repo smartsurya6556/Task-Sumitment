@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM ClassList Tasks</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+
+        .task {
+            margin-bottom: 30px;
+        }
+
+        .box {
+            width: 200px;
+            padding: 30px;
+            background-color: lightgray;
+            color: black;
+            text-align: center;
+        }
+
+        .active {
+            background-color: green;
+            color: white;
+        }
+
+        .card {
+            width: 250px;
+            padding: 20px;
+            background-color: white;
+            color: black;
+            border: 1px solid black;
+        }
+
+        .dark {
+            background-color: black;
+            color: white;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 8px 15px;
+        }
+
+        input {
+            padding: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div style="margin-bottom: 20px;">
+        <a href="../../../index.html" onclick="if(window.history.length > 1){ window.history.back(); return false; }" style="display: inline-flex; align-items: center; gap: 6px; background: #3b0764; color: #c084fc; border: 1px solid #6b21a8; padding: 6px 14px; border-radius: 9999px; text-decoration: none; font-weight: bold; font-size: 12px; font-family: sans-serif;">← Back to DevTask HUB</a>
+    </div>
+
+    <h1>JavaScript DOM Tasks</h1>
+
+    <div class="task">
+        <h2>Task 1 - Add Class</h2>
+
+        <div class="box" id="box1">
+            Box 1
+        </div>
+
+        <button id="addBtn">Add Class</button>
+    </div>
+
+
+    <div class="task">
+        <h2>Task 2 - Remove Class</h2>
+
+        <div class="box active" id="box2">
+            Box 2
+        </div>
+
+        <button id="removeBtn">Remove Class</button>
+    </div>
+
+
+    <div class="task">
+        <h2>Task 3 - Toggle Theme</h2>
+
+        <div class="card" id="card">
+            <h3>My Card</h3>
+            <p>This is a simple card.</p>
+        </div>
+
+        <button id="themeBtn">Change Theme</button>
+    </div>
+
+
+    <div class="task">
+        <h2>Task 4 - Input Value</h2>
+
+        <input type="text" id="userInput" placeholder="Enter something">
+
+        <button id="submitBtn">Submit</button>
+    </div>
+
+
+    <script src="assets/js/script.js"></script>
+
+</body>
+</html>
