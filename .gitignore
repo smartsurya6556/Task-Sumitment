@@ -1,0 +1,57 @@
+# ==============================================================================
+# Git Ignore Configuration for DevTask HUB — Fullstack Engineering Platform
+# ==============================================================================
+
+# Dependencies (Never push node_modules to GitHub)
+node_modules/
+Frontend/Own_Project/my-portfolio/node_modules/
+Frontend - Copy/Own_Project/my-portfolio/node_modules/
+Backend/node_modules/
+
+# Production Build Output
+dist/
+build/
+.cache/
+
+# Environment Variables & Secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Debug & Execution Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Database & SQLite files
+*.db
+*.sqlite
+*.sqlite3
+
+# OS Metadata & System Caches
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Editor & IDE Cache
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Temporary & Scratch Files
+*.tmp
+*.bak
+scratch/
