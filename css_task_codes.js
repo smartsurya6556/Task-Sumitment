@@ -548,149 +548,127 @@ body {
     min-height: 150px;
 }`,
 
-  7: `/* ==========================================================================
-   CSS-V3 — Day 7: Tailwind CSS 4 – Creation & Evolution Encyclopedia UI
-   Task: Compact editorial banner, timeline controls, interactive cards,
-         smooth pagination, and responsive modal transitions.
-   File: Tailwind-v4.3/Day4/style.css
-   Language: Pure CSS3
-   ========================================================================== */
+  7: `<!-- ==========================================================================
+     CSS-V3 — Day 7: Tailwind CSS & Design (Day 4 Assignment)
+     GitHub Repository: https://github.com/smartsurya6556/Tailwind-Day1-Task
+     Live Webpage:      https://smartsurya6556.github.io/Tailwind-Day1-Task/
+     Framework:         Tailwind CSS
+     Tasks:
+       Task 1: Text   — h1 with text-blue-500 font-bold text-center
+       Task 2: Box    — div with p-5 bg-blue-500 rounded-lg
+       Task 3: Button — button with bg-blue-500 text-white px-4 py-2 rounded
+       Task 4: Boxes  — two divs with flex gap-4
+       Task 5: Hover  — button with bg-blue-500 hover:bg-blue-700 text-white px-4 py-2
+     ========================================================================== -->
 
-/* Custom Typography & Base Tokens */
-:root {
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-serif: 'Newsreader', Georgia, Cambria, 'Times New Roman', serif;
-  --font-display: 'Plus Jakarta Sans', var(--font-sans);
-  
-  --color-brand-50: #f0f9ff;
-  --color-brand-100: #e0f2fe;
-  --color-brand-600: #0284c7;
-  --color-brand-700: #0369a1;
-  --color-brand-900: #0c4a6e;
-  
-  --color-slate-900: #0f172a;
-  --color-slate-800: #1e293b;
-  --color-slate-700: #334155;
-  --color-slate-600: #475569;
-  --color-slate-200: #e2e8f0;
-  --color-slate-100: #f1f5f9;
-  --color-slate-50: #f8fafc;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 4 - Tailwindcss & Design</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen py-10 px-4 font-sans antialiased">
 
-html {
-  scroll-behavior: smooth;
-  font-family: var(--font-sans);
-  color: var(--color-slate-800);
-  background-color: #ffffff;
-}
+  <div class="max-w-2xl mx-auto space-y-8 bg-slate-800/90 border border-slate-700/80 p-6 sm:p-8 rounded-2xl shadow-2xl backdrop-blur-md">
+    
+    <!-- Assignment Header -->
+    <header class="border-b border-slate-700/70 pb-5 flex items-center justify-between flex-wrap gap-3">
+      <div>
+        <span class="text-xs font-mono font-bold uppercase tracking-wider text-teal-400 bg-teal-950/60 border border-teal-800/60 px-3 py-1 rounded-full">
+          Tailwind CSS • Assignment
+        </span>
+        <h2 class="text-xl sm:text-2xl font-extrabold text-white mt-2">Day 4 - Tailwindcss & Design</h2>
+      </div>
+      <a href="https://github.com/smartsurya6556/Tailwind-Day1-Task" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-300 hover:text-white bg-slate-700/60 hover:bg-slate-700 border border-slate-600 px-3 py-1.5 rounded-xl transition">
+        GitHub Repo
+      </a>
+    </header>
 
-.font-serif {
-  font-family: var(--font-serif);
-}
+    <!-- Task 1 — Text -->
+    <!-- Create an <h1> and: Make the text blue, Make it bold, Center the text -->
+    <!-- Use: text-blue-500 font-bold text-center -->
+    <section class="space-y-2">
+      <div class="flex items-center justify-between">
+        <h3 class="text-xs font-mono font-semibold uppercase tracking-wider text-slate-400">Task 1 — Text</h3>
+        <span class="text-[10px] font-mono text-slate-500">text-blue-500 • font-bold • text-center</span>
+      </div>
+      <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-700/50">
+        <h1 class="text-blue-500 font-bold text-center text-2xl">
+          Welcome to Tailwind CSS
+        </h1>
+      </div>
+    </section>
 
-.font-display {
-  font-family: var(--font-display);
-}
+    <!-- Task 2 — Box -->
+    <!-- Create a <div> and: Add padding, Give it a background color, Add rounded corners -->
+    <!-- Use: p-5 bg-blue-500 rounded-lg -->
+    <section class="space-y-2">
+      <div class="flex items-center justify-between">
+        <h3 class="text-xs font-mono font-semibold uppercase tracking-wider text-slate-400">Task 2 — Box</h3>
+        <span class="text-[10px] font-mono text-slate-500">p-5 • bg-blue-500 • rounded-lg</span>
+      </div>
+      <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-700/50">
+        <div class="p-5 bg-blue-500 rounded-lg text-white font-medium text-center shadow-md">
+          This is a styled Box with padding, blue background, and rounded corners!
+        </div>
+      </div>
+    </section>
 
-/* Custom Scrollbar for Sleek Interface */
-::-webkit-scrollbar {
-  width: 7px;
-  height: 7px;
-}
+    <!-- Task 3 — Button -->
+    <!-- Create a button: Blue background, White text, Padding, Rounded corners -->
+    <!-- Use: bg-blue-500 text-white px-4 py-2 rounded -->
+    <section class="space-y-2">
+      <div class="flex items-center justify-between">
+        <h3 class="text-xs font-mono font-semibold uppercase tracking-wider text-slate-400">Task 3 — Button</h3>
+        <span class="text-[10px] font-mono text-slate-500">bg-blue-500 • text-white • px-4 • py-2 • rounded</span>
+      </div>
+      <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-700/50 flex justify-center">
+        <button class="bg-blue-500 text-white px-4 py-2 rounded font-semibold transition cursor-pointer">
+          Click Me
+        </button>
+      </div>
+    </section>
 
-::-webkit-scrollbar-track {
-  background: var(--color-slate-100);
-}
+    <!-- Task 4 — Two Boxes -->
+    <!-- Create two <div> elements and place them side by side -->
+    <!-- Use: flex gap-4 -->
+    <section class="space-y-2">
+      <div class="flex items-center justify-between">
+        <h3 class="text-xs font-mono font-semibold uppercase tracking-wider text-slate-400">Task 4 — Two Boxes</h3>
+        <span class="text-[10px] font-mono text-slate-500">flex • gap-4</span>
+      </div>
+      <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-700/50">
+        <div class="flex gap-4">
+          <div class="flex-1 p-5 bg-blue-500 rounded-lg text-white font-medium text-center shadow-sm">
+            Box 1
+          </div>
+          <div class="flex-1 p-5 bg-blue-500 rounded-lg text-white font-medium text-center shadow-sm">
+            Box 2
+          </div>
+        </div>
+      </div>
+    </section>
 
-::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-  border-radius: 4px;
-}
+    <!-- Task 5 — Simple Hover -->
+    <!-- Create a button: Normal → Blue, Hover → Dark Blue -->
+    <!-- Use: bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 -->
+    <section class="space-y-2">
+      <div class="flex items-center justify-between">
+        <h3 class="text-xs font-mono font-semibold uppercase tracking-wider text-slate-400">Task 5 — Simple Hover</h3>
+        <span class="text-[10px] font-mono text-slate-500">bg-blue-500 • hover:bg-blue-700 • text-white • px-4 • py-2</span>
+      </div>
+      <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-700/50 flex justify-center">
+        <button class="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded font-semibold transition cursor-pointer shadow-md">
+          Hover Over Me
+        </button>
+      </div>
+    </section>
 
-::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
-}
-
-/* Modal Smooth Transitions */
-.modal-backdrop {
-  transition: opacity 0.25s ease-in-out;
-}
-
-.modal-content {
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease-in-out;
-}
-
-.modal-open {
-  overflow: hidden;
-}
-
-/* Horizontal Timeline Track & Connector Lines */
-.timeline-track-container {
-  position: relative;
-  scrollbar-width: thin;
-  scroll-behavior: smooth;
-}
-
-.timeline-connector {
-  position: absolute;
-  top: 34px;
-  left: 30px;
-  right: 30px;
-  height: 2px;
-  background-color: var(--color-slate-200);
-  z-index: 1;
-}
-
-.timeline-node {
-  position: relative;
-  z-index: 2;
-  transition: transform 0.15s ease;
-}
-
-.timeline-node:hover {
-  transform: translateY(-2px);
-}
-
-/* Responsive Editorial Media Queries */
-@media (max-width: 640px) {
-  .subnav-sticky {
-    top: 56px;
-  }
-}
-
-@media (min-width: 641px) {
-  .subnav-sticky {
-    top: 64px;
-  }
-}
-
-/* Hero Gradient Ambient Mesh */
-.hero-compact-bg {
-  background: linear-gradient(135deg, #090d16 0%, #0d1527 50%, #08111e 100%);
-}
-
-.subnav-sticky {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-}
-
-/* Micro Focus Accessibility */
-a:focus-visible, button:focus-visible, input:focus-visible {
-  outline: 2px solid #0284c7;
-  outline-offset: 2px;
-}
-
-/* Print Optimization */
-@media print {
-  header, nav, footer, #timeline, #search-filter-section, #evolution-reasons, #comparison {
-    display: none !important;
-  }
-  body {
-    background: white !important;
-    color: black !important;
-  }
-}`,
+  </div>
+</body>
+</html>`,
 
   8: `/* ==========================================================================
    CSS-V3 — Day 8: Pseudo Class & Pseudo Elements

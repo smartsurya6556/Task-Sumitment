@@ -379,7 +379,7 @@
             { day: 4, title: 'Bootstrap 5.3 (Day 1) – Components & Responsive Grid System', tags: ['Bootstrap 5.3', 'Day 1', 'Grid System', 'Responsive'], zip: 'Frontend - Copy/Css-v3/Day4/Boostrab-v5.3/Day1/index.html', css: 'Frontend - Copy/Css-v3/Day4/Boostrab-v5.3/Day1/assets/css/style.css', visit: 'Frontend - Copy/Css-v3/Day4/Boostrab-v5.3/Day1/index.html' },
             { day: 5, title: 'Bootstrap 5.3 (Day 2) – Advanced Multi-Section Responsive Interface', tags: ['Bootstrap 5.3', 'Day 2', 'Utilities', 'Carousels'], zip: 'Frontend - Copy/Css-v3/Day4/Boostrab-v5.3/Day2/index.html', css: 'Frontend - Copy/Css-v3/Day4/Boostrab-v5.3/Day2/index.html', visit: 'Frontend - Copy/Css-v3/Day4/Boostrab-v5.3/Day2/index.html' },
             { day: 6, title: 'Bootstrap 5.3 (Day 3) – Multi-Column Layouts & Containers', tags: ['Bootstrap 5.3', 'Day 3', 'Grid System', 'Columns'], zip: 'Frontend - Copy/Css-v3/Day4/Boostrab-v5.3/Day3/index.html', css: 'Frontend - Copy/Css-v3/Day4/Boostrab-v5.3/Day3/assets/style.css', visit: 'Frontend - Copy/Css-v3/Day4/Boostrab-v5.3/Day3/index.html' },
-            { day: 7, title: 'Tailwind CSS 4 – Utility-First Responsive Layouts & Cards', tags: ['Tailwind CSS 4', 'Utility First', 'Flexbox'], zip: 'Frontend - Copy/Tailwind-v4.3/Day1/index.html', css: 'Frontend - Copy/Tailwind-v4.3/Day1/index.html', visit: 'Frontend - Copy/Tailwind-v4.3/Day1/index.html' },
+            { day: 7, title: 'Tailwind CSS 4 – Utility-First Responsive Layouts & Cards', tags: ['Tailwind CSS 4', 'Utility First', 'Flexbox'], zip: 'https://github.com/smartsurya6556/Tailwind-Day1-Task/archive/refs/heads/main.zip', git: 'https://github.com/smartsurya6556/Tailwind-Day1-Task.git', visit: 'https://smartsurya6556.github.io/Tailwind-Day1-Task/', html: 'https://smartsurya6556.github.io/Tailwind-Day1-Task/', css: 'Frontend - Copy/Tailwind-v4.3/Day1/index.html' },
             { day: 8, title: 'CSS3 Pseudo Class & Pseudo Elements (Hover, Focus, Lists & ::before/::after)', tags: ['CSS3', 'Day 8', 'Pseudo-classes', 'Pseudo-elements', 'Hover & Focus'], zip: 'Frontend - Copy/Css-v3/Day8/Task-8.zip', css: 'Frontend - Copy/Css-v3/Day8/assets/style.css', visit: 'Frontend - Copy/Css-v3/Day8/index.html' },
             { day: 9, title: 'CSS Transition & Transform (Button Hover, Gallery Zoom, Card Lift & 360° Rotate)', tags: ['CSS3', 'Day 9', 'Transitions', 'Transforms', 'Animations'], zip: 'Frontend - Copy/Css-v3/Day9/Task-9.zip', css: 'Frontend - Copy/Css-v3/Day9/assets/style.css', visit: 'Frontend - Copy/Css-v3/Day9/index.html' },
             { day: 10, title: 'CSS3 Media Queries & Responsive Design (Student Cards, Products & Portfolio)', tags: ['CSS3', 'Day 10', 'Media Queries', 'Responsive', 'Flex Cards'], zip: 'Frontend - Copy/Css-v3/Day10/Task-10.zip', css: 'Frontend - Copy/Css-v3/Day10/assets/style.css', visit: 'Frontend - Copy/Css-v3/Day10/index.html' },
@@ -773,7 +773,7 @@
               <span>.Zip File</span>
             </a>
 
-            <button onclick="openViewChooser(${t.day}, '${t.title.replace(/'/g, "\\'")}', '${t.html || t.visit}', '${t.css || t.js || t.code || t.visit}', '${activeModule}')" title="Visit Options: Live Webpage or Source Code" class="btn-track-action flex-1 max-w-[125px] sm:max-w-[135px] py-1.5 sm:py-2 px-3 rounded-xl font-bold text-xs flex items-center justify-center gap-1.5 shadow-sm cursor-pointer">
+            <button onclick="openViewChooser(${t.day}, '${t.title.replace(/'/g, "\\'")}', '${t.html || t.visit}', '${t.css || t.js || t.code || t.visit}', '${activeModule}', '${(t.git || '').replace(/'/g, "\\'")}')" title="Visit Options: Live Webpage or Source Code" class="btn-track-action flex-1 max-w-[125px] sm:max-w-[135px] py-1.5 sm:py-2 px-3 rounded-xl font-bold text-xs flex items-center justify-center gap-1.5 shadow-sm cursor-pointer">
               <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
@@ -798,7 +798,7 @@
               </div>
 
               <!-- Title (Light-weight bold / font-semibold) & Tech Tags -->
-              <h3 onclick="openViewChooser(${t.day}, '${t.title.replace(/'/g, "\\'")}', '${t.html || t.visit}', '${t.css || t.js || t.code || t.visit}', '${activeModule}')" class="font-semibold text-[15px] text-slate-800 tracking-tight leading-snug cursor-pointer transition">
+              <h3 onclick="openViewChooser(${t.day}, '${t.title.replace(/'/g, "\\'")}', '${t.html || t.visit}', '${t.css || t.js || t.code || t.visit}', '${activeModule}', '${(t.git || '').replace(/'/g, "\\'")}')" class="font-semibold text-[15px] text-slate-800 tracking-tight leading-snug cursor-pointer transition">
                 ${t.title || `Day ${t.day} Task`}
               </h3>
               ${tagsHtml}
@@ -818,6 +818,7 @@
     let currentChooserHtmlPath = '';
     let currentChooserJsPath = '';
     let currentChooserModule = '';
+    let currentChooserGitUrl = '';
     let currentModalCode = '';
 
     // Preloaded Codebase for JavaScript, HTML, and CSS (Loaded from respective dataset files)
@@ -825,18 +826,20 @@
     window.HTML_TASK_CODES = window.HTML_TASK_CODES || {};
     window.CSS_TASK_CODES = window.CSS_TASK_CODES || {};
 
-    function openViewChooser(day, title, htmlPath, jsPath, moduleKey) {
+    function openViewChooser(day, title, htmlPath, jsPath, moduleKey, gitUrl) {
       currentChooserDay = day;
       currentChooserTitle = title;
       currentChooserHtmlPath = htmlPath;
       currentChooserJsPath = jsPath;
       currentChooserModule = moduleKey || activeModule;
+      currentChooserGitUrl = gitUrl || '';
 
       const modal = document.getElementById('viewChooserModal');
       const badge = document.getElementById('chooserDayBadge');
       const titleEl = document.getElementById('chooserTitle');
       const codeTitleEl = document.getElementById('chooserCodeTitle');
       const codeDescEl = document.getElementById('chooserCodeDesc');
+      const gitBtn = document.getElementById('chooserGitBtn');
 
       if (badge) badge.innerText = `Day ${day}`;
       if (titleEl) titleEl.innerText = title;
@@ -850,10 +853,21 @@
           codeDescEl.innerText = 'View & Copy HTML Markup';
         } else if (currentChooserModule === 'CSS-V3') {
           codeTitleEl.innerText = 'CSS Source Code';
-          codeDescEl.innerText = 'View & Copy CSS Styles';
+          codeDescEl.innerText = 'View & Copy CSS / Tailwind Code';
         } else {
           codeTitleEl.innerText = 'Source Code';
           codeDescEl.innerText = 'View & Copy Source Code';
+        }
+      }
+
+      if (gitBtn) {
+        if (currentChooserGitUrl) {
+          gitBtn.href = currentChooserGitUrl;
+          gitBtn.classList.remove('hidden');
+          gitBtn.classList.add('flex');
+        } else {
+          gitBtn.classList.add('hidden');
+          gitBtn.classList.remove('flex');
         }
       }
 
@@ -1092,6 +1106,25 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
           </svg>
         </button>
+
+        <!-- Button 3: GitHub Repository (Dynamic) -->
+        <a id="chooserGitBtn" href="#" target="_blank" rel="noopener noreferrer" class="group hidden w-full p-3.5 rounded-xl bg-gradient-to-r from-slate-900 to-slate-800 hover:from-slate-950 hover:to-slate-900 text-white shadow-md hover:shadow-lg transition-all duration-200 items-center justify-between text-left cursor-pointer border border-slate-700/80 hover:border-sky-400/50">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-sky-400/10 flex items-center justify-center shrink-0 border border-sky-400/30 group-hover:scale-105 transition">
+              <svg class="w-5 h-5 text-sky-400" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            </div>
+            <div>
+              <div class="flex items-center gap-1.5">
+                <span class="font-bold text-sm text-sky-300">GitHub Repository</span>
+                <span class="text-[9px] font-mono font-extrabold uppercase px-1.5 py-0.5 rounded bg-sky-400/20 text-sky-300 border border-sky-400/30">Git Source</span>
+              </div>
+              <p class="text-[11px] text-slate-300 font-medium">View Source Code on GitHub</p>
+            </div>
+          </div>
+          <svg class="w-4 h-4 text-slate-400 group-hover:text-sky-400 group-hover:translate-x-0.5 transition shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
       </div>
 
       <!-- Footer -->
