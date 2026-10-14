@@ -20,6 +20,7 @@
   <script src="./js_task_codes.js"></script>
   <script src="./html_task_codes.js"></script>
   <script src="./css_task_codes.js"></script>
+  <script src="./java_task_codes.js"></script>
 
   <!-- Pre-render Theme Sync (Default: Always Dark Mode) -->
   <script>
@@ -101,15 +102,16 @@
               <span>Frontend</span>
             </button>
 
-            <!-- Backend Tab -->
-            <button id="nav-backend" onclick="setDomain('backend', 'NODEJS-V20')" class="segmented-btn px-3.5 sm:px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-2 text-slate-600 hover:text-slate-900 hover:bg-white/50">
-              <svg class="nav-icon w-4 h-4 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <rect x="2" y="2" width="20" height="8" rx="2" stroke-width="2" />
-                <rect x="2" y="14" width="20" height="8" rx="2" stroke-width="2" />
-                <line x1="6" y1="6" x2="6.01" y2="6" stroke-width="2.5" />
-                <line x1="6" y1="18" x2="6.01" y2="18" stroke-width="2.5" />
+            <!-- Core Java Tab -->
+            <button id="nav-backend" onclick="setDomain('backend', 'JAVA-TASKS')" class="segmented-btn px-3.5 sm:px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-2 text-slate-600 hover:text-slate-900 hover:bg-white/50">
+              <svg class="nav-icon w-4 h-4 text-slate-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                <line x1="6" y1="1" x2="6" y2="4"></line>
+                <line x1="10" y1="1" x2="10" y2="4"></line>
+                <line x1="14" y1="1" x2="14" y2="4"></line>
               </svg>
-              <span>Backend</span>
+              <span>Core Java</span>
             </button>
 
             <!-- Database Tab -->
@@ -272,9 +274,9 @@
               </button>
             </li>
             <li>
-              <button onclick="setDomain('backend', 'NODEJS-V20')" class="footer-link text-slate-600 hover:text-[#8D6E63] transition flex items-center gap-2 text-left w-full cursor-pointer">
-                <span class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-[#8D6E63]/15 text-[#8D6E63] dark:text-[#D7CCC8] border border-[#8D6E63]/30">Backend</span>
-                <span>Node.js V20 • Express • REST APIs</span>
+              <button onclick="setDomain('backend', 'JAVA-TASKS')" class="footer-link text-slate-600 hover:text-[#8D6E63] transition flex items-center gap-2 text-left w-full cursor-pointer">
+                <span class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-[#8D6E63]/15 text-[#8D6E63] dark:text-[#D7CCC8] border border-[#8D6E63]/30">Core Java</span>
+                <span>Java SE • OOPs • Collections • Practical Labs</span>
               </button>
             </li>
             <li>
@@ -333,7 +335,7 @@
           <span class="px-2 py-0.5 rounded-md bg-slate-100 text-slate-600 border border-slate-200/60 font-bold">HTML5</span>
           <span class="px-2 py-0.5 rounded-md bg-slate-100 text-slate-600 border border-slate-200/60 font-bold">CSS3</span>
           <span class="px-2 py-0.5 rounded-md bg-slate-100 text-slate-600 border border-slate-200/60 font-bold">ES2024</span>
-          <span class="px-2 py-0.5 rounded-md bg-slate-100 text-slate-600 border border-slate-200/60 font-bold">Node.js</span>
+          <span class="px-2 py-0.5 rounded-md bg-slate-100 text-slate-600 border border-slate-200/60 font-bold">Java SE</span>
           <span class="px-2 py-0.5 rounded-md bg-slate-100 text-slate-600 border border-slate-200/60 font-bold">PostgreSQL</span>
         </div>
       </div>
@@ -413,64 +415,36 @@
         }
       },
 
-      // 2. BACKEND ENGINEERING TRACK (3 MODULES + 1 MY PROJECT)
+      // 2. CORE JAVA TRACK (3 MODULES + 1 MY PROJECT)
       'backend': {
-        name: 'Backend Engineering',
-        modules: ['NODEJS-V20', 'EXPRESS-V4', 'AUTH-API-V2', 'MY PROJECT'],
+        name: 'Core Java Development',
+        modules: ['JAVA-TASKS', 'OOPs-JAVA', 'CORE-COLLECTIONS', 'MY PROJECT'],
         icons: {
-          'NODEJS-V20': `<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>`,
-          'EXPRESS-V4': `<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2" stroke-width="2"/><rect x="2" y="14" width="20" height="8" rx="2" stroke-width="2"/><line x1="6" y1="6" x2="6.01" y2="6" stroke-width="2.5"/><line x1="6" y1="18" x2="6.01" y2="18" stroke-width="2.5"/></svg>`,
-          'AUTH-API-V2': `<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2" stroke-width="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4" stroke-width="2"/></svg>`,
+          'JAVA-TASKS': `<svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>`,
+          'OOPs-JAVA': `<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2" stroke-width="2"/><rect x="2" y="14" width="20" height="8" rx="2" stroke-width="2"/><line x1="6" y1="6" x2="6.01" y2="6" stroke-width="2.5"/><line x1="6" y1="18" x2="6.01" y2="18" stroke-width="2.5"/></svg>`,
+          'CORE-COLLECTIONS': `<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>`,
           'MY PROJECT': `<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09zM12 15l-3-3m0 0l3-3m-3 3h12"/></svg>`
         },
         tasks: {
-          'NODEJS-V20': [
-            { day: 1, title: 'Node.js Architecture, V8 & Event Loop', tags: ['Node.js', 'V8 Engine'], zip: 'https://github.com/devtask-hub/nodejs-day01-task/archive/refs/heads/main.zip', visit: 'https://nodejs-day01.onrender.com' },
-            { day: 2, title: 'Node File System (fs) & Path Modules', tags: ['Node.js', 'fs/promises'], zip: 'https://github.com/devtask-hub/nodejs-day02-task/archive/refs/heads/main.zip', visit: 'https://nodejs-day02.onrender.com' },
-            { day: 3, title: 'Streams, Buffers & Large File Pipes', tags: ['Streams', 'Buffers'], zip: 'https://github.com/devtask-hub/nodejs-day03-task/archive/refs/heads/main.zip', visit: 'https://nodejs-day03.onrender.com' },
-            { day: 4, title: 'Event Emitters & Custom Pub/Sub Pattern', tags: ['Events', 'EventEmitter'], zip: 'https://github.com/devtask-hub/nodejs-day04-task/archive/refs/heads/main.zip', visit: 'https://nodejs-day04.onrender.com' },
-            { day: 5, title: 'Native HTTP Server & URL Routing Engine', tags: ['http', 'Routing'], zip: 'https://github.com/devtask-hub/nodejs-day05-task/archive/refs/heads/main.zip', visit: 'https://nodejs-day05.onrender.com' },
-            { day: 6, title: 'Worker Threads & Clustering Pipelines', tags: ['Workers', 'Clustering'], zip: 'https://github.com/devtask-hub/nodejs-day06-task/archive/refs/heads/main.zip', visit: 'https://nodejs-day06.onrender.com' },
-            { day: 7, title: 'Async Pipelines & Winston Logging System', tags: ['Async', 'Logging'], zip: 'https://github.com/devtask-hub/nodejs-day07-task/archive/refs/heads/main.zip', visit: 'https://nodejs-day07.onrender.com' },
-            { day: 8, title: 'NPM Package Publishing & Semantic Versioning', tags: ['NPM', 'Modules'], zip: 'https://github.com/devtask-hub/nodejs-day08-task/archive/refs/heads/main.zip', visit: 'https://nodejs-day08.onrender.com' },
-            { day: 9, title: 'Process Environment & Security Audits', tags: ['dotenv', 'Security'], zip: 'https://github.com/devtask-hub/nodejs-day09-task/archive/refs/heads/main.zip', visit: 'https://nodejs-day09.onrender.com' },
-            { day: 10, title: 'Full Node.js CLI Tool & Automation Script', tags: ['CLI', 'Node.js'], zip: 'https://github.com/devtask-hub/nodejs-day10-task/archive/refs/heads/main.zip', visit: 'https://nodejs-day10.onrender.com' }
+          'JAVA-TASKS': [
+            { day: 1, title: 'Variable Types (Instance, Static & Local Variables)', tags: ['Core Java', 'Variables', 'Instance', 'Static', 'Local'], zip: 'Core-Java/Day1/VariableTypesAssignment.java', visit: 'Core-Java/Day1/index.html', code: 'Core-Java/Day1/VariableTypesAssignment.java' }
           ],
-          'EXPRESS-V4': [
-            { day: 1, title: 'Express App Init & Middleware Chain', tags: ['Express', 'Routing'], zip: 'https://github.com/devtask-hub/express-day01-task/archive/refs/heads/main.zip', visit: 'https://express-day01.onrender.com' },
-            { day: 2, title: 'RESTful API Standards & Status Handling', tags: ['REST API', 'JSON'], zip: 'https://github.com/devtask-hub/express-day02-task/archive/refs/heads/main.zip', visit: 'https://express-day02.onrender.com' },
-            { day: 3, title: 'Request Validation & Sanitization with Zod', tags: ['Zod', 'Validation'], zip: 'https://github.com/devtask-hub/express-day03-task/archive/refs/heads/main.zip', visit: 'https://express-day03.onrender.com' },
-            { day: 4, title: 'Global Error Handling & Async Controller Wrappers', tags: ['Error Handling'], zip: 'https://github.com/devtask-hub/express-day04-task/archive/refs/heads/main.zip', visit: 'https://express-day04.onrender.com' },
-            { day: 5, title: 'Multipart File Uploads with Multer Pipeline', tags: ['Multer', 'Uploads'], zip: 'https://github.com/devtask-hub/express-day05-task/archive/refs/heads/main.zip', visit: 'https://express-day05.onrender.com' },
-            { day: 6, title: 'CORS Configuration & Helmet Security Layer', tags: ['CORS', 'Helmet'], zip: 'https://github.com/devtask-hub/express-day06-task/archive/refs/heads/main.zip', visit: 'https://express-day06.onrender.com' },
-            { day: 7, title: 'API Rate Limiting & DDoS Prevention System', tags: ['Rate Limit', 'Security'], zip: 'https://github.com/devtask-hub/express-day07-task/archive/refs/heads/main.zip', visit: 'https://express-day07.onrender.com' },
-            { day: 8, title: 'Real-Time WebSocket Server Integration', tags: ['WebSockets', 'ws'], zip: 'https://github.com/devtask-hub/express-day08-task/archive/refs/heads/main.zip', visit: 'https://express-day08.onrender.com' },
-            { day: 9, title: 'Interactive Swagger / OpenAPI Documentation', tags: ['Swagger', 'OpenAPI'], zip: 'https://github.com/devtask-hub/express-day09-task/archive/refs/heads/main.zip', visit: 'https://express-day09.onrender.com' },
-            { day: 10, title: 'Production Server Clustering & Health Probes', tags: ['PM2', 'Deployment'], zip: 'https://github.com/devtask-hub/express-day10-task/archive/refs/heads/main.zip', visit: 'https://express-day10.onrender.com' }
+          'OOPs-JAVA': [
+            { day: 1, title: 'Classes, Objects, State, Behavior & Constructors', tags: ['OOPs', 'Class', 'Object', 'Constructor'], zip: '#', visit: '#', code: 'OOP Day 1' },
+            { day: 2, title: 'Inheritance & Subclassing (Single, Multilevel, Hierarchical)', tags: ['OOPs', 'Inheritance', 'extends'], zip: '#', visit: '#', code: 'OOP Day 2' },
+            { day: 3, title: 'Polymorphism (Method Overloading vs Method Overriding)', tags: ['OOPs', 'Polymorphism', 'Overload', 'Override'], zip: '#', visit: '#', code: 'OOP Day 3' },
+            { day: 4, title: 'Encapsulation, Data Hiding, Getters & Setters', tags: ['OOPs', 'Encapsulation', 'Access Modifiers'], zip: '#', visit: '#', code: 'OOP Day 4' },
+            { day: 5, title: 'Abstraction (Abstract Classes & Pure Interfaces)', tags: ['OOPs', 'Abstraction', 'Interface'], zip: '#', visit: '#', code: 'OOP Day 5' }
           ],
-          'AUTH-API-V2': [
-            { day: 1, title: 'User Registration & Bcrypt Salt Hashing', tags: ['Auth', 'Bcrypt'], zip: 'https://github.com/devtask-hub/auth-day01-task/archive/refs/heads/main.zip', visit: 'https://auth-day01.onrender.com' },
-            { day: 2, title: 'JWT Access & Refresh Token Rotation', tags: ['JWT', 'Tokens'], zip: 'https://github.com/devtask-hub/auth-day02-task/archive/refs/heads/main.zip', visit: 'https://auth-day02.onrender.com' },
-            { day: 3, title: 'HTTP-Only Secure Cookie Storage Protocol', tags: ['Cookies', 'Security'], zip: 'https://github.com/devtask-hub/auth-day03-task/archive/refs/heads/main.zip', visit: 'https://auth-day03.onrender.com' },
-            { day: 4, title: 'Role-Based Access Control (RBAC) Guard', tags: ['RBAC', 'Permissions'], zip: 'https://github.com/devtask-hub/auth-day04-task/archive/refs/heads/main.zip', visit: 'https://auth-day04.onrender.com' },
-            { day: 5, title: 'OAuth 2.0 & Google / GitHub Social Auth', tags: ['OAuth2', 'Social Login'], zip: 'https://github.com/devtask-hub/auth-day05-task/archive/refs/heads/main.zip', visit: 'https://auth-day05.onrender.com' },
-            { day: 6, title: 'Two-Factor Authentication (2FA / TOTP)', tags: ['2FA', 'TOTP'], zip: 'https://github.com/devtask-hub/auth-day06-task/archive/refs/heads/main.zip', visit: 'https://auth-day06.onrender.com' },
-            { day: 7, title: 'Secure Password Reset with Signed Email Tokens', tags: ['Tokens', 'Email'], zip: 'https://github.com/devtask-hub/auth-day07-task/archive/refs/heads/main.zip', visit: 'https://auth-day07.onrender.com' },
-            { day: 8, title: 'Session Revocation & Redis Blacklist Caching', tags: ['Sessions', 'Redis'], zip: 'https://github.com/devtask-hub/auth-day08-task/archive/refs/heads/main.zip', visit: 'https://auth-day08.onrender.com' },
-            { day: 9, title: 'API Key Management & Rate-Limited Endpoints', tags: ['API Keys', 'Limits'], zip: 'https://github.com/devtask-hub/auth-day09-task/archive/refs/heads/main.zip', visit: 'https://auth-day09.onrender.com' },
-            { day: 10, title: 'Complete Enterprise Auth Microservice', tags: ['Microservices', 'Auth'], zip: 'https://github.com/devtask-hub/auth-day10-task/archive/refs/heads/main.zip', visit: 'https://auth-day10.onrender.com' }
+          'CORE-COLLECTIONS': [
+            { day: 1, title: 'Collection Framework Hierarchy & List Interface (ArrayList, LinkedList)', tags: ['Collections', 'List', 'ArrayList'], zip: '#', visit: '#', code: 'Coll Day 1' },
+            { day: 2, title: 'Set Interface & Unique Elements (HashSet, LinkedHashSet, TreeSet)', tags: ['Collections', 'Set', 'TreeSet'], zip: '#', visit: '#', code: 'Coll Day 2' },
+            { day: 3, title: 'Map Interface & Key-Value Pairs (HashMap, LinkedHashMap, TreeMap)', tags: ['Collections', 'Map', 'HashMap'], zip: '#', visit: '#', code: 'Coll Day 3' }
           ],
           'MY PROJECT': [
-            { day: 1, title: 'Enterprise Microservices API Gateway', tags: ['Node.js', 'Express', 'Docker'], zip: 'https://github.com/devtask-hub/backend-project-gateway/archive/refs/heads/main.zip', git: 'https://github.com/devtask-hub/backend-project-gateway', live: 'https://backend-gateway.onrender.com' },
-            { day: 2, title: 'Realtime Collaborative Chat Server', tags: ['WebSockets', 'Redis', 'Node.js'], zip: 'https://github.com/devtask-hub/backend-project-chat/archive/refs/heads/main.zip', git: 'https://github.com/devtask-hub/backend-project-chat', live: 'https://backend-chat.onrender.com' },
-            { day: 3, title: 'Stripe Billing & Subscription Engine', tags: ['Stripe SDK', 'Webhooks', 'Express'], zip: 'https://github.com/devtask-hub/backend-project-billing/archive/refs/heads/main.zip', git: 'https://github.com/devtask-hub/backend-project-billing', live: 'https://backend-billing.onrender.com' },
-            { day: 4, title: 'High-Throughput Job Queue Worker', tags: ['BullMQ', 'Redis', 'Node.js'], zip: 'https://github.com/devtask-hub/backend-project-queue/archive/refs/heads/main.zip', git: 'https://github.com/devtask-hub/backend-project-queue', live: 'https://backend-queue.onrender.com' },
-            { day: 5, title: 'S3 Media Transcoding & Upload Pipeline', tags: ['AWS S3', 'FFmpeg', 'Multer'], zip: 'https://github.com/devtask-hub/backend-project-s3/archive/refs/heads/main.zip', git: 'https://github.com/devtask-hub/backend-project-s3', live: 'https://backend-s3.onrender.com' },
-            { day: 6, title: 'Zero-Trust RBAC Identity Provider', tags: ['JWT', 'OAuth2', 'Bcrypt'], zip: 'https://github.com/devtask-hub/backend-project-rbac/archive/refs/heads/main.zip', git: 'https://github.com/devtask-hub/backend-project-rbac', live: 'https://backend-rbac.onrender.com' },
-            { day: 7, title: 'Automated Webhook Dispatcher & Retry System', tags: ['Express', 'Axios', 'PostgreSQL'], zip: 'https://github.com/devtask-hub/backend-project-webhooks/archive/refs/heads/main.zip', git: 'https://github.com/devtask-hub/backend-project-webhooks', live: 'https://backend-webhooks.onrender.com' },
-            { day: 8, title: 'Financial Ledger & Transaction API', tags: ['ACID', 'PostgreSQL', 'Node.js'], zip: 'https://github.com/devtask-hub/backend-project-ledger/archive/refs/heads/main.zip', git: 'https://github.com/devtask-hub/backend-project-ledger', live: 'https://backend-ledger.onrender.com' },
-            { day: 9, title: 'GraphQL Aggregator & Federation Gateway', tags: ['Apollo Server', 'GraphQL'], zip: 'https://github.com/devtask-hub/backend-project-graphql/archive/refs/heads/main.zip', git: 'https://github.com/devtask-hub/backend-project-graphql', live: 'https://backend-graphql.onrender.com' },
-            { day: 10, title: 'Dockerized Kubernetes Backend Cluster', tags: ['Docker', 'Kubernetes', 'CI/CD'], zip: 'https://github.com/devtask-hub/backend-project-k8s/archive/refs/heads/main.zip', git: 'https://github.com/devtask-hub/backend-project-k8s', live: 'https://backend-k8s.onrender.com' }
+            { day: 1, title: 'Student Management System • Console CRUD', tags: ['Java OOP', 'CRUD', 'Console'], zip: '#', git: 'https://github.com/smartsurya6556', live: '#' },
+            { day: 2, title: 'Banking Application • Transaction & Account Engine', tags: ['Java OOP', 'Banking', 'Exceptions'], zip: '#', git: 'https://github.com/smartsurya6556', live: '#' },
+            { day: 3, title: 'Supermarket Billing & Inventory Management', tags: ['Collections', 'OOP', 'Billing'], zip: '#', git: 'https://github.com/smartsurya6556', live: '#' }
           ]
         }
       },
@@ -633,7 +607,8 @@
       document.getElementById('domain-badge-text').style.color = "var(--track-primary)";
       document.getElementById('domain-pulse-dot').style.backgroundColor = "var(--track-primary)";
 
-      document.getElementById('domain-heading').innerHTML = `${activeModule} <span style="color: var(--track-primary)">Tasks</span>`;
+      const headingPrefix = activeModule.replace(/-TASKS?$/, '');
+      document.getElementById('domain-heading').innerHTML = `${headingPrefix} <span style="color: var(--track-primary)">Tasks</span>`;
 
       renderCards();
     }
@@ -763,6 +738,7 @@
         if (activeModule === 'JAVASCRIPT-V24') rightBadgeText = 'JS Task';
         else if (activeModule === 'HTML-V5') rightBadgeText = 'HTML Task';
         else if (activeModule === 'CSS-V3') rightBadgeText = 'CSS Task';
+        else if (activeDomain === 'backend' || activeModule.includes('JAVA') || activeModule.includes('COLLECTIONS')) rightBadgeText = 'Java Task';
 
         const actionButtons = `
           <div class="pt-3 border-t border-slate-100 flex items-center justify-center gap-2.5 sm:gap-3">
@@ -854,6 +830,9 @@
         } else if (currentChooserModule === 'CSS-V3') {
           codeTitleEl.innerText = 'CSS Source Code';
           codeDescEl.innerText = 'View & Copy CSS / Tailwind Code';
+        } else if (currentChooserModule.includes('JAVA') || currentChooserModule.includes('COLLECTIONS') || currentChooserModule === 'backend') {
+          codeTitleEl.innerText = 'Java Source Code';
+          codeDescEl.innerText = 'View & Copy Core Java Code';
         } else {
           codeTitleEl.innerText = 'Source Code';
           codeDescEl.innerText = 'View & Copy Source Code';
@@ -923,6 +902,8 @@
           footerLabel.innerText = 'CSS3 Responsive Styling / Design System Task';
         } else if (mod === 'JAVASCRIPT-V24') {
           footerLabel.innerText = 'JavaScript ECMAScript / Logic Task';
+        } else if (mod.includes('JAVA') || mod.includes('COLLECTIONS') || mod === 'backend') {
+          footerLabel.innerText = 'Core Java Programming / Object-Oriented Task';
         } else {
           footerLabel.innerText = `${mod} Task Source Code`;
         }
@@ -936,8 +917,10 @@
         code = window.HTML_TASK_CODES[day];
       } else if (mod === 'CSS-V3' && window.CSS_TASK_CODES && window.CSS_TASK_CODES[day]) {
         code = window.CSS_TASK_CODES[day];
+      } else if ((mod.includes('JAVA') || mod.includes('COLLECTIONS') || mod === 'backend') && window.JAVA_TASK_CODES && window.JAVA_TASK_CODES[day]) {
+        code = window.JAVA_TASK_CODES[day];
       } else {
-        code = `// ${mod} — Day ${day}: ${title}\n// File Path: ${visitPath}\n\n// Code is accessible via 'Open File' button above.`;
+        code = `// ${mod} — Day ${day}: ${title}\n// Ready for Java source code.\n\npublic class Day${day}Task {\n    public static void main(String[] args) {\n        System.out.println("${title}");\n    }\n}`;
       }
       currentModalCode = code;
       codeEl.textContent = code;

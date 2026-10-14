@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Core Java — Day 1: Variable Types | DevTask HUB</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    pre, code, .font-mono { font-family: 'JetBrains Mono', monospace; }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen py-8 sm:py-12 px-4 sm:px-6 lg:px-8 antialiased selection:bg-amber-500/30 selection:text-amber-200">
+
+  <div class="max-w-5xl mx-auto space-y-8">
+    
+    <!-- Header -->
+    <header class="flex items-center justify-between flex-wrap gap-4 pb-6 border-b border-slate-800">
+      <div class="flex items-center gap-3">
+        <a href="../../index.html" class="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-300 hover:text-white transition flex items-center gap-1.5 shadow-sm">
+          <span>&larr; DevTask HUB</span>
+        </a>
+        <span class="text-xs font-mono font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20">
+          Java Tasks &bull; Day 1
+        </span>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <a href="./VariableTypesAssignment.java" download="VariableTypesAssignment.java" class="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/30 transition flex items-center gap-1.5 shadow-sm">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+          <span>Download .java</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- Title Section -->
+    <div class="space-y-2">
+      <span class="text-xs font-mono font-bold uppercase tracking-wider text-amber-400">Assignment 1</span>
+      <h1 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+        Variable Types <span class="text-slate-400 font-semibold text-lg sm:text-2xl">(Instance, Static &amp; Local)</span>
+      </h1>
+      <p class="text-sm text-slate-400 max-w-2xl">
+        Clean Java implementation demonstrating object variables, static counter, and method-level calculations.
+      </p>
+    </div>
+
+    <!-- 3 Short Question Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      
+      <!-- 1 -->
+      <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 space-y-2">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold text-amber-400 font-mono">1. Instance</span>
+          <span class="text-[10px] text-slate-500 font-mono">Student</span>
+        </div>
+        <h3 class="text-sm font-bold text-white">Student Registration</h3>
+        <p class="text-xs text-slate-400">
+          Create three students with different names and roll numbers using a method.
+        </p>
+      </div>
+
+      <!-- 2 -->
+      <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 space-y-2">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold text-amber-400 font-mono">2. Static</span>
+          <span class="text-[10px] text-slate-500 font-mono">Employee</span>
+        </div>
+        <h3 class="text-sm font-bold text-white">Employee Counter</h3>
+        <p class="text-xs text-slate-400">
+          Count how many employee objects are created by calling a method to register each employee.
+        </p>
+      </div>
+
+      <!-- 3 -->
+      <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 space-y-2">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold text-amber-400 font-mono">3. Local</span>
+          <span class="text-[10px] text-slate-500 font-mono">ElectricityBill</span>
+        </div>
+        <h3 class="text-sm font-bold text-white">Electricity Bill</h3>
+        <p class="text-xs text-slate-400">
+          Calculate bill using local variables. Rates: &le;100 &#8377;2, 101-200 &#8377;3, &gt;200 &#8377;5.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Workspace Tabs: Terminal Output vs Java Code -->
+    <div class="rounded-2xl border border-slate-800 bg-slate-900/95 overflow-hidden shadow-2xl">
+      
+      <!-- Tabs Header -->
+      <div class="flex items-center justify-between px-5 py-3 bg-slate-950 border-b border-slate-800">
+        <div class="flex items-center gap-2">
+          <button id="tabTerm" onclick="showTab('term')" class="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30 transition">
+            Terminal Output
+          </button>
+          <button id="tabCode" onclick="showTab('code')" class="px-3.5 py-1.5 rounded-xl text-xs font-bold text-slate-400 hover:text-white hover:bg-slate-800 transition">
+            Java Code
+          </button>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <button id="runBtn" onclick="runCode()" class="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 transition flex items-center gap-1.5 cursor-pointer">
+            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            <span id="runText">Run Program</span>
+          </button>
+          <button id="copyBtn" onclick="copyCode()" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-800 hover:bg-slate-700 text-slate-300 transition hidden">
+            Copy Code
+          </button>
+        </div>
+      </div>
+
+      <!-- Tab 1: Terminal Output -->
+      <div id="contentTerm" class="p-5 font-mono text-xs leading-relaxed bg-[#0a0f1d] overflow-x-auto min-h-[240px]">
+        <pre id="outputPre" class="text-emerald-400 whitespace-pre"></pre>
+      </div>
+
+      <!-- Tab 2: Java Source Code -->
+      <div id="contentCode" class="p-5 font-mono text-xs leading-relaxed bg-[#0a0f1d] overflow-x-auto min-h-[240px] hidden">
+        <pre id="codePre" class="text-slate-300 whitespace-pre"></pre>
+      </div>
+
+    </div>
+
+    <!-- Back to Hub -->
+    <div class="pt-2 flex justify-between items-center text-xs text-slate-500">
+      <span>Core Java &bull; Java Tasks &bull; Day 1</span>
+      <a href="../../index.html" class="text-amber-400 hover:text-amber-300 transition">&larr; Back to Portal</a>
+    </div>
+
+  </div>
+
+  <script>
+    const cleanOutput = `--- Student Registration ---
+Roll No: 101, Name: Surya
+Roll No: 102, Name: Karthik
+Roll No: 103, Name: Praveen
+
+--- Employee Counter ---
+ID: 101, Name: Anand
+ID: 102, Name: Divya
+ID: 103, Name: Vimal
+Total Employees Created: 3
+
+--- Electricity Bill Calculation ---
+Units: 80 | Bill: Rs. 160.0
+Units: 150 | Bill: Rs. 350.0
+Units: 250 | Bill: Rs. 750.0`;
+
+    const cleanJavaCode = `// Day 1 - Variable Types
+
+// 1. Student Registration (Instance Variables)
+class Student {
+    String name;
+    int rollNo;
+
+    void register(String name, int rollNo) {
+        this.name = name;
+        this.rollNo = rollNo;
+    }
+
+    void display() {
+        System.out.println("Roll No: " + rollNo + ", Name: " + name);
+    }
+}
+
+// 2. Employee Counter (Static Variable)
+class Employee {
+    static int count = 0;
+    int id;
+    String name;
+
+    void register(int id, String name) {
+        this.id = id;
+        this.name = name;
+        count++;
+    }
+
+    void display() {
+        System.out.println("ID: " + id + ", Name: " + name);
+    }
+}
+
+// 3. Electricity Bill (Local Variables)
+class ElectricityBill {
+    void calculateBill(int units) {
+        double bill;
+
+        if (units <= 100) {
+            bill = units * 2;
+        } else if (units <= 200) {
+            bill = (100 * 2) + ((units - 100) * 3);
+        } else {
+            bill = (100 * 2) + (100 * 3) + ((units - 200) * 5);
+        }
+
+        System.out.println("Units: " + units + " | Bill: Rs. " + bill);
+    }
+}
+
+public class VariableTypesAssignment {
+    public static void main(String[] args) {
+        // Task 1: Student Registration
+        System.out.println("--- Student Registration ---");
+        Student s1 = new Student();
+        Student s2 = new Student();
+        Student s3 = new Student();
+
+        s1.register("Surya", 101);
+        s2.register("Karthik", 102);
+        s3.register("Praveen", 103);
+
+        s1.display();
+        s2.display();
+        s3.display();
+
+        // Task 2: Employee Counter
+        System.out.println("\\n--- Employee Counter ---");
+        Employee e1 = new Employee();
+        Employee e2 = new Employee();
+        Employee e3 = new Employee();
+
+        e1.register(101, "Anand");
+        e2.register(102, "Divya");
+        e3.register(103, "Vimal");
+
+        e1.display();
+        e2.display();
+        e3.display();
+        System.out.println("Total Employees Created: " + Employee.count);
+
+        // Task 3: Electricity Bill
+        System.out.println("\\n--- Electricity Bill Calculation ---");
+        ElectricityBill eb = new ElectricityBill();
+        eb.calculateBill(80);
+        eb.calculateBill(150);
+        eb.calculateBill(250);
+    }
+}`;
+
+    function showTab(t) {
+      const cTerm = document.getElementById('contentTerm');
+      const cCode = document.getElementById('contentCode');
+      const bTerm = document.getElementById('tabTerm');
+      const bCode = document.getElementById('tabCode');
+      const runBtn = document.getElementById('runBtn');
+      const copyBtn = document.getElementById('copyBtn');
+
+      if (t === 'term') {
+        cTerm.classList.remove('hidden');
+        cCode.classList.add('hidden');
+        bTerm.className = "px-3.5 py-1.5 rounded-xl text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30 transition";
+        bCode.className = "px-3.5 py-1.5 rounded-xl text-xs font-bold text-slate-400 hover:text-white hover:bg-slate-800 transition";
+        runBtn.classList.remove('hidden');
+        copyBtn.classList.add('hidden');
+      } else {
+        cTerm.classList.add('hidden');
+        cCode.classList.remove('hidden');
+        bCode.className = "px-3.5 py-1.5 rounded-xl text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30 transition";
+        bTerm.className = "px-3.5 py-1.5 rounded-xl text-xs font-bold text-slate-400 hover:text-white hover:bg-slate-800 transition";
+        runBtn.classList.add('hidden');
+        copyBtn.classList.remove('hidden');
+      }
+    }
+
+    function runCode() {
+      const el = document.getElementById('outputPre');
+      const txt = document.getElementById('runText');
+      el.textContent = 'Running VariableTypesAssignment.java...\n\n';
+      txt.textContent = 'Running...';
+      setTimeout(() => {
+        el.textContent = cleanOutput;
+        txt.textContent = 'Re-Run';
+      }, 300);
+    }
+
+    function copyCode() {
+      navigator.clipboard.writeText(cleanJavaCode).then(() => {
+        const btn = document.getElementById('copyBtn');
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy Code', 2000);
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('codePre').textContent = cleanJavaCode;
+      runCode();
+    });
+  </script>
+
+</body>
+</html>
