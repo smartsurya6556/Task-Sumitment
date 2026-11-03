@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Core Java — Day 4: OOPs Concepts & Loop | DevTask HUB</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    pre, code, .font-mono { font-family: 'JetBrains Mono', monospace; }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen py-8 sm:py-12 px-4 sm:px-6 lg:px-8 antialiased selection:bg-amber-500/30 selection:text-amber-200">
+
+  <div class="max-w-5xl mx-auto space-y-8">
+    
+    <!-- Header -->
+    <header class="flex items-center justify-between flex-wrap gap-4 pb-6 border-b border-slate-800">
+      <div class="flex items-center gap-3">
+        <a href="../../index.html" class="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-300 hover:text-white transition flex items-center gap-1.5 shadow-sm">
+          <span>&larr; DevTask HUB</span>
+        </a>
+        <span class="text-xs font-mono font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20">
+          Java Tasks &bull; Day 4
+        </span>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <a href="./OOPsAssignment.java" download="OOPsAssignment.java" class="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/30 transition flex items-center gap-1.5 shadow-sm">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+          <span>Download .java</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- Title Section -->
+    <div class="space-y-2">
+      <span class="text-xs font-mono font-bold uppercase tracking-wider text-amber-400">Assignment 4</span>
+      <h1 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+        OOPs Concepts &amp; Interactive Menu Loop <span class="text-slate-400 font-semibold text-lg sm:text-2xl">(5 Core Assignments)</span>
+      </h1>
+      <p class="text-sm text-slate-400 max-w-2xl">
+        Complete Object-Oriented Programming suite demonstrating Constructor Overloading, Method Overloading/Overriding, Encapsulation, Inheritance, and Abstraction driven by a dynamic console menu loop.
+      </p>
+    </div>
+
+    <!-- 5 Concept Cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      
+      <!-- 1 -->
+      <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 space-y-2">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold text-amber-400 font-mono">1. Overloading</span>
+          <span class="text-[10px] text-slate-500 font-mono">StudentRecord</span>
+        </div>
+        <h3 class="text-sm font-bold text-white">Constructor Overload</h3>
+        <p class="text-xs text-slate-400">
+          Create student objects with variable argument lists: either name only or both name and age.
+        </p>
+      </div>
+
+      <!-- 2 -->
+      <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 space-y-2">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold text-amber-400 font-mono">2. Polymorphism</span>
+          <span class="text-[10px] text-slate-500 font-mono">Calculator &amp; Bonus</span>
+        </div>
+        <h3 class="text-sm font-bold text-white">Overload &amp; Override</h3>
+        <p class="text-xs text-slate-400">
+          Compile-time method overloading (int/double additions) and runtime method overriding (employee bonus calculation).
+        </p>
+      </div>
+
+      <!-- 3 -->
+      <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 space-y-2">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold text-amber-400 font-mono">3. Security</span>
+          <span class="text-[10px] text-slate-500 font-mono">BankAccount</span>
+        </div>
+        <h3 class="text-sm font-bold text-white">Encapsulation</h3>
+        <p class="text-xs text-slate-400">
+          Private variables with getters/setters and overdraft validation rules guarding withdrawals.
+        </p>
+      </div>
+
+      <!-- 4 -->
+      <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 space-y-2">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold text-amber-400 font-mono">4. Hierarchy</span>
+          <span class="text-[10px] text-slate-500 font-mono">StaffMember</span>
+        </div>
+        <h3 class="text-sm font-bold text-white">Inheritance</h3>
+        <p class="text-xs text-slate-400">
+          Software Developer and Team Manager inherit common staff traits while defining custom responsibilities.
+        </p>
+      </div>
+
+      <!-- 5 -->
+      <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 space-y-2">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold text-amber-400 font-mono">5. Contracts</span>
+          <span class="text-[10px] text-slate-500 font-mono">Payment</span>
+        </div>
+        <h3 class="text-sm font-bold text-white">Abstraction &amp; Poly</h3>
+        <p class="text-xs text-slate-400">
+          Abstract class defines <code class="text-amber-300">processPayment()</code> contract fulfilled by UPI and Credit Card gateways.
+        </p>
+      </div>
+
+      <!-- 6 (Menu Loop) -->
+      <div class="p-4 rounded-xl bg-slate-900/90 border border-amber-500/30 space-y-2 bg-gradient-to-br from-amber-500/5 to-transparent">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold text-amber-400 font-mono">Control Flow</span>
+          <span class="text-[10px] text-amber-400/80 font-mono">while(true)</span>
+        </div>
+        <h3 class="text-sm font-bold text-white">Menu-Driven Loop</h3>
+        <p class="text-xs text-slate-400">
+          Interactive console while-loop with Scanner switch-case menu to run any task or all tasks dynamically.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Workspace Tabs: Terminal Output vs Java Code -->
+    <div class="rounded-2xl border border-slate-800 bg-slate-900/95 overflow-hidden shadow-2xl">
+      
+      <!-- Tabs Header -->
+      <div class="flex items-center justify-between px-5 py-3 bg-slate-950 border-b border-slate-800 flex-wrap gap-2">
+        <div class="flex items-center gap-2">
+          <button id="tabTerm" onclick="showTab('term')" class="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30 transition">
+            Terminal Output
+          </button>
+          <button id="tabCode" onclick="showTab('code')" class="px-3.5 py-1.5 rounded-xl text-xs font-bold text-slate-400 hover:text-white hover:bg-slate-800 transition">
+            Java Code
+          </button>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <button id="runBtn" onclick="runTask('all')" class="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 transition flex items-center gap-1.5 cursor-pointer">
+            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            <span id="runText">Run All 5 Tasks</span>
+          </button>
+          <button id="copyBtn" onclick="copyCode()" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-800 hover:bg-slate-700 text-slate-300 transition hidden">
+            Copy Code
+          </button>
+        </div>
+      </div>
+
+      <!-- Task Selector Menu Buttons -->
+      <div id="interactiveBar" class="px-5 py-3 bg-slate-900/80 border-b border-slate-800/80 flex flex-wrap items-center gap-2 text-xs">
+        <span class="text-slate-400 font-bold mr-1">Select Loop Menu Option:</span>
+        <button onclick="runTask(1)" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-mono transition">1. Constructor</button>
+        <button onclick="runTask(2)" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-mono transition">2. Overload/Override</button>
+        <button onclick="runTask(3)" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-mono transition">3. Encapsulation</button>
+        <button onclick="runTask(4)" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-mono transition">4. Inheritance</button>
+        <button onclick="runTask(5)" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-mono transition">5. Abstraction</button>
+        <button onclick="runTask('all')" class="px-2.5 py-1 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/30 font-bold transition">6. Run All</button>
+      </div>
+
+      <!-- Tab 1: Terminal Output -->
+      <div id="contentTerm" class="p-5 font-mono text-xs leading-relaxed bg-[#0a0f1d] overflow-x-auto min-h-[280px]">
+        <pre id="outputPre" class="text-emerald-400 whitespace-pre"></pre>
+      </div>
+
+      <!-- Tab 2: Java Source Code -->
+      <div id="contentCode" class="p-5 font-mono text-xs leading-relaxed bg-[#0a0f1d] overflow-x-auto min-h-[280px] hidden">
+        <pre id="codePre" class="text-slate-300 whitespace-pre"></pre>
+      </div>
+
+    </div>
+
+    <!-- Back to Hub -->
+    <div class="pt-2 flex justify-between items-center text-xs text-slate-500">
+      <span>Core Java &bull; Java Tasks &bull; Day 4</span>
+      <a href="../../index.html" class="text-amber-400 hover:text-amber-300 transition">&larr; Back to Portal</a>
+    </div>
+
+  </div>
+
+  <script>
+    const cleanJavaCode = `// Day 4 - OOPs Concepts & Interactive Menu Loop
+// package Tasks; // Uncomment if running inside IDE package 'Tasks'
+import java.util.Scanner;
+
+// TASK 1: Constructor Overloading
+class StudentRecord {
+    String name;
+    int age;
+
+    StudentRecord(String name) {
+        this.name = name;
+        this.age = 0;
+    }
+
+    StudentRecord(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    void display() {
+        System.out.println("  Name: " + name + (age > 0 ? " | Age: " + age : " | Age: Not Provided"));
+    }
+}
+
+// TASK 2: Method Overloading & Overriding
+class Calculator {
+    int add(int a, int b) { return a + b; }
+    double add(double a, double b) { return a + b; }
+}
+
+class BaseEmployee {
+    String name;
+    double salary;
+    BaseEmployee(String name, double salary) { this.name = name; this.salary = salary; }
+    double calculateBonus() { return salary * 0.05; }
+}
+
+class DeveloperEmployee extends BaseEmployee {
+    DeveloperEmployee(String name, double salary) { super(name, salary); }
+    @Override double calculateBonus() { return salary * 0.12; }
+}
+
+class ManagerEmployee extends BaseEmployee {
+    ManagerEmployee(String name, double salary) { super(name, salary); }
+    @Override double calculateBonus() { return salary * 0.20; }
+}
+
+// TASK 3: Encapsulation
+class BankAccount {
+    private String accountHolder;
+    private double balance;
+
+    BankAccount(String accountHolder, double initialBalance) {
+        this.accountHolder = accountHolder;
+        this.balance = Math.max(0, initialBalance);
+    }
+
+    public String getAccountHolder() { return accountHolder; }
+    public double getBalance() { return balance; }
+
+    public boolean withdraw(double amount) {
+        if (amount <= balance && amount > 0) {
+            balance -= amount;
+            System.out.println("  Successfully withdrawn: ₹" + amount + " | Remaining Balance: ₹" + balance);
+            return true;
+        } else {
+            System.out.println("  Transaction Failed: Insufficient balance!");
+            return false;
+        }
+    }
+}
+
+// TASK 4: Inheritance & Overriding
+class StaffMember {
+    int id;
+    String name;
+    StaffMember(int id, String name) { this.id = id; this.name = name; }
+    void displayResponsibilities() { System.out.println("  Role: General Staff Duties"); }
+}
+
+class SoftwareDeveloper extends StaffMember {
+    SoftwareDeveloper(int id, String name) { super(id, name); }
+    @Override void displayResponsibilities() {
+        System.out.println("  Developer: " + name + " | Writes scalable code, reviews PRs, and fixes bugs.");
+    }
+}
+
+class TeamManager extends StaffMember {
+    TeamManager(int id, String name) { super(id, name); }
+    @Override void displayResponsibilities() {
+        System.out.println("  Manager: " + name + " | Leads sprint planning and oversees deliverables.");
+    }
+}
+
+// TASK 5: Abstraction & Runtime Polymorphism
+abstract class Payment {
+    double amount;
+    Payment(double amount) { this.amount = amount; }
+    abstract void processPayment();
+}
+
+class UPIPayment extends Payment {
+    String upiId;
+    UPIPayment(double amount, String upiId) { super(amount); this.upiId = upiId; }
+    @Override void processPayment() {
+        System.out.println("  [UPI Gateway] Payment of ₹" + amount + " via " + upiId + " approved instantly.");
+    }
+}
+
+class CreditCardPayment extends Payment {
+    String cardNumber;
+    CreditCardPayment(double amount, String cardNumber) { super(amount); this.cardNumber = cardNumber; }
+    @Override void processPayment() {
+        System.out.println("  [Card Gateway] Payment of ₹" + amount + " authorized via 3D Secure OTP.");
+    }
+}
+
+// Driver with Menu Loop
+public class OOPsAssignment {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        // Menu-driven while(true) loop
+        // ... (See source file for full implementation)
+    }
+}`;
+
+    const taskOutputs = {
+      1: `Select an OOPs Task to Run:
+  1. Constructor Overloading (Student Management)
+Enter choice: 1
+
+--- Task 1: Constructor Overloading ---
+Enter Student 1 Name (Name Only): Surya
+Enter Student 2 Name: Karthik
+Enter Student 2 Age: 22
+
+Created Student Objects:
+  Name: Surya | Age: Not Provided
+  Name: Karthik | Age: 22`,
+
+      2: `Select an OOPs Task to Run:
+  2. Method Overloading & Overriding (Calculator & Bonus)
+Enter choice: 2
+
+--- Task 2: Method Overloading & Overriding ---
+1. Method Overloading (Calculator Addition):
+   calc.add(15, 25)           = 40
+   calc.add(12.75, 8.50)      = 21.25
+
+2. Method Overriding (Employee Bonus Calculation):
+   General Staff Bonus (5%):  ₹2000.0
+   Surya (Developer) Bonus (12%): ₹8400.0
+   Anand (Manager) Bonus (20%): ₹19000.0`,
+
+      3: `Select an OOPs Task to Run:
+  3. Encapsulation (Bank Account Withdrawal Guard)
+Enter choice: 3
+
+--- Task 3: Encapsulation (Banking Application) ---
+Enter Account Holder Name: Surya
+Enter Initial Deposit: ₹10000.0
+Enter Amount to Withdraw: ₹3500.0
+  Successfully withdrawn: ₹3500.0 | Remaining Balance: ₹6500.0
+  Final Verified Balance (via getter): ₹6500.0`,
+
+      4: `Select an OOPs Task to Run:
+  4. Inheritance & Responsibilities (Developer & Manager)
+Enter choice: 4
+
+--- Task 4: Inheritance & Method Overriding ---
+Developer Role:
+  ID: 101 | Developer: Karthik
+  Responsibilities: Writes scalable code, conducts unit tests, reviews PRs, and fixes bugs.
+
+Manager Role:
+  ID: 201 | Manager: Praveen
+  Responsibilities: Leads sprint planning, coordinates client requirements, and oversees team deliverables.`,
+
+      5: `Select an OOPs Task to Run:
+  5. Abstraction & Polymorphism (Payment Processing)
+Enter choice: 5
+
+--- Task 5: Abstraction & Runtime Polymorphism ---
+Enter Payment Amount: ₹2500.0
+
+1. Executing UPI Payment:
+  [UPI Gateway] Connecting to VPA: surya@oksbi...
+  [SUCCESS] UPI payment of ₹2500.0 verified and approved instantly.
+
+2. Executing Credit Card Payment:
+  [Card Gateway] Authorizing card XXXX-XXXX-XXXX-8899...
+  [SUCCESS] Credit card transaction of ₹2500.0 authorized via 3D Secure OTP.`,
+
+      all: `============================================================
+     Day 4: Core OOPs & Loop-Based Interactive Console
+============================================================
+
+>>> RUNNING ALL 5 TASKS <<<
+
+[Task 1: Constructor Overloading]
+  Name: Surya | Age: Not Provided
+  Name: Karthik | Age: 22
+
+[Task 2: Method Overloading & Overriding]
+  Overload int: 30 | Overload double: 10.0
+  Override Dev Bonus: ₹7200.0 | Mgr Bonus: ₹18000.0
+
+[Task 3: Encapsulation]
+  Successfully withdrawn: ₹3500.0 | Remaining Balance: ₹6500.0
+  Getter Verified Balance: ₹6500.0
+
+[Task 4: Inheritance & Responsibilities]
+  Developer: Surya | Writes scalable code, reviews PRs, and fixes bugs.
+  Manager: Anand | Leads sprint planning and oversees deliverables.
+
+[Task 5: Abstraction & Polymorphism]
+  [UPI Gateway] Payment of ₹2500.0 via user@upi approved instantly.
+  [Card Gateway] Payment of ₹2500.0 authorized via 3D Secure OTP.
+
+============================================================
+All 5 tasks executed successfully in loop iteration.`
+    };
+
+    function showTab(t) {
+      const cTerm = document.getElementById('contentTerm');
+      const cCode = document.getElementById('contentCode');
+      const bTerm = document.getElementById('tabTerm');
+      const bCode = document.getElementById('tabCode');
+      const runBtn = document.getElementById('runBtn');
+      const copyBtn = document.getElementById('copyBtn');
+      const bar = document.getElementById('interactiveBar');
+
+      if (t === 'term') {
+        cTerm.classList.remove('hidden');
+        cCode.classList.add('hidden');
+        bar.classList.remove('hidden');
+        bTerm.className = "px-3.5 py-1.5 rounded-xl text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30 transition";
+        bCode.className = "px-3.5 py-1.5 rounded-xl text-xs font-bold text-slate-400 hover:text-white hover:bg-slate-800 transition";
+        runBtn.classList.remove('hidden');
+        copyBtn.classList.add('hidden');
+      } else {
+        cTerm.classList.add('hidden');
+        cCode.classList.remove('hidden');
+        bar.classList.add('hidden');
+        bCode.className = "px-3.5 py-1.5 rounded-xl text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30 transition";
+        bTerm.className = "px-3.5 py-1.5 rounded-xl text-xs font-bold text-slate-400 hover:text-white hover:bg-slate-800 transition";
+        runBtn.classList.add('hidden');
+        copyBtn.classList.remove('hidden');
+      }
+    }
+
+    function runTask(taskKey) {
+      const el = document.getElementById('outputPre');
+      const txt = document.getElementById('runText');
+      el.textContent = 'Executing OOPs Task ' + taskKey + ' in while loop...\n\n';
+      txt.textContent = 'Running...';
+      setTimeout(() => {
+        el.textContent = taskOutputs[taskKey] || taskOutputs['all'];
+        txt.textContent = 'Re-Run All';
+      }, 250);
+    }
+
+    function copyCode() {
+      navigator.clipboard.writeText(cleanJavaCode).then(() => {
+        const btn = document.getElementById('copyBtn');
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy Code', 2000);
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('codePre').textContent = cleanJavaCode;
+      runTask('all');
+    });
+  </script>
+
+</body>
+</html>

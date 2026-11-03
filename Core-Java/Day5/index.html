@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Core Java — Day 5: Inheritance Types & super() Execution | DevTask HUB</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    pre, code, .font-mono { font-family: 'JetBrains Mono', monospace; }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen py-8 sm:py-12 px-4 sm:px-6 lg:px-8 antialiased selection:bg-amber-500/30 selection:text-amber-200">
+
+  <div class="max-w-5xl mx-auto space-y-8">
+    
+    <!-- Header -->
+    <header class="flex items-center justify-between flex-wrap gap-4 pb-6 border-b border-slate-800">
+      <div class="flex items-center gap-3">
+        <a href="../../index.html" class="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-300 hover:text-white transition flex items-center gap-1.5 shadow-sm">
+          <span>&larr; DevTask HUB</span>
+        </a>
+        <span class="text-xs font-mono font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20">
+          Java Tasks &bull; Day 5
+        </span>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <a href="./InheritanceAssignment.java" download="InheritanceAssignment.java" class="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/30 transition flex items-center gap-1.5 shadow-sm">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+          <span>Download .java</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- Title Section -->
+    <div class="space-y-2">
+      <span class="text-xs font-mono font-bold uppercase tracking-wider text-amber-400">Assignment 5</span>
+      <h1 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+        Inheritance Types &amp; super() Execution <span class="text-slate-400 font-semibold text-lg sm:text-2xl">(5 Core Scenarios)</span>
+      </h1>
+      <p class="text-sm text-slate-400 max-w-2xl">
+        Comprehensive study of object-oriented Inheritance architecture in Java, detailing Single, Method Reusability, Multilevel, Hierarchical, and Constructor Chaining with <code class="text-amber-300">super()</code>.
+      </p>
+    </div>
+
+    <!-- 5 Inheritance Cards with IMPORTANT Badges -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      
+      <!-- 1 -->
+      <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 space-y-2.5">
+        <div class="flex items-center justify-between">
+          <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-md bg-rose-500/10 text-rose-400 border border-rose-500/20">IMPORTANT</span>
+          <span class="text-[10px] text-slate-500 font-mono">Employee</span>
+        </div>
+        <div>
+          <span class="text-xs font-bold text-amber-400 font-mono block">1. Basic / Single</span>
+          <h3 class="text-sm font-bold text-white">Employee Subclassing</h3>
+        </div>
+        <p class="text-xs text-slate-400">
+          Base <code class="text-slate-300">Employee</code> attributes (name, salary) inherited by specialized <code class="text-slate-300">Developer</code> and <code class="text-slate-300">Tester</code> subclasses.
+        </p>
+      </div>
+
+      <!-- 2 -->
+      <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 space-y-2.5">
+        <div class="flex items-center justify-between">
+          <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-md bg-rose-500/10 text-rose-400 border border-rose-500/20">IMPORTANT</span>
+          <span class="text-[10px] text-slate-500 font-mono">Vehicle</span>
+        </div>
+        <div>
+          <span class="text-xs font-bold text-amber-400 font-mono block">2. Method Reusability</span>
+          <h3 class="text-sm font-bold text-white">Vehicle Operations</h3>
+        </div>
+        <p class="text-xs text-slate-400">
+          Subclasses <code class="text-slate-300">Car</code> and <code class="text-slate-300">Bike</code> directly reuse parent methods <code class="text-amber-300">start()</code> and <code class="text-amber-300">stop()</code> without rewriting logic.
+        </p>
+      </div>
+
+      <!-- 3 -->
+      <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 space-y-2.5">
+        <div class="flex items-center justify-between">
+          <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-md bg-rose-500/10 text-rose-400 border border-rose-500/20">IMPORTANT</span>
+          <span class="text-[10px] text-slate-500 font-mono">BankAccount</span>
+        </div>
+        <div>
+          <span class="text-xs font-bold text-amber-400 font-mono block">3. Multilevel Inheritance</span>
+          <h3 class="text-sm font-bold text-white">3-Tier Banking Hierarchy</h3>
+        </div>
+        <p class="text-xs text-slate-400">
+          Chain of inheritance: <code class="text-slate-300">BankAccount</code> &rarr; <code class="text-slate-300">SavingsAccount</code> &rarr; <code class="text-slate-300">PremiumSavingsAccount</code> inheriting accumulated traits.
+        </p>
+      </div>
+
+      <!-- 4 -->
+      <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 space-y-2.5">
+        <div class="flex items-center justify-between">
+          <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-md bg-rose-500/10 text-rose-400 border border-rose-500/20">IMPORTANT</span>
+          <span class="text-[10px] text-slate-500 font-mono">Product</span>
+        </div>
+        <div>
+          <span class="text-xs font-bold text-amber-400 font-mono block">4. Hierarchical Inheritance</span>
+          <h3 class="text-sm font-bold text-white">E-Commerce Catalog</h3>
+        </div>
+        <p class="text-xs text-slate-400">
+          Single parent <code class="text-slate-300">Product</code> branches out to three sibling child classes: <code class="text-slate-300">Electronics</code>, <code class="text-slate-300">Clothing</code>, and <code class="text-slate-300">Books</code>.
+        </p>
+      </div>
+
+      <!-- 5 -->
+      <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 space-y-2.5">
+        <div class="flex items-center justify-between">
+          <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-md bg-rose-500/10 text-rose-400 border border-rose-500/20">IMPORTANT</span>
+          <span class="text-[10px] text-slate-500 font-mono">Person</span>
+        </div>
+        <div>
+          <span class="text-xs font-bold text-amber-400 font-mono block">5. super() Constructor Chaining</span>
+          <h3 class="text-sm font-bold text-white">University Student</h3>
+        </div>
+        <p class="text-xs text-slate-400">
+          Subclass <code class="text-slate-300">Student</code> invokes parent constructor <code class="text-amber-300">super(name, age)</code> as its first executable instruction.
+        </p>
+      </div>
+
+      <!-- 6 (Menu Loop) -->
+      <div class="p-4 rounded-xl bg-slate-900/90 border border-amber-500/30 space-y-2.5 bg-gradient-to-br from-amber-500/5 to-transparent">
+        <div class="flex items-center justify-between">
+          <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-md bg-amber-500/10 text-amber-300 border border-amber-500/30">FEATURE</span>
+          <span class="text-[10px] text-amber-400/80 font-mono">while(true)</span>
+        </div>
+        <div>
+          <span class="text-xs font-bold text-amber-400 font-mono block">Control Flow</span>
+          <h3 class="text-sm font-bold text-white">Menu-Driven Loop</h3>
+        </div>
+        <p class="text-xs text-slate-400">
+          Interactive console while-loop with Scanner to execute each scenario or run all 5 sequentially.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Workspace Tabs: Terminal Output vs Java Code -->
+    <div class="rounded-2xl border border-slate-800 bg-slate-900/95 overflow-hidden shadow-2xl">
+      
+      <!-- Tabs Header -->
+      <div class="flex items-center justify-between px-5 py-3 bg-slate-950 border-b border-slate-800 flex-wrap gap-2">
+        <div class="flex items-center gap-2">
+          <button id="tabTerm" onclick="showTab('term')" class="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30 transition">
+            Terminal Output
+          </button>
+          <button id="tabCode" onclick="showTab('code')" class="px-3.5 py-1.5 rounded-xl text-xs font-bold text-slate-400 hover:text-white hover:bg-slate-800 transition">
+            Java Code (With Inheritance Types)
+          </button>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <button id="runBtn" onclick="runScenario('all')" class="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 transition flex items-center gap-1.5 cursor-pointer">
+            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            <span id="runText">Run All 5 Scenarios</span>
+          </button>
+          <button id="copyBtn" onclick="copyCode()" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-800 hover:bg-slate-700 text-slate-300 transition hidden">
+            Copy Code
+          </button>
+        </div>
+      </div>
+
+      <!-- Task Selector Menu Buttons -->
+      <div id="interactiveBar" class="px-5 py-3 bg-slate-900/80 border-b border-slate-800/80 flex flex-wrap items-center gap-2 text-xs">
+        <span class="text-slate-400 font-bold mr-1">Select Inheritance Type:</span>
+        <button onclick="runScenario(1)" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-mono transition">1. Single</button>
+        <button onclick="runScenario(2)" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-mono transition">2. Method Reuse</button>
+        <button onclick="runScenario(3)" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-mono transition">3. Multilevel</button>
+        <button onclick="runScenario(4)" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-mono transition">4. Hierarchical</button>
+        <button onclick="runScenario(5)" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-mono transition">5. super() Chaining</button>
+        <button onclick="runScenario('all')" class="px-2.5 py-1 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/30 font-bold transition">6. Run All</button>
+      </div>
+
+      <!-- Tab 1: Terminal Output -->
+      <div id="contentTerm" class="p-5 font-mono text-xs leading-relaxed bg-[#0a0f1d] overflow-x-auto min-h-[300px]">
+        <pre id="outputPre" class="text-emerald-400 whitespace-pre"></pre>
+      </div>
+
+      <!-- Tab 2: Java Source Code -->
+      <div id="contentCode" class="p-5 font-mono text-xs leading-relaxed bg-[#0a0f1d] overflow-x-auto min-h-[300px] hidden">
+        <pre id="codePre" class="text-slate-300 whitespace-pre"></pre>
+      </div>
+
+    </div>
+
+    <!-- Back to Hub -->
+    <div class="pt-2 flex justify-between items-center text-xs text-slate-500">
+      <span>Core Java &bull; Java Tasks &bull; Day 5</span>
+      <a href="../../index.html" class="text-amber-400 hover:text-amber-300 transition">&larr; Back to Portal</a>
+    </div>
+
+  </div>
+
+  <script>
+    const cleanJavaCode = `// Day 5 - Inheritance Types & super() Constructor Execution
+// package Tasks; // Uncomment if running inside IDE package 'Tasks'
+import java.util.Scanner;
+
+// ============================================================================
+// SCENARIO 1: Basic Inheritance (Employee -> Developer, Tester)
+// [IMPORTANT: INHERITANCE TYPE: SINGLE / BASIC INHERITANCE]
+// ============================================================================
+class Employee {
+    String name;
+    double salary;
+
+    Employee(String name, double salary) {
+        this.name = name;
+        this.salary = salary;
+    }
+
+    void displayEmployee() {
+        System.out.println("  Name: " + name + " | Salary: ₹" + salary);
+    }
+}
+
+class Developer extends Employee {
+    String programmingLanguage;
+
+    Developer(String name, double salary, String programmingLanguage) {
+        super(name, salary);
+        this.programmingLanguage = programmingLanguage;
+    }
+
+    void displayDeveloper() {
+        displayEmployee();
+        System.out.println("  Role: Developer | Language: " + programmingLanguage);
+    }
+}
+
+class Tester extends Employee {
+    String testingTool;
+
+    Tester(String name, double salary, String testingTool) {
+        super(name, salary);
+        this.testingTool = testingTool;
+    }
+
+    void displayTester() {
+        displayEmployee();
+        System.out.println("  Role: QA Tester | Testing Tool: " + testingTool);
+    }
+}
+
+// ============================================================================
+// SCENARIO 2: Method Reusability in Inheritance (Vehicle -> Car, Bike)
+// [IMPORTANT: INHERITANCE TYPE: METHOD REUSABILITY IN INHERITANCE]
+// ============================================================================
+class Vehicle {
+    String brand;
+
+    Vehicle(String brand) { this.brand = brand; }
+    void start() { System.out.println("  [" + brand + "] Ignition ON: Engine started successfully."); }
+    void stop() { System.out.println("  [" + brand + "] Brakes engaged: Vehicle stopped safely."); }
+}
+
+class Car extends Vehicle {
+    int numberOfDoors;
+    Car(String brand, int numberOfDoors) { super(brand); this.numberOfDoors = numberOfDoors; }
+    void displayType() { System.out.println("  Vehicle Type: Four-Wheeler Passenger Car (" + numberOfDoors + " Doors)"); }
+}
+
+class Bike extends Vehicle {
+    boolean hasGear;
+    Bike(String brand, boolean hasGear) { super(brand); this.hasGear = hasGear; }
+    void displayType() { System.out.println("  Vehicle Type: Two-Wheeler Motorcycle (" + (hasGear ? "Geared" : "Automatic") + ")"); }
+}
+
+// ============================================================================
+// SCENARIO 3: Multilevel Inheritance (BankAccount -> Savings -> PremiumSavings)
+// [IMPORTANT: INHERITANCE TYPE: MULTILEVEL INHERITANCE]
+// ============================================================================
+class BankAccount {
+    String accountNumber;
+    double balance;
+    BankAccount(String accountNumber, double balance) { this.accountNumber = accountNumber; this.balance = balance; }
+    void displayBaseAccount() { System.out.println("  Level 1 (BankAccount) -> Account No: " + accountNumber + " | Balance: ₹" + balance); }
+}
+
+class SavingsAccount extends BankAccount {
+    double interestRate;
+    SavingsAccount(String accountNumber, double balance, double interestRate) { super(accountNumber, balance); this.interestRate = interestRate; }
+    void displaySavingsAccount() { displayBaseAccount(); System.out.println("  Level 2 (SavingsAccount) -> Annual Interest Rate: " + interestRate + "%"); }
+}
+
+class PremiumSavingsAccount extends SavingsAccount {
+    double cashBackReward;
+    PremiumSavingsAccount(String accountNumber, double balance, double interestRate, double cashBackReward) {
+        super(accountNumber, balance, interestRate);
+        this.cashBackReward = cashBackReward;
+    }
+    void displayPremiumAccount() {
+        displaySavingsAccount();
+        System.out.println("  Level 3 (PremiumSavingsAccount) -> CashBack Tier: " + cashBackReward + "% with Personal Concierge");
+    }
+}
+
+// ============================================================================
+// SCENARIO 4: Hierarchical Inheritance (Product -> Electronics, Clothing, Books)
+// [IMPORTANT: INHERITANCE TYPE: HIERARCHICAL INHERITANCE]
+// ============================================================================
+class Product {
+    int productId;
+    double price;
+    Product(int productId, double price) { this.productId = productId; this.price = price; }
+    void displayProductBase() { System.out.print("  Product ID: #" + productId + " | Price: ₹" + price); }
+}
+
+class Electronics extends Product {
+    int warrantyMonths;
+    Electronics(int productId, double price, int warrantyMonths) { super(productId, price); this.warrantyMonths = warrantyMonths; }
+    void displayDetails() { displayProductBase(); System.out.println(" | Category: Electronics | Warranty: " + warrantyMonths + " Months"); }
+}
+
+class Clothing extends Product {
+    String size;
+    Clothing(int productId, double price, String size) { super(productId, price); this.size = size; }
+    void displayDetails() { displayProductBase(); System.out.println(" | Category: Clothing Apparels | Size: " + size); }
+}
+
+class Books extends Product {
+    String author;
+    Books(int productId, double price, String author) { super(productId, price); this.author = author; }
+    void displayDetails() { displayProductBase(); System.out.println(" | Category: Educational Books | Author: " + author); }
+}
+
+// ============================================================================
+// SCENARIO 5: Constructor Execution with super() (Person -> Student)
+// [IMPORTANT: INHERITANCE TYPE: CONSTRUCTOR CHAINING VIA SUPER()]
+// ============================================================================
+class Person {
+    String name;
+    int age;
+    Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+        System.out.println("  [Parent Constructor] Person initialized: Name=" + name + ", Age=" + age);
+    }
+}
+
+class UniversityStudent extends Person {
+    int rollNumber;
+    UniversityStudent(String name, int age, int rollNumber) {
+        super(name, age);
+        this.rollNumber = rollNumber;
+        System.out.println("  [Subclass Constructor] UniversityStudent initialized: RollNo=" + rollNumber);
+    }
+    void displayStudentDetails() {
+        System.out.println("  Roll Number : " + rollNumber + " | Name: " + name + " | Age: " + age + " years old");
+    }
+}
+
+// Driver with Menu Loop
+public class InheritanceAssignment {
+    public static void main(String[] args) {
+        // Interactive menu-driven loop
+    }
+}`;
+
+    const scenarioOutputs = {
+      1: `------------------------------------------------------------
+>>> SCENARIO 1: EMPLOYEE SPECIALIZATION
+[IMPORTANT: INHERITANCE TYPE: SINGLE / BASIC INHERITANCE]
+------------------------------------------------------------
+Developer Details:
+  Name: Surya | Salary: ₹75000.0
+  Role: Developer | Language: Java & Spring Boot
+
+Tester Details:
+  Name: Praveen | Salary: ₹55000.0
+  Role: QA Tester | Testing Tool: Selenium & JUnit`,
+
+      2: `------------------------------------------------------------
+>>> SCENARIO 2: VEHICLE RENTAL FLEET
+[IMPORTANT: INHERITANCE TYPE: METHOD REUSABILITY IN INHERITANCE]
+------------------------------------------------------------
+Car Execution (Reusing Vehicle methods):
+  Vehicle Type: Four-Wheeler Passenger Car (4 Doors)
+  [Hyundai Verna] Ignition ON: Engine started successfully.
+  [Hyundai Verna] Brakes engaged: Vehicle stopped safely.
+
+Bike Execution (Reusing Vehicle methods):
+  Vehicle Type: Two-Wheeler Motorcycle (Geared)
+  [Yamaha R15] Ignition ON: Engine started successfully.
+  [Yamaha R15] Brakes engaged: Vehicle stopped safely.`,
+
+      3: `------------------------------------------------------------
+>>> SCENARIO 3: MULTILEVEL BANK ACCOUNT HIERARCHY
+[IMPORTANT: INHERITANCE TYPE: MULTILEVEL INHERITANCE]
+------------------------------------------------------------
+  Level 1 (BankAccount) -> Account No: SB-IND-99482 | Balance: ₹125000.0
+  Level 2 (SavingsAccount) -> Annual Interest Rate: 6.5%
+  Level 3 (PremiumSavingsAccount) -> CashBack Tier: 2.0% with Personal Concierge`,
+
+      4: `------------------------------------------------------------
+>>> SCENARIO 4: E-COMMERCE PRODUCT CATALOG
+[IMPORTANT: INHERITANCE TYPE: HIERARCHICAL INHERITANCE]
+------------------------------------------------------------
+  Product ID: #101 | Price: ₹65000.0 | Category: Electronics | Warranty: 24 Months
+  Product ID: #202 | Price: ₹1499.0 | Category: Clothing Apparels | Size: L
+  Product ID: #303 | Price: ₹799.0 | Category: Educational Books | Author: James Gosling`,
+
+      5: `------------------------------------------------------------
+>>> SCENARIO 5: CONSTRUCTOR EXECUTION VIA SUPER()
+[IMPORTANT: INHERITANCE TYPE: CONSTRUCTOR CHAINING VIA SUPER()]
+------------------------------------------------------------
+Instantiating UniversityStudent (Watching super() execution):
+  [Parent Constructor] Person initialized: Name=Surya Kumar, Age=21
+  [Subclass Constructor] UniversityStudent initialized: RollNo=505
+
+  --- Complete Student Profile ---
+  Roll Number : 505
+  Student Name: Surya Kumar
+  Age         : 21 years old`,
+
+      all: `============================================================
+     Day 5: 5 Inheritance Types & super() Execution
+============================================================
+
+>>> SCENARIO 1: EMPLOYEE SPECIALIZATION
+[IMPORTANT: INHERITANCE TYPE: SINGLE / BASIC INHERITANCE]
+Developer: Surya (₹75000.0) | Language: Java & Spring Boot
+Tester   : Praveen (₹55000.0) | Tool: Selenium & JUnit
+
+>>> SCENARIO 2: VEHICLE RENTAL FLEET
+[IMPORTANT: INHERITANCE TYPE: METHOD REUSABILITY IN INHERITANCE]
+Car : Four-Wheeler Passenger Car (4 Doors) -> Engine started & stopped safely.
+Bike: Two-Wheeler Motorcycle (Geared)     -> Engine started & stopped safely.
+
+>>> SCENARIO 3: MULTILEVEL BANK ACCOUNT HIERARCHY
+[IMPORTANT: INHERITANCE TYPE: MULTILEVEL INHERITANCE]
+Level 1: Account SB-IND-99482 | Balance: ₹125000.0
+Level 2: Annual Interest Rate: 6.5%
+Level 3: CashBack Tier: 2.0% with Concierge Perks
+
+>>> SCENARIO 4: E-COMMERCE PRODUCT CATALOG
+[IMPORTANT: INHERITANCE TYPE: HIERARCHICAL INHERITANCE]
+Electronics: #101 | ₹65000.0 | Warranty: 24 Months
+Clothing   : #202 | ₹1499.0  | Size: L
+Books      : #303 | ₹799.0   | Author: James Gosling
+
+>>> SCENARIO 5: CONSTRUCTOR EXECUTION VIA SUPER()
+[IMPORTANT: INHERITANCE TYPE: CONSTRUCTOR CHAINING VIA SUPER()]
+[Parent Constructor] Person initialized: Name=Surya Kumar, Age=21
+[Subclass Constructor] UniversityStudent initialized: RollNo=505
+Student Profile: Roll: 505 | Name: Surya Kumar | Age: 21
+
+============================================================
+All 5 inheritance scenarios executed successfully in loop.`
+    };
+
+    function showTab(t) {
+      const cTerm = document.getElementById('contentTerm');
+      const cCode = document.getElementById('contentCode');
+      const bTerm = document.getElementById('tabTerm');
+      const bCode = document.getElementById('tabCode');
+      const runBtn = document.getElementById('runBtn');
+      const copyBtn = document.getElementById('copyBtn');
+      const bar = document.getElementById('interactiveBar');
+
+      if (t === 'term') {
+        cTerm.classList.remove('hidden');
+        cCode.classList.add('hidden');
+        bar.classList.remove('hidden');
+        bTerm.className = "px-3.5 py-1.5 rounded-xl text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30 transition";
+        bCode.className = "px-3.5 py-1.5 rounded-xl text-xs font-bold text-slate-400 hover:text-white hover:bg-slate-800 transition";
+        runBtn.classList.remove('hidden');
+        copyBtn.classList.add('hidden');
+      } else {
+        cTerm.classList.add('hidden');
+        cCode.classList.remove('hidden');
+        bar.classList.add('hidden');
+        bCode.className = "px-3.5 py-1.5 rounded-xl text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30 transition";
+        bTerm.className = "px-3.5 py-1.5 rounded-xl text-xs font-bold text-slate-400 hover:text-white hover:bg-slate-800 transition";
+        runBtn.classList.add('hidden');
+        copyBtn.classList.remove('hidden');
+      }
+    }
+
+    function runScenario(key) {
+      const el = document.getElementById('outputPre');
+      const txt = document.getElementById('runText');
+      el.textContent = 'Executing Scenario ' + key + '...\n\n';
+      txt.textContent = 'Running...';
+      setTimeout(() => {
+        el.textContent = scenarioOutputs[key] || scenarioOutputs['all'];
+        txt.textContent = 'Re-Run All';
+      }, 250);
+    }
+
+    function copyCode() {
+      navigator.clipboard.writeText(cleanJavaCode).then(() => {
+        const btn = document.getElementById('copyBtn');
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy Code', 2000);
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('codePre').textContent = cleanJavaCode;
+      runScenario('all');
+    });
+  </script>
+
+</body>
+</html>

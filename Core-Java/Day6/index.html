@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Core Java — Day 6: Array Operations | DevTask HUB</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    pre, code, .font-mono { font-family: 'JetBrains Mono', monospace; }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen py-8 sm:py-12 px-4 sm:px-6 lg:px-8 antialiased selection:bg-amber-500/30 selection:text-amber-200">
+
+  <div class="max-w-5xl mx-auto space-y-8">
+    
+    <!-- Header -->
+    <header class="flex items-center justify-between flex-wrap gap-4 pb-6 border-b border-slate-800">
+      <div class="flex items-center gap-3">
+        <a href="../../index.html" class="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-300 hover:text-white transition flex items-center gap-1.5 shadow-sm">
+          <span>&larr; DevTask HUB</span>
+        </a>
+        <span class="text-xs font-mono font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20">
+          Java Tasks &bull; Day 6
+        </span>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <a href="./ArrayOperations.java" download="ArrayOperations.java" class="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/30 transition flex items-center gap-1.5 shadow-sm">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+          <span>Download .java</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- Title Section -->
+    <div class="space-y-2">
+      <span class="text-xs font-mono font-bold uppercase tracking-wider text-amber-400">Assignment 6</span>
+      <h1 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+        Array Operations <span class="text-slate-400 font-semibold text-lg sm:text-2xl">(Largest, Smallest, Even/Odd, Sign &amp; Average)</span>
+      </h1>
+      <p class="text-sm text-slate-400 max-w-2xl">
+        High-performance 1D array manipulation algorithms in Java executing maximum/minimum discovery, parity counters, sign distribution, and arithmetic mean.
+      </p>
+    </div>
+
+    <!-- 5 Concept Cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5">
+      
+      <!-- 1 -->
+      <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 space-y-2">
+        <span class="text-xs font-bold text-amber-400 font-mono">1. Maximum</span>
+        <h3 class="text-sm font-bold text-white">Largest Number</h3>
+        <p class="text-xs text-slate-400">
+          Linear traverse tracks the highest value in the array.
+        </p>
+      </div>
+
+      <!-- 2 -->
+      <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 space-y-2">
+        <span class="text-xs font-bold text-amber-400 font-mono">2. Minimum</span>
+        <h3 class="text-sm font-bold text-white">Smallest Number</h3>
+        <p class="text-xs text-slate-400">
+          Scans array elements finding the minimum value.
+        </p>
+      </div>
+
+      <!-- 3 -->
+      <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 space-y-2">
+        <span class="text-xs font-bold text-amber-400 font-mono">3. Parity</span>
+        <h3 class="text-sm font-bold text-white">Even &amp; Odd Count</h3>
+        <p class="text-xs text-slate-400">
+          Evaluates <code class="text-amber-300">num % 2 == 0</code> to tally even vs odd numbers.
+        </p>
+      </div>
+
+      <!-- 4 -->
+      <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 space-y-2">
+        <span class="text-xs font-bold text-amber-400 font-mono">4. Signs</span>
+        <h3 class="text-sm font-bold text-white">Pos, Neg &amp; Zero</h3>
+        <p class="text-xs text-slate-400">
+          Categorizes numbers into positive, negative, and zeros.
+        </p>
+      </div>
+
+      <!-- 5 -->
+      <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 space-y-2">
+        <span class="text-xs font-bold text-amber-400 font-mono">5. Mean</span>
+        <h3 class="text-sm font-bold text-white">Average Calculation</h3>
+        <p class="text-xs text-slate-400">
+          Computes accurate decimal mean via sum / array length.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Workspace Tabs: Terminal Output vs Java Code -->
+    <div class="rounded-2xl border border-slate-800 bg-slate-900/95 overflow-hidden shadow-2xl">
+      
+      <!-- Tabs Header -->
+      <div class="flex items-center justify-between px-5 py-3 bg-slate-950 border-b border-slate-800 flex-wrap gap-2">
+        <div class="flex items-center gap-2">
+          <button id="tabTerm" onclick="showTab('term')" class="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30 transition">
+            Terminal Output
+          </button>
+          <button id="tabCode" onclick="showTab('code')" class="px-3.5 py-1.5 rounded-xl text-xs font-bold text-slate-400 hover:text-white hover:bg-slate-800 transition">
+            Java Code
+          </button>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <button id="runBtn" onclick="runOperation('all')" class="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 transition flex items-center gap-1.5 cursor-pointer">
+            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            <span id="runText">Run All 5 Operations</span>
+          </button>
+          <button id="copyBtn" onclick="copyCode()" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-800 hover:bg-slate-700 text-slate-300 transition hidden">
+            Copy Code
+          </button>
+        </div>
+      </div>
+
+      <!-- Interactive Array Bar -->
+      <div id="interactiveBar" class="px-5 py-3 bg-slate-900/80 border-b border-slate-800/80 space-y-3">
+        <div class="flex flex-wrap items-center gap-3 text-xs">
+          <label class="text-slate-300 font-bold font-mono flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7"/></svg>
+            Array Elements (Comma separated):
+          </label>
+          <input id="arrayInput" type="text" value="25, -12, 0, 48, 7, -3, 90, 14, 0, -8" class="flex-1 min-w-[280px] px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-700 text-emerald-400 font-mono font-bold text-xs focus:border-amber-400 focus:outline-none">
+          <button onclick="runOperation('all')" class="px-3 py-1.5 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/30 font-bold text-xs transition">
+            Apply &amp; Run
+          </button>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2 text-xs">
+          <span class="text-slate-400 font-mono text-[11px]">Individual Operations:</span>
+          <button onclick="runOperation('largest')" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-mono text-xs transition">1. Largest</button>
+          <button onclick="runOperation('smallest')" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-mono text-xs transition">2. Smallest</button>
+          <button onclick="runOperation('evenodd')" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-mono text-xs transition">3. Even / Odd</button>
+          <button onclick="runOperation('posneg')" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-mono text-xs transition">4. Sign Count</button>
+          <button onclick="runOperation('average')" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-mono text-xs transition">5. Average</button>
+          <button onclick="runOperation('all')" class="px-2.5 py-1 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/30 font-bold text-xs transition">6. Run All</button>
+        </div>
+      </div>
+
+      <!-- Tab 1: Terminal Output -->
+      <div id="contentTerm" class="p-5 font-mono text-xs leading-relaxed bg-[#0a0f1d] overflow-x-auto min-h-[280px]">
+        <pre id="outputPre" class="text-emerald-400 whitespace-pre"></pre>
+      </div>
+
+      <!-- Tab 2: Java Source Code -->
+      <div id="contentCode" class="p-5 font-mono text-xs leading-relaxed bg-[#0a0f1d] overflow-x-auto min-h-[280px] hidden">
+        <pre id="codePre" class="text-slate-300 whitespace-pre"></pre>
+      </div>
+
+    </div>
+
+    <!-- Back to Hub -->
+    <div class="pt-2 flex justify-between items-center text-xs text-slate-500">
+      <span>Core Java &bull; Java Tasks &bull; Day 6</span>
+      <a href="../../index.html" class="text-amber-400 hover:text-amber-300 transition">&larr; Back to Portal</a>
+    </div>
+
+  </div>
+
+  <script>
+    const cleanJavaCode = `// Day 6 - Array Operations (Largest, Smallest, Even/Odd, Sign Counts & Average)
+// package Tasks; // Uncomment if running inside IDE package 'Tasks'
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class ArrayOperations {
+
+    // 1. Find the largest number in an array
+    public static int findLargest(int[] arr) {
+        int max = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > max) max = arr[i];
+        }
+        return max;
+    }
+
+    // 2. Find the smallest number in an array
+    public static int findSmallest(int[] arr) {
+        int min = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] < min) min = arr[i];
+        }
+        return min;
+    }
+
+    // 3. Count how many even and odd numbers are present
+    public static void countEvenOdd(int[] arr) {
+        int evenCount = 0, oddCount = 0;
+        for (int num : arr) {
+            if (num % 2 == 0) evenCount++;
+            else oddCount++;
+        }
+        System.out.println("  • Even Numbers Count : " + evenCount);
+        System.out.println("  • Odd Numbers Count  : " + oddCount);
+    }
+
+    // 4. Count positive numbers, negative numbers and zeros
+    public static void countPosNegZero(int[] arr) {
+        int pos = 0, neg = 0, zero = 0;
+        for (int num : arr) {
+            if (num > 0) pos++;
+            else if (num < 0) neg++;
+            else zero++;
+        }
+        System.out.println("  • Positive Numbers Count : " + pos);
+        System.out.println("  • Negative Numbers Count : " + neg);
+        System.out.println("  • Zeroes Count           : " + zero);
+    }
+
+    // 5. Calculate the average of all elements in an array
+    public static double calculateAverage(int[] arr) {
+        long sum = 0;
+        for (int num : arr) sum += num;
+        return (double) sum / arr.length;
+    }
+
+    public static void main(String[] args) {
+        // Driver with dynamic while(true) loop and custom array entry
+    }
+}`;
+
+    function parseArray() {
+      const raw = document.getElementById('arrayInput').value;
+      const parts = raw.split(',').map(s => parseInt(s.trim(), 10)).filter(n => !isNaN(n));
+      return parts.length > 0 ? parts : [25, -12, 0, 48, 7, -3, 90, 14, 0, -8];
+    }
+
+    function runOperation(op) {
+      const arr = parseArray();
+      const el = document.getElementById('outputPre');
+      const txt = document.getElementById('runText');
+      el.textContent = 'Processing array operation: ' + op + '...\n\n';
+      txt.textContent = 'Calculating...';
+
+      setTimeout(() => {
+        let max = arr[0], min = arr[0], even = 0, odd = 0, pos = 0, neg = 0, zero = 0, sum = 0;
+
+        for (let num of arr) {
+          if (num > max) max = num;
+          if (num < min) min = num;
+          if (num % 2 === 0) even++; else odd++;
+          if (num > 0) pos++; else if (num < 0) neg++; else zero++;
+          sum += num;
+        }
+        const avg = (sum / arr.length).toFixed(2);
+
+        let out = `Array Elements: [${arr.join(', ')}]\nArray Length  : ${arr.length} items\n`;
+        out += `------------------------------------------------------------\n`;
+
+        if (op === 'largest') {
+          out += `[Result 1] Largest Number in Array  : ${max}`;
+        } else if (op === 'smallest') {
+          out += `[Result 2] Smallest Number in Array : ${min}`;
+        } else if (op === 'evenodd') {
+          out += `[Result 3] Even and Odd Count:\n  • Even Numbers Count : ${even}\n  • Odd Numbers Count  : ${odd}`;
+        } else if (op === 'posneg') {
+          out += `[Result 4] Sign Classification:\n  • Positive Numbers Count : ${pos}\n  • Negative Numbers Count : ${neg}\n  • Zeroes Count           : ${zero}`;
+        } else if (op === 'average') {
+          out += `[Result 5] Arithmetic Average of Elements: ${avg} (Sum: ${sum})`;
+        } else {
+          out += `============================================================\n`;
+          out += `>>> COMPLETE ARRAY OPERATIONS REPORT <<<\n`;
+          out += `============================================================\n`;
+          out += `1. Largest Number  : ${max}\n`;
+          out += `2. Smallest Number : ${min}\n\n`;
+          out += `3. Even & Odd Distribution:\n`;
+          out += `   • Even Numbers Count : ${even}\n`;
+          out += `   • Odd Numbers Count  : ${odd}\n\n`;
+          out += `4. Sign Distribution:\n`;
+          out += `   • Positive Numbers Count : ${pos}\n`;
+          out += `   • Negative Numbers Count : ${neg}\n`;
+          out += `   • Zeroes Count           : ${zero}\n\n`;
+          out += `5. Average of All Elements : ${avg} (Sum = ${sum})\n`;
+          out += `============================================================`;
+        }
+
+        el.textContent = out;
+        txt.textContent = 'Re-Run All';
+      }, 200);
+    }
+
+    function showTab(t) {
+      const cTerm = document.getElementById('contentTerm');
+      const cCode = document.getElementById('contentCode');
+      const bTerm = document.getElementById('tabTerm');
+      const bCode = document.getElementById('tabCode');
+      const runBtn = document.getElementById('runBtn');
+      const copyBtn = document.getElementById('copyBtn');
+      const bar = document.getElementById('interactiveBar');
+
+      if (t === 'term') {
+        cTerm.classList.remove('hidden');
+        cCode.classList.add('hidden');
+        bar.classList.remove('hidden');
+        bTerm.className = "px-3.5 py-1.5 rounded-xl text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30 transition";
+        bCode.className = "px-3.5 py-1.5 rounded-xl text-xs font-bold text-slate-400 hover:text-white hover:bg-slate-800 transition";
+        runBtn.classList.remove('hidden');
+        copyBtn.classList.add('hidden');
+      } else {
+        cTerm.classList.add('hidden');
+        cCode.classList.remove('hidden');
+        bar.classList.add('hidden');
+        bCode.className = "px-3.5 py-1.5 rounded-xl text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30 transition";
+        bTerm.className = "px-3.5 py-1.5 rounded-xl text-xs font-bold text-slate-400 hover:text-white hover:bg-slate-800 transition";
+        runBtn.classList.add('hidden');
+        copyBtn.classList.remove('hidden');
+      }
+    }
+
+    function copyCode() {
+      navigator.clipboard.writeText(cleanJavaCode).then(() => {
+        const btn = document.getElementById('copyBtn');
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy Code', 2000);
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('codePre').textContent = cleanJavaCode;
+      runOperation('all');
+    });
+  </script>
+
+</body>
+</html>
