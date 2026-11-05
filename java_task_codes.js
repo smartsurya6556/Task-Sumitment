@@ -570,5 +570,59 @@ public class ArrayOperations {
         // Interactive menu loop with while(true)
         sc.close();
     }
+}`,
+  7: `// Day 7 - Control Statements (for, while, continue & break)
+// package Tasks; // Uncomment if running inside IDE package 'Tasks'
+import java.util.Scanner;
+
+public class ControlStatements {
+
+    // 1. Skip Multiples of 3 (for & continue)
+    public static void skipMultiplesOfThree() {
+        System.out.println("--- Task 1: Numbers 1 to 30 (Skipping Multiples of 3) ---");
+        System.out.print("Output: ");
+
+        for (int i = 1; i <= 30; i++) {
+            if (i % 3 == 0) {
+                continue; // Skip multiples of 3
+            }
+            System.out.print(i + " ");
+        }
+        System.out.println();
+    }
+
+    // 2. Login Attempt System (while & break)
+    public static void loginAttemptSystem(Scanner sc) {
+        System.out.println("--- Task 2: Login Attempt System (Max 3 Attempts) ---");
+        final String correctPassword = "jeyam55";
+        int attempts = 0;
+        final int maxAttempts = 3;
+        boolean loggedIn = false;
+
+        while (attempts < maxAttempts) {
+            attempts++;
+            System.out.print("Attempt (" + attempts + "/" + maxAttempts + ") Enter Password: ");
+            String enteredPassword = sc.nextLine().trim();
+
+            if (enteredPassword.equals(correctPassword)) {
+                System.out.println("Login Successful");
+                loggedIn = true;
+                break; // Stop the loop on success
+            } else {
+                System.out.println("Invalid Password.");
+            }
+        }
+
+        if (!loggedIn) {
+            System.out.println("Maximum attempts reached. Account Locked!");
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        skipMultiplesOfThree();
+        loginAttemptSystem(sc);
+        sc.close();
+    }
 }`
 };
